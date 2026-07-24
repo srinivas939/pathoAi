@@ -18,7 +18,8 @@ const {
 } = Mocha.Runner.constants;
 
 const OUT_DIR_EXCEL = path.join(process.cwd(), 'Test_Results', 'Excel');
-const OUT_FILE = path.join(OUT_DIR_EXCEL, 'selenium-report.xlsx');
+const OUT_FILE      = path.join(OUT_DIR_EXCEL, 'selenium-report.xlsx');
+const STATS_FILE    = path.join(process.cwd(), 'Test_Results', 'test-stats.json');
 
 // Ensure output directories exist
 ['Test_Results/Excel', 'Test_Results/HTML'].forEach(d => {
@@ -34,52 +35,52 @@ function safeDuration(ms) {
 // Map suite title → category type
 function detectType(title) {
   const t = title.toLowerCase();
-  if (t.includes('functional') || t.includes('feature'))   return 'Functional';
+  if (t.includes('functional') || t.includes('feature'))              return 'Functional';
   if (t.includes('ui') || t.includes('layout') || t.includes('component')) return 'UI/UX';
-  if (t.includes('access'))                                  return 'Accessibility';
-  if (t.includes('performance') || t.includes('metric'))    return 'Performance';
+  if (t.includes('access'))                                            return 'Accessibility';
+  if (t.includes('performance') || t.includes('metric'))              return 'Performance';
   if (t.includes('security') || t.includes('sanitiz') || t.includes('xss') || t.includes('csrf')) return 'Security';
   if (t.includes('api') || t.includes('network') || t.includes('fetch')) return 'API';
   if (t.includes('database') || t.includes('db') || t.includes('mysql')) return 'Database';
   if (t.includes('mobile') || t.includes('responsive') || t.includes('viewport')) return 'Mobile';
-  if (t.includes('regression'))                              return 'Regression';
+  if (t.includes('regression'))                                        return 'Regression';
   if (t.includes('e2e') || t.includes('end-to-end') || t.includes('flow')) return 'E2E';
-  if (t.includes('compat'))                                  return 'Compatibility';
-  if (t.includes('css') || t.includes('tailwind'))           return 'CSS';
-  if (t.includes('javascript') || t.includes('js engine'))  return 'JavaScript';
-  if (t.includes('state'))                                   return 'State Management';
-  if (t.includes('notification'))                            return 'Notifications';
-  if (t.includes('appointment'))                             return 'Appointments';
-  if (t.includes('scan'))                                    return 'AI Scan';
-  if (t.includes('auth') || t.includes('login'))             return 'Authentication';
-  if (t.includes('admin'))                                   return 'Admin';
-  if (t.includes('doctor'))                                  return 'Doctor';
-  if (t.includes('patient'))                                 return 'Patient';
-  if (t.includes('feedback'))                                return 'Feedback';
-  if (t.includes('pdf') || t.includes('report'))             return 'Reports';
-  if (t.includes('form') || t.includes('valid'))             return 'Form Validation';
-  if (t.includes('navigation') || t.includes('routing'))    return 'Navigation';
-  if (t.includes('image') || t.includes('media'))           return 'Media';
-  if (t.includes('storage') || t.includes('local'))         return 'Storage';
-  if (t.includes('chart') || t.includes('recharts'))        return 'Charts';
-  if (t.includes('modal') || t.includes('dialog'))          return 'Modal';
-  if (t.includes('react') || t.includes('rendering'))       return 'React Rendering';
-  if (t.includes('gemini') || t.includes('ai integration')) return 'AI Integration';
-  if (t.includes('header'))                                  return 'Header';
+  if (t.includes('compat'))                                            return 'Compatibility';
+  if (t.includes('css') || t.includes('tailwind'))                    return 'CSS';
+  if (t.includes('javascript') || t.includes('js engine'))            return 'JavaScript';
+  if (t.includes('state'))                                             return 'State Management';
+  if (t.includes('notification'))                                      return 'Notifications';
+  if (t.includes('appointment'))                                       return 'Appointments';
+  if (t.includes('scan'))                                              return 'AI Scan';
+  if (t.includes('auth') || t.includes('login'))                      return 'Authentication';
+  if (t.includes('admin'))                                             return 'Admin';
+  if (t.includes('doctor'))                                            return 'Doctor';
+  if (t.includes('patient'))                                           return 'Patient';
+  if (t.includes('feedback'))                                          return 'Feedback';
+  if (t.includes('pdf') || t.includes('report'))                      return 'Reports';
+  if (t.includes('form') || t.includes('valid'))                      return 'Form Validation';
+  if (t.includes('navigation') || t.includes('routing'))              return 'Navigation';
+  if (t.includes('image') || t.includes('media'))                     return 'Media';
+  if (t.includes('storage') || t.includes('local'))                   return 'Storage';
+  if (t.includes('chart') || t.includes('recharts'))                  return 'Charts';
+  if (t.includes('modal') || t.includes('dialog'))                    return 'Modal';
+  if (t.includes('react') || t.includes('rendering'))                 return 'React Rendering';
+  if (t.includes('gemini') || t.includes('ai integration'))           return 'AI Integration';
+  if (t.includes('header'))                                            return 'Header';
   if (t.includes('rate') || t.includes('limit') || t.includes('error handling')) return 'Error Handling';
-  if (t.includes('dom'))                                     return 'DOM';
-  if (t.includes('browser'))                                 return 'Browser APIs';
-  if (t.includes('input') || t.includes('interaction'))     return 'Input';
-  if (t.includes('data type'))                               return 'Data Types';
+  if (t.includes('dom'))                                               return 'DOM';
+  if (t.includes('browser'))                                           return 'Browser APIs';
+  if (t.includes('input') || t.includes('interaction'))               return 'Input';
+  if (t.includes('data type'))                                         return 'Data Types';
   return 'General';
 }
 
 class ExcelReporter {
   constructor(runner) {
-    this._results = [];
-    this._startTime = Date.now();
+    this._results    = [];
+    this._startTime  = Date.now();
     this._currentSuite = '';
-    this._stats = { pass: 0, fail: 0, pending: 0 };
+    this._stats      = { pass: 0, fail: 0, pending: 0 };
 
     runner.on(EVENT_SUITE_BEGIN, suite => {
       if (suite.title) this._currentSuite = suite.title;
@@ -95,7 +96,8 @@ class ExcelReporter {
         error:    '',
         type:     detectType(this._currentSuite),
       });
-      if (this._results.length % 10 === 0) this._writeSyncReports();
+      // Write intermediate reports every 100 tests
+      if (this._results.length % 100 === 0) this._writeSyncReports();
     });
 
     runner.on(EVENT_TEST_FAIL, (test, err) => {
@@ -108,7 +110,7 @@ class ExcelReporter {
         error:    err.message || String(err),
         type:     detectType(this._currentSuite),
       });
-      if (this._results.length % 10 === 0) this._writeSyncReports();
+      if (this._results.length % 100 === 0) this._writeSyncReports();
     });
 
     runner.on(EVENT_TEST_PENDING, test => {
@@ -121,12 +123,13 @@ class ExcelReporter {
         error:    '',
         type:     detectType(this._currentSuite),
       });
-      if (this._results.length % 10 === 0) this._writeSyncReports();
+      if (this._results.length % 100 === 0) this._writeSyncReports();
     });
 
     runner.on(EVENT_RUN_END, () => {
       this._writeSyncReports();
       this._writeExcelSync();
+      this._printSummary();
     });
   }
 
@@ -147,35 +150,63 @@ class ExcelReporter {
     const typeMap = this._getTypeMap();
 
     // Trigger HTML report generation synchronously
-    generateHTMLReport({
-      results:  this._results,
-      stats:    this._stats,
-      duration: elapsed,
-      typeMap,
-    });
+    try {
+      generateHTMLReport({
+        results:  this._results,
+        stats:    this._stats,
+        duration: elapsed,
+        typeMap,
+      });
+    } catch (e) {
+      console.error('HTML report generation error:', e.message);
+    }
 
     // Write test-stats.json synchronously
     const statsJson = {
-      total:    this._results.length,
-      passed:   this._stats.pass,
-      failed:   this._stats.fail,
-      pending:  this._stats.pending,
-      passRate: this._results.length > 0
+      total:      this._results.length,
+      passed:     this._stats.pass,
+      failed:     this._stats.fail,
+      pending:    this._stats.pending,
+      passRate:   this._results.length > 0
         ? ((this._stats.pass / this._results.length) * 100).toFixed(2)
         : '0.00',
-      duration: (elapsed / 1000).toFixed(2),
+      duration:   (elapsed / 1000).toFixed(2),
       categories: Object.keys(typeMap).length,
     };
-    const statsPath = path.join(process.cwd(), 'Test_Results', 'test-stats.json');
-    fs.writeFileSync(statsPath, JSON.stringify(statsJson, null, 2), 'utf8');
+
+    try {
+      fs.writeFileSync(STATS_FILE, JSON.stringify(statsJson, null, 2), 'utf8');
+    } catch (e) {
+      console.error('Failed to write test-stats.json:', e.message);
+    }
+  }
+
+  _printSummary() {
+    const elapsed = ((Date.now() - this._startTime) / 1000).toFixed(2);
+    const total   = this._results.length;
+    const passed  = this._stats.pass;
+    const failed  = this._stats.fail;
+    const rate    = total > 0 ? ((passed / total) * 100).toFixed(2) : '0.00';
+
+    console.log('\n══════════════════════════════════════════════════');
+    console.log('  PathoAI E2E Web Test Suite — Final Summary');
+    console.log('══════════════════════════════════════════════════');
+    console.log(`  Total Tests : ${total}`);
+    console.log(`  Passed      : ${passed}`);
+    console.log(`  Failed      : ${failed}`);
+    console.log(`  Pass Rate   : ${rate}%`);
+    console.log(`  Duration    : ${elapsed}s`);
+    console.log('══════════════════════════════════════════════════\n');
   }
 
   _writeExcelSync() {
     try {
       const wb = new ExcelJS.Workbook();
-      wb.creator = 'PathoAI Test Suite';
-      wb.created = new Date();
+      wb.creator  = 'PathoAI Test Suite';
+      wb.created  = new Date();
+      wb.modified = new Date();
 
+      // ── Sheet 1: Selenium Test Report ──────────────────────────────────
       const ws1 = wb.addWorksheet('Selenium Test Report');
       const headerFill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1E293B' } };
       const headerFont = { bold: true, color: { argb: 'FFFFFFFF' }, size: 11 };
@@ -184,19 +215,22 @@ class ExcelReporter {
       const pendColor  = 'FFFBBF24';
 
       ws1.columns = [
-        { header: '#',           key: 'no',       width: 6  },
-        { header: 'Suite',       key: 'suite',    width: 35 },
-        { header: 'Test Title',  key: 'title',    width: 60 },
-        { header: 'Type',        key: 'type',     width: 22 },
-        { header: 'Status',      key: 'status',   width: 10 },
-        { header: 'Duration(ms)',key: 'duration', width: 14 },
-        { header: 'Error',       key: 'error',    width: 50 },
+        { header: '#',            key: 'no',       width: 6  },
+        { header: 'Suite',        key: 'suite',    width: 35 },
+        { header: 'Test Title',   key: 'title',    width: 60 },
+        { header: 'Type',         key: 'type',     width: 22 },
+        { header: 'Status',       key: 'status',   width: 10 },
+        { header: 'Duration(ms)', key: 'duration', width: 14 },
+        { header: 'Error',        key: 'error',    width: 50 },
       ];
 
       ws1.getRow(1).eachCell(cell => {
-        cell.fill = headerFill;
-        cell.font = headerFont;
+        cell.fill      = headerFill;
+        cell.font      = headerFont;
         cell.alignment = { vertical: 'middle', horizontal: 'center' };
+        cell.border    = {
+          bottom: { style: 'medium', color: { argb: 'FF0EA5E9' } }
+        };
       });
 
       this._results.forEach((r, i) => {
@@ -214,10 +248,76 @@ class ExcelReporter {
         const color = r.status === 'PASS' ? passColor : r.status === 'FAIL' ? failColor : pendColor;
         statusCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: color } };
         statusCell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+        statusCell.alignment = { horizontal: 'center' };
+
+        // Alternate row shading
+        if (i % 2 === 1) {
+          row.eachCell({ includeEmpty: true }, cell => {
+            if (cell.col !== 5) { // skip status cell
+              cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1E293B' } };
+            }
+          });
+        }
       });
 
-      wb.xlsx.writeFile(OUT_FILE).catch(() => {});
-    } catch (_) {}
+      // ── Sheet 2: Testing Types Summary ────────────────────────────────
+      const ws2 = wb.addWorksheet('Testing Types Summary');
+      const typeMap = this._getTypeMap();
+
+      ws2.columns = [
+        { header: 'Test Type',  key: 'type',     width: 28 },
+        { header: 'Total',      key: 'total',    width: 12 },
+        { header: 'Passed',     key: 'passed',   width: 12 },
+        { header: 'Failed',     key: 'failed',   width: 12 },
+        { header: 'Pending',    key: 'pending',  width: 12 },
+        { header: 'Pass Rate',  key: 'passRate', width: 14 },
+      ];
+
+      ws2.getRow(1).eachCell(cell => {
+        cell.fill      = headerFill;
+        cell.font      = headerFont;
+        cell.alignment = { vertical: 'middle', horizontal: 'center' };
+        cell.border    = {
+          bottom: { style: 'medium', color: { argb: 'FF0EA5E9' } }
+        };
+      });
+
+      const elapsed = Date.now() - this._startTime;
+      Object.entries(typeMap)
+        .sort((a, b) => a[0].localeCompare(b[0]))
+        .forEach(([type, s]) => {
+          const rate = s.total > 0 ? ((s.passed / s.total) * 100).toFixed(1) + '%' : '0.0%';
+          const row = ws2.addRow({
+            type,
+            total:    s.total,
+            passed:   s.passed,
+            failed:   s.failed,
+            pending:  s.pending,
+            passRate: rate,
+          });
+
+          // Color pass rate cell
+          const rateCell = row.getCell('passRate');
+          const rateNum  = parseFloat(rate);
+          rateCell.fill  = {
+            type: 'pattern', pattern: 'solid',
+            fgColor: { argb: rateNum >= 90 ? 'FF166534' : rateNum >= 70 ? 'FF78350F' : 'FF7F1D1D' }
+          };
+          rateCell.font      = { bold: true, color: { argb: rateNum >= 90 ? 'FF86EFAC' : rateNum >= 70 ? 'FFFDE68A' : 'FFFCA5A5' } };
+          rateCell.alignment = { horizontal: 'center' };
+
+          // Color pass/fail cells
+          row.getCell('passed').font = { color: { argb: 'FF22C55E' }, bold: true };
+          row.getCell('failed').font = { color: { argb: 'FFEF4444' }, bold: true };
+        });
+
+      wb.xlsx.writeFile(OUT_FILE)
+        .then(() => console.log(`📊 Excel report saved → ${OUT_FILE}`))
+        .catch(e => console.error('Excel write error:', e.message));
+
+    } catch (e) {
+      console.error('Excel report error:', e.message);
+    }
   }
 }
 
