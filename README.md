@@ -4,6 +4,14 @@ PathoAI is a comprehensive clinical AI pathology platform featuring automated sp
 
 ---
 
+## 🚀 CI/CD E2E Web Testing & Deployment
+This project has integrated E2E Web Selenium Testing (1,100 Assertions across 110 categories) and automated deployment to GitHub Pages.
+
+- **HTML report link**: `https://srinivas939.github.io/pathoAi/reports/latest/execution-report.html`
+- **Excel report link**: `https://srinivas939.github.io/pathoAi/reports/latest/selenium-report.xlsx`
+
+---
+
 ## 📱 Android Studio Setup & Deployment
 
 To run and deploy PathoAI on Android devices or Android Studio emulators:
