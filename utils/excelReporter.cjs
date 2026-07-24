@@ -6,7 +6,7 @@ const Mocha = require('mocha');
 const ExcelJS = require('exceljs');
 const path = require('path');
 const fs = require('fs');
-const { generateHTMLReport } = require('./htmlReportGenerator');
+const { generateHTMLReport } = require('./htmlReportGenerator.cjs');
 
 const {
   EVENT_RUN_BEGIN,

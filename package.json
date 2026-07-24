@@ -12,9 +12,9 @@
     "cap:add:android": "cap add android",
     "cap:sync": "npm run build && cap sync",
     "cap:open:android": "cap open android",
-    "test": "mocha tests/mega_web_1100.test.js --timeout 30000 --reporter utils/excelReporter.js --exit --no-bail",
-    "test:web": "mocha tests/mega_web_1100.test.js --timeout 30000 --reporter utils/excelReporter.js --exit --no-bail",
-    "test:spec": "mocha tests/mega_web_1100.test.js --timeout 30000 --reporter spec --exit --no-bail"
+    "test": "mocha tests/mega_web_1100.test.cjs --timeout 30000 --reporter utils/excelReporter.cjs --exit --no-bail",
+    "test:web": "mocha tests/mega_web_1100.test.cjs --timeout 30000 --reporter utils/excelReporter.cjs --exit --no-bail",
+    "test:spec": "mocha tests/mega_web_1100.test.cjs --timeout 30000 --reporter spec --exit --no-bail"
   },
   "dependencies": {
     "@capacitor/android": "^8.4.2",

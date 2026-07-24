@@ -96,9 +96,9 @@ jobs:
 
       - name: Run Selenium E2E tests (1100 assertions)
         run: |
-          npx mocha tests/mega_web_1100.test.js \
+          npx mocha tests/mega_web_1100.test.cjs \
             --timeout 30000 \
-            --reporter utils/excelReporter.js \
+            --reporter utils/excelReporter.cjs \
             --exit \
             --no-bail || true
         env:
