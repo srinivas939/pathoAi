@@ -42,5 +42,10 @@ export function createBackendApp() {
     res.json({ status: 'ok', service: 'PathoAI Backend', timestamp: new Date().toISOString() });
   });
 
+  // 404 handler for unknown API routes
+  app.use('/api/*', (req, res) => {
+    res.status(404).json({ error: 'API endpoint not found' });
+  });
+
   return app;
 }

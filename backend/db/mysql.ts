@@ -146,7 +146,7 @@ async function setupTablesAndSeed() {
         title VARCHAR(150),
         message TEXT,
         type VARCHAR(50),
-        is_read TINYINT(1) DEFAULT 0,
+        \`read\` TINYINT(1) DEFAULT 0,
         createdAt VARCHAR(50)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
     `);

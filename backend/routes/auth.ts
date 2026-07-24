@@ -190,3 +190,59 @@ router.put('/profile', (req, res) => {
 });
 
 export default router;
+
+
+// Generic Login (auto-detects role)
+router.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  const user = users.find(u => u.email.toLowerCase() === (email || '').toLowerCase());
+  if (!user || user.password !== password) {
+    return res.status(401).json({ error: 'Invalid email or password' });
+  }
+  if (user.role === 'doctor' && !user.approved) {
+    return res.status(403).json({ error: 'Doctor account pending admin approval' });
+  }
+  const token = `jwt_${user.role}_${user.id}_${Date.now()}`;
+  const { password: _, ...userNoPass } = user;
+  return res.json({ token, user: userNoPass });
+});
+
+// Generic Register (auto-assigns role based on fields or defaults to patient)
+router.post('/register', (req, res) => {
+  const { name, email, password, role } = req.body;
+  if (!email || !password || !name) {
+    return res.status(400).json({ error: 'Name, email and password required' });
+  }
+  const existing = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+  if (existing) {
+    return res.status(409).json({ error: 'Email already registered' });
+  }
+  
+  const userRole = (role === 'doctor' || role === 'patient' || role === 'admin') ? role : 'patient';
+  
+  if (userRole === 'doctor') {
+    return res.status(400).json({ error: 'Use /register/doctor for doctor registration' });
+  }
+  
+  // Default to patient registration
+  const newUser = {
+    id: `pat-${Date.now()}`,
+    name,
+    email,
+    password,
+    role: 'patient' as const,
+    phone: req.body.phone || '',
+    avatarUrl: `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(name)}`,
+    createdAt: new Date().toISOString(),
+    age: req.body.age ? Number(req.body.age) : 30,
+    gender: req.body.gender || 'Other',
+    bloodGroup: req.body.bloodGroup || 'O+',
+    medicalHistory: req.body.medicalHistory || 'None',
+    isActive: true,
+  };
+  users.push(newUser);
+  saveUserToMySQL(newUser);
+  const token = `jwt_patient_${newUser.id}_${Date.now()}`;
+  const { password: _, ...userNoPass } = newUser;
+  return res.json({ token, user: userNoPass });
+});

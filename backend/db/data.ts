@@ -205,7 +205,7 @@ export const feedbackList: FeedbackItem[] = [
 
 export const systemLogs: SystemLog[] = [];
 
-export function addLog(endpoint: string, method: 'GET' | 'POST' | 'PUT' | 'DELETE', statusCode: number, responseTimeMs: number, ip: string) {
+export function addLog(endpoint: string, method: string, statusCode: number, responseTimeMs: number, ip: string) {
   systemLogs.unshift({
     id: `log-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
     endpoint,

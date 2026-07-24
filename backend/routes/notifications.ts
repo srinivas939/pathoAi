@@ -14,18 +14,30 @@ router.get('/', (req, res) => {
   return res.json(userNotifs);
 });
 
-// Mark single notification as read
+// Mark single notification as read (PUT or PATCH)
 router.put('/:id/read', (req, res) => {
   const notif = notifications.find(n => n.id === req.params.id);
   if (notif) notif.read = true;
   return res.json({ success: true });
 });
+router.patch('/:id/read', (req, res) => {
+  const notif = notifications.find(n => n.id === req.params.id);
+  if (notif) notif.read = true;
+  return res.json({ success: true });
+});
 
-// Mark all notifications read
+// Mark all notifications read (POST or PATCH)
 router.post('/mark-all-read', (req, res) => {
   const { userId } = req.body;
   notifications.forEach(n => {
-    if (n.userId === userId || userId === 'all') n.read = true;
+    if (!userId || n.userId === userId || userId === 'all') n.read = true;
+  });
+  return res.json({ success: true });
+});
+router.patch('/mark-all-read', (req, res) => {
+  const { userId } = req.body;
+  notifications.forEach(n => {
+    if (!userId || n.userId === userId || userId === 'all') n.read = true;
   });
   return res.json({ success: true });
 });
