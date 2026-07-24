@@ -243,12 +243,17 @@ function generateHTMLReport({ results = [], stats = {}, duration = 0, typeMap = 
 <div class="header">
   <h1>🧪 PathoAI Selenium Test Report</h1>
   <p class="subtitle">Web E2E Test Suite — 1,100 Assertions across 110 Categories</p>
-  <div class="run-info">
+  <div class="run-info" style="margin-bottom: 22px;">
     <span>📅 ${runDate}</span>
     <span>⏱ Duration: ${durSec}s</span>
     <span>🌐 Chrome Headless</span>
     <span>🧩 Mocha + Selenium WebDriver</span>
     <span>🏥 PathoAI Health Platform</span>
+  </div>
+  <div style="margin-top: 18px; position: relative; z-index: 10;">
+    <a id="excel-dl" href="#" download style="display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: #fff; padding: 10px 24px; border-radius: 30px; font-weight: 700; font-size: 0.9rem; text-decoration: none; border: 2px solid var(--green); box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(34, 197, 94, 0.6)';" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 15px rgba(34, 197, 94, 0.4)';">
+      <span>📥 Download Excel Report (xlsx)</span>
+    </a>
   </div>
 </div>
 
@@ -399,6 +404,12 @@ new Chart(dCtx, {
     }
   }
 });
+
+// Resolve download link dynamically based on environment
+const isGitHubPages = window.location.hostname.includes('github.io') || window.location.pathname.includes('/pathoAi/');
+const excelUrl = isGitHubPages ? 'selenium-report.xlsx' : '../Excel/selenium-report.xlsx';
+const dlLink = document.getElementById('excel-dl');
+if (dlLink) dlLink.setAttribute('href', excelUrl);
 </script>
 </body>
 </html>`;

@@ -57,6 +57,29 @@ export const Header: React.FC = () => {
           </div>
         </div>
 
+        {/* E2E Reports Links */}
+        <div className="hidden lg:flex items-center space-x-2 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700">
+          <a
+            href="reports/latest/execution-report.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-teal-600 dark:hover:text-teal-300 transition-all"
+            title="Open HTML E2E Test Report"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-teal-500" />
+            <span>HTML Report</span>
+          </a>
+          <a
+            href="reports/latest/selenium-report.xlsx"
+            download
+            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-teal-600 dark:hover:text-teal-300 transition-all"
+            title="Download Excel E2E Test Report"
+          >
+            <FileText className="w-3.5 h-3.5 text-emerald-500" />
+            <span>Excel Report</span>
+          </a>
+        </div>
+
         {/* Target Platform Switcher (Flutter Web <-> Android Mobile) */}
         <div className="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700">
           <button
