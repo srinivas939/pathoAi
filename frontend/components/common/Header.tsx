@@ -122,31 +122,44 @@ export const Header: React.FC = () => {
         </div>
 
         {/* Target Platform Switcher (Flutter Web <-> Android Mobile) */}
-        <div className="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700">
-          <button
-            onClick={() => setViewMode('web')}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-              viewMode === 'web'
-                ? 'bg-white dark:bg-slate-700 text-teal-600 dark:text-teal-300 shadow-sm'
-                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
-            }`}
-            title="Switch to Web View (Responsive Desktop/Tablet)"
+        <div className="flex items-center space-x-2">
+          <div className="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700">
+            <button
+              onClick={() => setViewMode('web')}
+              className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                viewMode === 'web'
+                  ? 'bg-white dark:bg-slate-700 text-teal-600 dark:text-teal-300 shadow-sm'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
+              }`}
+              title="Switch to Web View (Responsive Desktop/Tablet)"
+            >
+              <Globe className="w-3.5 h-3.5" />
+              <span className="hidden md:inline">Flutter Web</span>
+            </button>
+            <button
+              onClick={() => setViewMode('android')}
+              className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                viewMode === 'android'
+                  ? 'bg-white dark:bg-slate-700 text-teal-600 dark:text-teal-300 shadow-sm'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
+              }`}
+              title="Switch to Android Phone View Frame"
+            >
+              <Smartphone className="w-3.5 h-3.5" />
+              <span className="hidden md:inline">Android Frame</span>
+            </button>
+          </div>
+
+          {/* Android APK Download Button */}
+          <a
+            href="apk/PathoAI-v2.4.apk"
+            download="PathoAI-v2.4.apk"
+            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white text-xs font-semibold shadow-sm hover:shadow-md transition-all cursor-pointer"
+            title="Download PathoAI Android Mobile APK directly to your phone"
           >
-            <Globe className="w-3.5 h-3.5" />
-            <span className="hidden md:inline">Flutter Web</span>
-          </button>
-          <button
-            onClick={() => setViewMode('android')}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-              viewMode === 'android'
-                ? 'bg-white dark:bg-slate-700 text-teal-600 dark:text-teal-300 shadow-sm'
-                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
-            }`}
-            title="Switch to Android Phone View Frame"
-          >
-            <Smartphone className="w-3.5 h-3.5" />
-            <span className="hidden md:inline">Android Frame</span>
-          </button>
+            <Smartphone className="w-4 h-4 animate-bounce" />
+            <span className="hidden sm:inline">Get Mobile APK</span>
+          </a>
         </div>
 
         {/* Right Actions */}

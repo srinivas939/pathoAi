@@ -4,7 +4,11 @@
   "webDir": "dist",
   "bundledWebRuntime": false,
   "server": {
-    "url": "http://10.203.166.24:3000",
+    "androidScheme": "https",
     "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true,
+    "backgroundColor": "#0f172a"
   }
 }

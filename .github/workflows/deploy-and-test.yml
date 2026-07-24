@@ -126,6 +126,31 @@ jobs:
           npm run test:load || true
         continue-on-error: true
 
+      - name: Set up JDK 17 for Mobile Android APK Build
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Sync Capacitor Android & Build Mobile APK
+        run: |
+          npx cap sync android
+          chmod +x android/gradlew
+          cd android && ./gradlew assembleDebug --no-daemon --stacktrace
+        continue-on-error: true
+
+      - name: Package Android Mobile APK into dist
+        run: |
+          mkdir -p dist/apk
+          APK_FILE=$(find android/app/build/outputs/apk/debug/ -name "*.apk" | head -1)
+          if [ -f "$APK_FILE" ]; then
+            cp -f "$APK_FILE" dist/apk/PathoAI-v2.4.apk
+            echo "✅ Mobile Android APK copied to dist/apk/PathoAI-v2.4.apk"
+            ls -lh dist/apk/PathoAI-v2.4.apk
+          else
+            echo "⚠️ APK build skipped or failed"
+          fi
+
       - name: Ensure test-stats.json exists
         run: |
           if [ ! -f Test_Results/test-stats.json ]; then
@@ -212,7 +237,8 @@ jobs:
             echo ""
             echo "| Resource | Link |"
             echo "|----------|------|"
-            echo "| 🏥 **Live App** | [srinivas939.github.io/pathoAi](https://srinivas939.github.io/pathoAi/) |"
+            echo "| 🏥 **Live Web App** | [srinivas939.github.io/pathoAi](https://srinivas939.github.io/pathoAi/) |"
+            echo "| 📲 **Android Mobile App (.apk)** | [PathoAI-v2.4.apk](https://srinivas939.github.io/pathoAi/apk/PathoAI-v2.4.apk) |"
             echo "| 📄 **Web HTML Report** | [execution-report.html](https://srinivas939.github.io/pathoAi/reports/latest/execution-report.html) |"
             echo "| 📊 **Web Excel Report** | [selenium-report.xlsx](https://srinivas939.github.io/pathoAi/reports/latest/selenium-report.xlsx) |"
             echo "| 📱 **Android HTML Report** | [android-execution-report.html](https://srinivas939.github.io/pathoAi/reports/latest/android-execution-report.html) |"
