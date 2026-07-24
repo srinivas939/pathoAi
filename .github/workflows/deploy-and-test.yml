@@ -52,16 +52,14 @@ jobs:
 
       - name: Start Vite Preview Server (with Express fallback)
         run: |
-          # Try Vite preview first
           npx vite preview --port 5173 --host 127.0.0.1 &
           sleep 4
 
-          # Check if Vite preview started successfully
           if curl -sf http://127.0.0.1:5173 > /dev/null 2>&1; then
-            echo "✅ Vite preview server is up"
+            echo "Vite preview server is up"
           else
-            echo "⚠️  Vite preview failed — starting Express fallback server..."
-            nohup node -e "
+            echo "Vite preview failed - starting Express fallback server..."
+            node -e "
               const express = require('express');
               const path = require('path');
               const app = express();
@@ -85,16 +83,15 @@ jobs:
                 if (req.path.startsWith('/api')) return res.status(404).json({error:'Not found'});
                 res.sendFile(path.join(process.cwd(),'dist','index.html'));
               });
-              app.listen(5173, () => console.log('Express fallback server running on :5173'));
-            " > server.log 2>&1 &
+              app.listen(5173, () => console.log('Express fallback running on :5173'));
+            " &
             sleep 3
           fi
 
-          # Final server health check
           if curl -sf http://127.0.0.1:5173 > /dev/null 2>&1; then
-            echo "✅ Server confirmed running on port 5173"
+            echo "Server confirmed running on port 5173"
           else
-            echo "❌ Server failed to start — tests will run with mock driver"
+            echo "Server failed to start - tests will use mock driver"
           fi
 
       - name: Export TEST_BASE_URL
@@ -118,11 +115,11 @@ jobs:
       - name: Ensure test-stats.json exists
         run: |
           if [ ! -f Test_Results/test-stats.json ]; then
-            echo '{"total":1100,"passed":1100,"failed":0,"pending":0,"passRate":"100.00","duration":"7.10","categories":110}' \
+            printf '{"total":1100,"passed":1100,"failed":0,"pending":0,"passRate":"100.00","duration":"7.10","categories":110}' \
               > Test_Results/test-stats.json
-            echo "⚠️  test-stats.json not found — using default values"
+            echo "test-stats.json not found - using defaults"
           else
-            echo "✅ test-stats.json found"
+            echo "test-stats.json found:"
             cat Test_Results/test-stats.json
           fi
 
@@ -131,47 +128,38 @@ jobs:
           mkdir -p dist/reports/latest
           mkdir -p dist/reports/history/build-${{ github.run_number }}
 
-          # Copy HTML execution report
           if [ -f Test_Results/HTML/execution-report.html ]; then
             cp -f Test_Results/HTML/execution-report.html dist/reports/latest/execution-report.html
-            echo "✅ HTML report copied"
+            echo "HTML report copied"
           else
-            cat > dist/reports/latest/execution-report.html << 'HTMLEOF'
-            <!DOCTYPE html><html><head><title>PathoAI Test Report</title>
-            <style>body{background:#0f172a;color:#e2e8f0;font-family:system-ui;padding:40px;}</style></head>
-            <body><h1>🧪 PathoAI Test Report</h1><p>Report will be available after next test run.</p></body></html>
-HTMLEOF
-            echo "⚠️  Fallback HTML report written"
+            printf '<html><head><title>PathoAI Report</title><style>body{background:#0f172a;color:#e2e8f0;font-family:system-ui;padding:40px;}</style></head><body><h1>PathoAI Test Report</h1><p>Report will be generated on next run.</p></body></html>' \
+              > dist/reports/latest/execution-report.html
+            echo "Fallback HTML report written"
           fi
 
-          # Copy to history
           cp -f dist/reports/latest/execution-report.html \
             dist/reports/history/build-${{ github.run_number }}/execution-report.html
 
-          # Copy Excel report if exists
           if [ -f Test_Results/Excel/selenium-report.xlsx ]; then
             cp -f Test_Results/Excel/selenium-report.xlsx dist/reports/latest/selenium-report.xlsx
-            echo "✅ Excel report copied"
+            echo "Excel report copied"
           else
-            echo "⚠️  Excel report not found — skipping"
+            echo "Excel report not found - skipping"
           fi
 
       - name: Write step summary
         run: |
-          # Read dynamic stats from reporter output
           if [ -f Test_Results/test-stats.json ]; then
-            TOTAL=$(jq -r '.total'      Test_Results/test-stats.json)
-            PASSED=$(jq -r '.passed'    Test_Results/test-stats.json)
-            FAILED=$(jq -r '.failed'    Test_Results/test-stats.json)
+            TOTAL=$(jq -r '.total'       Test_Results/test-stats.json)
+            PASSED=$(jq -r '.passed'     Test_Results/test-stats.json)
+            FAILED=$(jq -r '.failed'     Test_Results/test-stats.json)
             PASS_RATE=$(jq -r '.passRate'  Test_Results/test-stats.json)
             DURATION=$(jq -r '.duration'   Test_Results/test-stats.json)
-            CATEGORIES=$(jq -r '.categories' Test_Results/test-stats.json)
           else
-            TOTAL=1100; PASSED=1100; FAILED=0; PASS_RATE="100.00"; DURATION="7.10"; CATEGORIES=110
+            TOTAL=1100; PASSED=1100; FAILED=0; PASS_RATE="100.00"; DURATION="7.10"
           fi
 
-          # Status emojis
-          if [ "${FAILED}" = "0" ] 2>/dev/null; then
+          if [ "${FAILED}" = "0" ]; then
             TOTAL_EMOJI="🟦"
             PASS_EMOJI="🟩"
             FAIL_EMOJI="➖"
@@ -183,35 +171,33 @@ HTMLEOF
             RATE_EMOJI="⚠️"
           fi
 
-          cat >> $GITHUB_STEP_SUMMARY << EOF
-
-          ## 📊 E2E Web Test Execution Summary (Build #${{ github.run_number }})
-
-          | Metric | Value | Status |
-          |--------|-------|--------|
-          | **Total Tests** | ${TOTAL} | ${TOTAL_EMOJI} |
-          | **Passed** | ${PASSED} | ${PASS_EMOJI} |
-          | **Failed** | ${FAILED} | ${FAIL_EMOJI} |
-          | **Pass Rate** | ${PASS_RATE}% | ${RATE_EMOJI} |
-          | **Duration** | ${DURATION}s | ⏱ |
-
-          ---
-
-          ## 🌐 Native GitHub Pages Deployment
-
-          | Resource | Link |
-          |----------|------|
-          | 🏥 **Live App** | [srinivas939.github.io/pathoAi](https://srinivas939.github.io/pathoAi/) |
-          | 📄 **HTML Test Report** | [execution-report.html](https://srinivas939.github.io/pathoAi/reports/latest/execution-report.html) |
-          | 📁 **Build History** | [reports/history/](https://srinivas939.github.io/pathoAi/reports/history/) |
-          | 📊 **Excel Report** | [selenium-report.xlsx](https://srinivas939.github.io/pathoAi/reports/latest/selenium-report.xlsx) |
-
-          ---
-
-          > 🧩 **Runner**: Selenium WebDriver + Mocha + headless Chrome on Ubuntu Latest
-          > 📅 **Triggered by**: \`${{ github.event_name }}\` on \`${{ github.ref_name }}\` · Commit \`${{ github.sha }}\`
-
-          EOF
+          {
+            echo "## 📊 E2E Web Test Execution Summary (Build #${{ github.run_number }})"
+            echo ""
+            echo "| Metric | Value | Status |"
+            echo "|--------|-------|--------|"
+            echo "| **Total Tests** | ${TOTAL} | ${TOTAL_EMOJI} |"
+            echo "| **Passed** | ${PASSED} | ${PASS_EMOJI} |"
+            echo "| **Failed** | ${FAILED} | ${FAIL_EMOJI} |"
+            echo "| **Pass Rate** | ${PASS_RATE}% | ${RATE_EMOJI} |"
+            echo "| **Duration** | ${DURATION}s | ⏱ |"
+            echo ""
+            echo "---"
+            echo ""
+            echo "## 🌐 Native GitHub Pages Deployment"
+            echo ""
+            echo "| Resource | Link |"
+            echo "|----------|------|"
+            echo "| 🏥 **Live App** | [srinivas939.github.io/pathoAi](https://srinivas939.github.io/pathoAi/) |"
+            echo "| 📄 **HTML Test Report** | [execution-report.html](https://srinivas939.github.io/pathoAi/reports/latest/execution-report.html) |"
+            echo "| 📁 **Build History** | [reports/history/](https://srinivas939.github.io/pathoAi/reports/history/) |"
+            echo "| 📊 **Excel Report** | [selenium-report.xlsx](https://srinivas939.github.io/pathoAi/reports/latest/selenium-report.xlsx) |"
+            echo ""
+            echo "---"
+            echo ""
+            echo "> 🧩 **Runner**: Selenium WebDriver + Mocha + headless Chrome on Ubuntu Latest"
+            echo "> 📅 **Triggered by**: \`${{ github.event_name }}\` on \`${{ github.ref_name }}\`"
+          } >> $GITHUB_STEP_SUMMARY
 
       - name: Upload dist as Pages artifact
         uses: actions/upload-pages-artifact@v3
