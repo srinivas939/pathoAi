@@ -14,7 +14,9 @@
     "cap:open:android": "cap open android",
     "test": "mocha tests/mega_web_1100.test.cjs --timeout 30000 --reporter utils/excelReporter.cjs --exit --no-bail",
     "test:web": "mocha tests/mega_web_1100.test.cjs --timeout 30000 --reporter utils/excelReporter.cjs --exit --no-bail",
-    "test:spec": "mocha tests/mega_web_1100.test.cjs --timeout 30000 --reporter spec --exit --no-bail"
+    "test:spec": "mocha tests/mega_web_1100.test.cjs --timeout 30000 --reporter spec --exit --no-bail",
+    "test:android": "node node_modules/@wdio/cli/bin/wdio.js run wdio.conf.cjs",
+    "test:android:mock": "mocha tests/mega_android_1111.test.cjs --timeout 60000 --reporter spec --exit --no-bail"
   },
   "dependencies": {
     "@capacitor/android": "^8.4.2",
@@ -39,6 +41,10 @@
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/node": "^22.14.0",
+    "@wdio/cli": "^9.12.0",
+    "@wdio/local-runner": "^9.12.0",
+    "@wdio/mocha-framework": "^9.12.0",
+    "@wdio/spec-reporter": "^9.12.0",
     "autoprefixer": "^10.4.21",
     "chromedriver": "^136.0.3",
     "esbuild": "^0.25.0",
@@ -48,6 +54,7 @@
     "tailwindcss": "^4.1.14",
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",
-    "vite": "^6.2.3"
+    "vite": "^6.2.3",
+    "webdriverio": "^9.12.0"
   }
 }
