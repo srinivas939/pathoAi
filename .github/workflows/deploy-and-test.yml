@@ -1,11 +1,5 @@
-name: PathoAI CI – Selenium Tests + GitHub Pages Deploy
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  workflow_dispatch:
+name: deploy-and-test.yml
+on: push
 
 permissions:
   contents: read
@@ -20,7 +14,7 @@ jobs:
   # ──────────────────────────────────────────────
   # JOB 1: Build + Selenium Tests + Reports
   # ──────────────────────────────────────────────
-  test-and-build:
+  build-and-test:
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
@@ -55,38 +49,47 @@ jobs:
       - name: Build Vite app
         run: npm run build
         env:
-          VITE_API_URL: http://localhost:3000
+          VITE_API_URL: http://localhost:5173
 
-      - name: Start PathoAI backend server
+      - name: Start Vite Preview Server
         run: |
-          nohup node -e "
-            const express = require('express');
-            const path = require('path');
-            const app = express();
-            app.use(express.json());
-            app.use(express.static(path.join(process.cwd(), 'dist')));
-            app.get('/api/doctors', (req,res) => res.json([]));
-            app.get('/api/scans', (req,res) => res.json([]));
-            app.get('/api/appointments', (req,res) => res.json([]));
-            app.get('/api/notifications', (req,res) => res.json([]));
-            app.get('/api/feedback', (req,res) => res.json([]));
-            app.get('/api/admin/stats', (req,res) => res.json({users:0,scans:0}));
-            app.get('/api/admin/users', (req,res) => res.json([]));
-            app.get('/api/admin/logs', (req,res) => res.json([]));
-            app.get('/api/admin/health', (req,res) => res.json({status:'ok',db:'memory'}));
-            app.post('/api/auth/login', (req,res) => res.status(401).json({error:'Invalid credentials'}));
-            app.post('/api/auth/register', (req,res) => res.status(400).json({error:'Validation failed'}));
-            app.post('/api/feedback', (req,res) => res.status(201).json({id:'f1'}));
-            app.post('/api/scans', (req,res) => res.status(201).json({id:'s1'}));
-            app.post('/api/appointments', (req,res) => res.status(201).json({id:'a1'}));
-            app.all('*', (req,res) => { if(req.path.startsWith('/api')) return res.status(404).json({error:'Not found'}); res.sendFile(path.join(process.cwd(),'dist','index.html')); });
-            app.listen(3000, () => console.log('Mock server running on :3000'));
-          " > server.log 2>&1 &
-          sleep 5
-          curl -f http://localhost:3000 && echo "Server is up" || echo "Server check failed"
+          npx vite preview --port 5173 --host 127.0.0.1 &
+          sleep 4
+          curl -f http://127.0.0.1:5173 && echo "✅ Vite preview server is up" || echo "⚠️ Vite preview check failed, starting Express fallback..."
+
+          # Fallback: Start Express mock server if Vite preview fails
+          if ! curl -sf http://127.0.0.1:5173 > /dev/null 2>&1; then
+            echo "Starting Express fallback server on port 5173..."
+            nohup node -e "
+              const express = require('express');
+              const path = require('path');
+              const app = express();
+              app.use(express.json());
+              app.use(express.static(path.join(process.cwd(), 'dist')));
+              app.get('/api/doctors', (req,res) => res.json([]));
+              app.get('/api/scans', (req,res) => res.json([]));
+              app.get('/api/appointments', (req,res) => res.json([]));
+              app.get('/api/notifications', (req,res) => res.json([]));
+              app.get('/api/feedback', (req,res) => res.json([]));
+              app.get('/api/admin/stats', (req,res) => res.json({users:0,scans:0}));
+              app.get('/api/admin/users', (req,res) => res.json([]));
+              app.get('/api/admin/logs', (req,res) => res.json([]));
+              app.get('/api/admin/health', (req,res) => res.json({status:'ok',db:'memory'}));
+              app.post('/api/auth/login', (req,res) => res.status(401).json({error:'Invalid credentials'}));
+              app.post('/api/auth/register', (req,res) => res.status(400).json({error:'Validation failed'}));
+              app.post('/api/feedback', (req,res) => res.status(201).json({id:'f1'}));
+              app.post('/api/scans', (req,res) => res.status(201).json({id:'s1'}));
+              app.post('/api/appointments', (req,res) => res.status(201).json({id:'a1'}));
+              app.all('*', (req,res) => { if(req.path.startsWith('/api')) return res.status(404).json({error:'Not found'}); res.sendFile(path.join(process.cwd(),'dist','index.html')); });
+              app.listen(5173, () => console.log('Express fallback server running on :5173'));
+            " > server.log 2>&1 &
+            sleep 3
+          fi
+
+          curl -f http://127.0.0.1:5173 && echo "✅ Server confirmed running" || echo "❌ Server failed to start"
 
       - name: Export TEST_BASE_URL
-        run: echo "TEST_BASE_URL=http://localhost:3000" >> $GITHUB_ENV
+        run: echo "TEST_BASE_URL=http://127.0.0.1:5173" >> $GITHUB_ENV
 
       - name: Create test output directories
         run: mkdir -p Test_Results/Excel Test_Results/HTML
@@ -99,7 +102,7 @@ jobs:
             --exit \
             --no-bail || true
         env:
-          TEST_BASE_URL: http://localhost:3000
+          TEST_BASE_URL: http://127.0.0.1:5173
           DISPLAY: :99
         continue-on-error: true
 
@@ -107,10 +110,16 @@ jobs:
         run: |
           mkdir -p dist/reports/latest
           mkdir -p dist/reports/history/build-${{ github.run_number }}
+
+          # Copy HTML execution report
           cp -f Test_Results/HTML/execution-report.html dist/reports/latest/execution-report.html 2>/dev/null || \
             echo "<html><body><h1>Report not generated yet</h1></body></html>" > dist/reports/latest/execution-report.html
+
+          # Copy to history
           cp -f dist/reports/latest/execution-report.html \
             dist/reports/history/build-${{ github.run_number }}/execution-report.html
+
+          # Copy Excel report
           cp -f Test_Results/Excel/selenium-report.xlsx dist/reports/latest/selenium-report.xlsx 2>/dev/null || true
 
       - name: Write step summary
@@ -149,7 +158,6 @@ jobs:
           | **Failed** | ${FAILED} | ${FAIL_EMOJI} |
           | **Pass Rate** | ${PASS_RATE}% | ${RATE_EMOJI} |
           | **Duration** | ${DURATION}s | ⏱ |
-          | **Categories** | ${CATEGORIES} | 📂 |
 
           ---
 
@@ -178,7 +186,7 @@ jobs:
   # JOB 2: Deploy to GitHub Pages
   # ──────────────────────────────────────────────
   deploy-pages:
-    needs: test-and-build
+    needs: build-and-test
     runs-on: ubuntu-latest
     environment:
       name: github-pages
