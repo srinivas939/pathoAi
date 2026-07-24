@@ -123,6 +123,42 @@ jobs:
             cat Test_Results/test-stats.json
           fi
 
+      - name: Run Web Frontend Security Review
+        run: |
+          node scripts/generateWebSecuritySuite.js
+        env:
+          NODE_PATH: node_modules
+
+      - name: Append Web Security Report to GHA Summary
+        run: |
+          if [ -f web-executive-summary.md ]; then
+            cat web-executive-summary.md >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+          if [ -f web-security-review.md ]; then
+            cat web-security-review.md >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Enforce Web Zero-Critical Security Policy
+        run: |
+          CRIT_COUNT=$(grep -i "Critical Findings" web-executive-summary.md | grep -o "[0-9]\+")
+          echo "Discovered critical web vulnerabilities count: $CRIT_COUNT"
+          if [ "$CRIT_COUNT" -gt 0 ]; then
+            echo "❌ Web Zero-Critical Security Gate Failed! Critical Findings count: $CRIT_COUNT"
+            exit 1
+          else
+            echo "✅ Web Zero-Critical Security Gate Passed! Continuing build..."
+          fi
+
+      - name: Copy Security Reports to dist
+        run: |
+          mkdir -p dist/reports/latest
+          if [ -f web-security-findings.xlsx ]; then
+            cp -f web-security-findings.xlsx dist/reports/latest/web-security-findings.xlsx
+            echo "Web security Excel report copied"
+          fi
+
       - name: Copy reports into dist
         run: |
           mkdir -p dist/reports/latest
