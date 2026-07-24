@@ -1,56 +1,79 @@
-# PathoAI - Clinical AI Pathology & Diagnostic Platform
+# 🏥 PathoAI — AI-Powered Diagnostic Pathology Platform
 
-PathoAI is a comprehensive clinical AI pathology platform featuring automated specimen diagnostics, verified specialist bookings, hospital report generation, and medical practitioner management.
-
----
-
-## 🚀 CI/CD E2E Web Testing & Deployment
-This project has integrated E2E Web Selenium Testing (1,100 Assertions across 110 categories) and automated deployment to GitHub Pages.
-
-- **HTML report link**: `https://srinivas939.github.io/pathoAi/reports/latest/execution-report.html`
-- **Excel report link**: `https://srinivas939.github.io/pathoAi/reports/latest/selenium-report.xlsx`
+PathoAI is a comprehensive, production-grade clinical AI pathology platform featuring automated specimen diagnostics, verified specialist bookings, hospital PDF report generation, and multi-role medical management.
 
 ---
 
-## 📱 Android Studio Setup & Deployment
+## 📁 Modular Project Architecture
 
-To run and deploy PathoAI on Android devices or Android Studio emulators:
+The codebase is organized into clear, decoupled modules for Frontend, Backend, Database, Android App, Web App, Tests, and Performance Pipelines:
 
-👉 **[Read the Full Android Studio Setup Guide (ANDROID_SETUP_README.md)](./ANDROID_SETUP_README.md)**
+```
+pathoAi/
+├── 🌐 frontend/                # React 19 + Vite + Tailwind CSS Web Application
+│   ├── src/                    # Components, Screens, Context, Services & Types
+│   ├── public/                 # Static Assets & Icons
+│   └── index.html              # HTML Entry Point
+│
+├── ⚙️ backend/                 # Node.js + Express REST API Server
+│   ├── config/                 # Environment & Service Configuration
+│   ├── db/                     # MySQL Pool, Schema Migrations & In-Memory Fallback
+│   ├── routes/                 # API Endpoints (Auth, Doctors, Scans, Appointments)
+│   └── services/               # Gemini AI Engine Integration
+│
+├── 🗄️ database/               # Database SQL Schemas & Initial Seed Data
+│   ├── schema.sql              # MySQL DDL (users, scans, appointments, etc.)
+│   └── seed.sql                # Initial Seed Data for Patients, Doctors, Admin
+│
+├── 📱 android/                 # Capacitor Native Android App Project (Gradle)
+│   └── app/build/outputs/apk/debug/app-debug.apk
+│
+├── 📱 flutter_app/             # Flutter Cross-Platform Mobile App Codebase
+│
+├── 🧪 tests/                   # E2E Test Automation Suites
+│   ├── mega_web_1100.test.cjs  # Web Selenium E2E (1,100 Tests)
+│   └── mega_android_1111.test.cjs # Android Appium E2E (1,111 Tests)
+│
+├── 📈 scripts/                 # Performance, Load Testing (k6) & CI Scripts
+│   ├── load-test.js            # k6 Performance Test Script (100 VUs)
+│   ├── parseK6Summary.cjs      # k6 Summary Parser & Executive Report Generator
+│   └── runLoadTestLocal.cjs    # Local Load Test Simulator
+│
+└── 🛠️ utils/                  # HTML & Excel Report Generation Utilities
+```
 
-### Quick Android Commands:
+---
+
+## 🌐 Live GitHub Pages & Performance Reports
+
+| Resource | Format | Live URL |
+|---|:---:|---|
+| 🏥 **Live Web App** | Web App | [srinivas939.github.io/pathoAi](https://srinivas939.github.io/pathoAi/) |
+| 📲 **Android Mobile App** | `.apk` | [PathoAI-v2.4.apk](https://srinivas939.github.io/pathoAi/apk/PathoAI-v2.4.apk) |
+| 📊 **Web E2E Excel Report** | `.xlsx` | [selenium-report.xlsx](https://srinivas939.github.io/pathoAi/reports/latest/selenium-report.xlsx) |
+| 📄 **Web E2E HTML Report** | `.html` | [execution-report.html](https://srinivas939.github.io/pathoAi/reports/latest/execution-report.html) |
+| 📊 **Android E2E Excel Report** | `.xlsx` | [android-report.xlsx](https://srinivas939.github.io/pathoAi/reports/latest/android-report.xlsx) |
+| 📱 **Android E2E HTML Report** | `.html` | [android-execution-report.html](https://srinivas939.github.io/pathoAi/reports/latest/android-execution-report.html) |
+| 📈 **k6 Load Test Excel Report** | `.xlsx` | [load-test-report.xlsx](https://srinivas939.github.io/pathoAi/reports/latest/load-test-report.xlsx) |
+| 📈 **k6 Load Test HTML Report** | `.html` | [load-test-execution-report.html](https://srinivas939.github.io/pathoAi/reports/latest/load-test-execution-report.html) |
+
+---
+
+## 🚀 Quick Start Commands
+
 ```bash
-# 1. Install dependencies
+# 1. Install all dependencies
 npm install
 
-# 2. Build web assets & sync to Android shell
+# 2. Start Full-Stack Dev Server (Express API + Vite Web)
+npm run dev
+
+# 3. Build Production Bundle & Sync to Android App
+npm run build
 npm run cap:sync
 
-# 3. Launch project in Android Studio
-npm run cap:open:android
+# 4. Run E2E Test Suites & Generate Excel Reports
+npm run test           # Web E2E (1,100 Tests)
+npm run test:android:report # Android Appium E2E (1,111 Tests)
+npm run test:load      # k6 API Load Test (100 VUs)
 ```
-
----
-
-## 💻 Web Development & Testing
-
-### Local Development Server
-To start the full-stack server (Express API + Vite frontend) on port 3000:
-
-```bash
-npm run dev
-```
-
-### Production Build
-```bash
-npm run build
-npm start
-```
-
----
-
-## 🛠 Tech Stack
-- **Frontend**: React 19, TypeScript, Tailwind CSS, Lucide Icons, Recharts, Motion
-- **Mobile Container**: Capacitor 8 for Android Studio & APK generation
-- **Backend API**: Express.js, Node.js, @google/genai SDK
-- **Documents**: jsPDF, html2canvas (Hospital PDF Generation)
