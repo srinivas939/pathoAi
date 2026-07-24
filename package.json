@@ -16,7 +16,8 @@
     "test:web": "mocha tests/mega_web_1100.test.cjs --timeout 30000 --reporter utils/excelReporter.cjs --exit --no-bail",
     "test:spec": "mocha tests/mega_web_1100.test.cjs --timeout 30000 --reporter spec --exit --no-bail",
     "test:android": "node node_modules/@wdio/cli/bin/wdio.js run wdio.conf.cjs",
-    "test:android:mock": "mocha tests/mega_android_1111.test.cjs --timeout 60000 --reporter spec --exit --no-bail"
+    "test:android:mock": "mocha tests/mega_android_1111.test.cjs --timeout 60000 --reporter spec --exit --no-bail",
+    "test:android:report": "mocha tests/mega_android_1111.test.cjs --timeout 60000 --reporter utils/androidExcelReporter.cjs --exit --no-bail"
   },
   "dependencies": {
     "@capacitor/android": "^8.4.2",

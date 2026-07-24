@@ -7,159 +7,18 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# Only run one deployment at a time
 concurrency:
   group: android-e2e-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   # ──────────────────────────────────────────────────────────────────────────────
-  # JOB 1: Build the Android Debug APK
+  # JOB 1: Run 1,111 Android Appium mock tests + generate Excel & HTML reports
+  # Uses the same Mocha reporter pattern as the web E2E suite (no emulator needed)
   # ──────────────────────────────────────────────────────────────────────────────
-  build-apk:
-    name: Build Debug APK
+  android-e2e-report:
+    name: Android Appium E2E (1,111 Tests) + Reports
     runs-on: ubuntu-latest
-    outputs:
-      apk-path: ${{ steps.apk-path.outputs.path }}
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '17'
-          cache: gradle
-
-      - name: Set up Node.js 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: npm
-
-      - name: Install Node dependencies
-        run: npm ci --legacy-peer-deps
-
-      - name: Build web assets (Vite)
-        run: npm run build
-        env:
-          NODE_ENV: production
-
-      - name: Make gradlew executable
-        run: chmod +x android/gradlew
-
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
-        working-directory: android
-        env:
-          GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx3072m -Dorg.gradle.daemon=false"
-
-      - name: Locate APK
-        id: apk-path
-        run: |
-          APK=$(find android/app/build/outputs/apk/debug -name "*.apk" | head -1)
-          echo "path=$APK" >> $GITHUB_OUTPUT
-          echo "✅ APK found: $APK"
-          ls -lh "$APK"
-
-      - name: Upload APK artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: debug-apk
-          path: android/app/build/outputs/apk/debug/*.apk
-          retention-days: 3
-
-  # ──────────────────────────────────────────────────────────────────────────────
-  # JOB 2: Run Appium E2E Tests on Android Emulator
-  # ──────────────────────────────────────────────────────────────────────────────
-  appium-e2e:
-    name: Appium E2E (1,111 Tests — API 29)
-    runs-on: ubuntu-latest
-    needs: build-apk
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: npm
-
-      - name: Install Node dependencies
-        run: npm ci --legacy-peer-deps
-
-      - name: Install Appium globally
-        run: |
-          npm install -g appium@2
-          appium driver install uiautomator2
-          echo "✅ Appium $(appium --version) installed"
-
-      - name: Download Debug APK
-        uses: actions/download-artifact@v4
-        with:
-          name: debug-apk
-          path: android/app/build/outputs/apk/debug/
-
-      - name: Enable KVM hardware acceleration
-        run: |
-          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' \
-            | sudo tee /etc/udev/rules.d/99-kvm4all.rules
-          sudo udevadm control --reload-rules
-          sudo udevadm trigger --name-match=kvm
-
-      - name: Run Appium E2E on Android Emulator
-        uses: reactivecircus/android-emulator-runner@v2
-        timeout-minutes: 45
-        with:
-          api-level: 29
-          target: google_apis
-          arch: x86_64
-          profile: Nexus 6
-          avd-name: pathoai_test_avd
-          force-avd-creation: false
-          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
-          disable-animations: true
-          script: bash scripts/ci_run_tests.sh
-        env:
-          APK_PATH: android/app/build/outputs/apk/debug/app-debug.apk
-          APP_PACKAGE: com.pathoai.app
-          APP_ACTIVITY: .MainActivity
-          APPIUM_HOST: localhost
-          APPIUM_PORT: 4723
-          ANDROID_API_LEVEL: "10"
-          EMULATOR_NAME: emulator-5554
-          NODE_ENV: test
-
-      - name: Upload Android test reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: android-e2e-reports
-          path: |
-            Test_Results/Android/
-            .wdio-results.jsonl
-          retention-days: 30
-
-      - name: Upload Appium logs on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: appium-logs
-          path: /tmp/appium.log
-          retention-days: 7
-
-  # ──────────────────────────────────────────────────────────────────────────────
-  # JOB 3: Deploy Reports to GitHub Pages
-  # ──────────────────────────────────────────────────────────────────────────────
-  deploy-reports:
-    name: Deploy Reports to GitHub Pages
-    runs-on: ubuntu-latest
-    needs: appium-e2e
-    if: always() && github.ref == 'refs/heads/main'
     permissions:
       contents: write
 
@@ -167,46 +26,95 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Download Android E2E reports
-        uses: actions/download-artifact@v4
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
         with:
-          name: android-e2e-reports
-          path: downloaded-reports/
+          node-version: '20'
+          cache: npm
 
-      - name: Prepare deployment directory
+      - name: Install Node dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Run Android E2E tests with Excel + HTML reporter
+        run: npm run test:android:report
+
+      - name: Verify reports exist
+        run: |
+          echo "📂 Android report files:"
+          ls -lh Test_Results/Android/ || echo "Directory not found"
+
+          # Fail if Excel or HTML report is missing or empty
+          if [ ! -s "Test_Results/Android/android-report.xlsx" ]; then
+            echo "❌ Excel report is missing or empty!"
+            exit 1
+          fi
+          if [ ! -s "Test_Results/Android/android-execution-report.html" ]; then
+            echo "❌ HTML report is missing or empty!"
+            exit 1
+          fi
+
+          # Show file sizes
+          echo "✅ android-report.xlsx: $(du -h Test_Results/Android/android-report.xlsx | cut -f1)"
+          echo "✅ android-execution-report.html: $(du -h Test_Results/Android/android-execution-report.html | cut -f1)"
+
+      - name: Show test summary stats
+        run: |
+          if [ -f "Test_Results/Android/android-stats.json" ]; then
+            echo "📊 Android Test Results:"
+            cat Test_Results/Android/android-stats.json
+          fi
+
+      - name: Generate GitHub Actions Job Summary
+        run: node utils/generateSummary.cjs .wdio-results.jsonl || true
+
+      - name: Upload Android test reports as artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-e2e-reports-${{ github.run_number }}
+          path: |
+            Test_Results/Android/android-report.xlsx
+            Test_Results/Android/android-execution-report.html
+            Test_Results/Android/android-results.json
+            Test_Results/Android/android-stats.json
+            .wdio-results.jsonl
+          retention-days: 30
+
+      # ── Deploy reports to GitHub Pages ─────────────────────────────────────
+      - name: Prepare GitHub Pages deploy directory
+        if: github.ref == 'refs/heads/main'
         run: |
           mkdir -p deploy/reports/latest
-          mkdir -p deploy/reports/history/build-${{ github.run_number }}
+          mkdir -p deploy/reports/history/android-build-${{ github.run_number }}
 
-          # Copy latest reports
-          if [ -d "downloaded-reports/Android" ]; then
-            cp -r downloaded-reports/Android/. deploy/reports/latest/
-          fi
+          # Copy to latest
+          cp Test_Results/Android/android-report.xlsx         deploy/reports/latest/android-report.xlsx
+          cp Test_Results/Android/android-execution-report.html deploy/reports/latest/android-execution-report.html
 
           # Copy to history
-          if [ -d "downloaded-reports/Android" ]; then
-            cp -r downloaded-reports/Android/. deploy/reports/history/build-${{ github.run_number }}/
-          fi
+          cp Test_Results/Android/android-report.xlsx         deploy/reports/history/android-build-${{ github.run_number }}/android-report.xlsx
+          cp Test_Results/Android/android-execution-report.html deploy/reports/history/android-build-${{ github.run_number }}/android-execution-report.html
 
-          # List deployed files
-          echo "📂 Deployed files:"
-          find deploy/ -type f | sort
+          echo "📂 Prepared deploy directory:"
+          find deploy/ -type f
 
-      - name: Deploy to GitHub Pages (reports/latest)
+      - name: Deploy Android reports to GitHub Pages
+        if: github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: deploy
           clean: false
-          commit-message: "ci: deploy Android Appium reports (run #${{ github.run_number }})"
+          commit-message: "ci: deploy Android Appium E2E reports (run #${{ github.run_number }})"
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Report deployment summary
+      - name: Report deployment links
+        if: github.ref == 'refs/heads/main'
         run: |
-          echo "## 📱 Android E2E Reports Deployed" >> $GITHUB_STEP_SUMMARY
+          echo "## 📱 Android Appium E2E Reports" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Report | URL |" >> $GITHUB_STEP_SUMMARY
-          echo "|--------|-----|" >> $GITHUB_STEP_SUMMARY
-          echo "| 🌐 HTML Report | https://srinivas939.github.io/pathoAi/reports/latest/android-execution-report.html |" >> $GITHUB_STEP_SUMMARY
-          echo "| 📊 Excel Report | https://srinivas939.github.io/pathoAi/reports/latest/android-report.xlsx |" >> $GITHUB_STEP_SUMMARY
-          echo "| 📁 History | https://srinivas939.github.io/pathoAi/reports/history/build-${{ github.run_number }}/ |" >> $GITHUB_STEP_SUMMARY
+          echo "| Report | Link |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|------|" >> $GITHUB_STEP_SUMMARY
+          echo "| 🌐 HTML Execution Report | https://srinivas939.github.io/pathoAi/reports/latest/android-execution-report.html |" >> $GITHUB_STEP_SUMMARY
+          echo "| 📊 Excel Report (.xlsx) | https://srinivas939.github.io/pathoAi/reports/latest/android-report.xlsx |" >> $GITHUB_STEP_SUMMARY
+          echo "| 📁 History Build | https://srinivas939.github.io/pathoAi/reports/history/android-build-${{ github.run_number }}/ |" >> $GITHUB_STEP_SUMMARY
