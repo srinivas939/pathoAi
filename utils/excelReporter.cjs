@@ -1,4 +1,4 @@
-// utils/excelReporter.js
+// utils/excelReporter.cjs
 // Mocha custom reporter – writes test results to Excel (exceljs) + triggers HTML report
 'use strict';
 
@@ -95,6 +95,7 @@ class ExcelReporter {
         error:    '',
         type:     detectType(this._currentSuite),
       });
+      if (this._results.length % 10 === 0) this._writeSyncReports();
     });
 
     runner.on(EVENT_TEST_FAIL, (test, err) => {
@@ -107,6 +108,7 @@ class ExcelReporter {
         error:    err.message || String(err),
         type:     detectType(this._currentSuite),
       });
+      if (this._results.length % 10 === 0) this._writeSyncReports();
     });
 
     runner.on(EVENT_TEST_PENDING, test => {
@@ -119,106 +121,16 @@ class ExcelReporter {
         error:    '',
         type:     detectType(this._currentSuite),
       });
+      if (this._results.length % 10 === 0) this._writeSyncReports();
     });
 
-    runner.on(EVENT_RUN_END, async () => {
-      await this._writeExcel();
+    runner.on(EVENT_RUN_END, () => {
+      this._writeSyncReports();
+      this._writeExcelSync();
     });
   }
 
-  async _writeExcel() {
-    const wb = new ExcelJS.Workbook();
-    wb.creator = 'PathoAI Test Suite';
-    wb.created = new Date();
-
-    // ── Sheet 1: Selenium Test Report ────────────────────────────────────────
-    const ws1 = wb.addWorksheet('Selenium Test Report');
-
-    // Header row styling
-    const headerFill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1E293B' } };
-    const headerFont = { bold: true, color: { argb: 'FFFFFFFF' }, size: 11 };
-    const passColor  = 'FF22C55E'; // green
-    const failColor  = 'FFEF4444'; // red
-    const pendColor  = 'FFFBBF24'; // yellow
-
-    ws1.columns = [
-      { header: '#',           key: 'no',       width: 6  },
-      { header: 'Suite',       key: 'suite',    width: 35 },
-      { header: 'Test Title',  key: 'title',    width: 60 },
-      { header: 'Type',        key: 'type',     width: 22 },
-      { header: 'Status',      key: 'status',   width: 10 },
-      { header: 'Duration(ms)',key: 'duration', width: 14 },
-      { header: 'Error',       key: 'error',    width: 50 },
-    ];
-
-    // Style header
-    ws1.getRow(1).eachCell(cell => {
-      cell.fill = headerFill;
-      cell.font = headerFont;
-      cell.alignment = { vertical: 'middle', horizontal: 'center' };
-      cell.border = {
-        top: { style: 'thin' }, bottom: { style: 'thin' },
-        left: { style: 'thin' }, right: { style: 'thin' },
-      };
-    });
-    ws1.getRow(1).height = 22;
-
-    // Data rows
-    this._results.forEach((r, i) => {
-      const row = ws1.addRow({
-        no:       i + 1,
-        suite:    r.suite,
-        title:    r.title,
-        type:     r.type,
-        status:   r.status,
-        duration: r.duration,
-        error:    r.error,
-      });
-
-      const statusCell = row.getCell('status');
-      const color = r.status === 'PASS' ? passColor : r.status === 'FAIL' ? failColor : pendColor;
-      statusCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: color } };
-      statusCell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
-      statusCell.alignment = { horizontal: 'center' };
-
-      row.eachCell(cell => {
-        cell.border = {
-          top: { style: 'thin', color: { argb: 'FFE2E8F0' } },
-          bottom: { style: 'thin', color: { argb: 'FFE2E8F0' } },
-          left: { style: 'thin', color: { argb: 'FFE2E8F0' } },
-          right: { style: 'thin', color: { argb: 'FFE2E8F0' } },
-        };
-        if (i % 2 === 0) {
-          cell.fill = cell.fill.fgColor ? cell.fill : {
-            type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF8FAFC' }
-          };
-        }
-      });
-    });
-
-    // Auto-freeze header
-    ws1.views = [{ state: 'frozen', ySplit: 1 }];
-
-    // ── Sheet 2: Testing Types Summary ───────────────────────────────────────
-    const ws2 = wb.addWorksheet('Testing Types Summary');
-
-    ws2.columns = [
-      { header: 'Test Type',   key: 'type',    width: 25 },
-      { header: 'Total',       key: 'total',   width: 10 },
-      { header: 'Passed',      key: 'passed',  width: 10 },
-      { header: 'Failed',      key: 'failed',  width: 10 },
-      { header: 'Pending',     key: 'pending', width: 10 },
-      { header: 'Pass Rate %', key: 'rate',    width: 14 },
-    ];
-
-    ws2.getRow(1).eachCell(cell => {
-      cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0F172A' } };
-      cell.font = { bold: true, color: { argb: 'FF38BDF8' }, size: 11 };
-      cell.alignment = { vertical: 'middle', horizontal: 'center' };
-    });
-    ws2.getRow(1).height = 22;
-
-    // Aggregate by type
+  _getTypeMap() {
     const typeMap = {};
     this._results.forEach(r => {
       if (!typeMap[r.type]) typeMap[r.type] = { total: 0, passed: 0, failed: 0, pending: 0 };
@@ -227,63 +139,14 @@ class ExcelReporter {
       if (r.status === 'FAIL')    typeMap[r.type].failed++;
       if (r.status === 'PENDING') typeMap[r.type].pending++;
     });
+    return typeMap;
+  }
 
-    Object.entries(typeMap).sort((a, b) => a[0].localeCompare(b[0])).forEach(([type, s], i) => {
-      const rate = s.total > 0 ? ((s.passed / s.total) * 100).toFixed(1) : '0.0';
-      const row = ws2.addRow({ type, total: s.total, passed: s.passed, failed: s.failed, pending: s.pending, rate: parseFloat(rate) });
-
-      // Color code pass rate cell
-      const rateCell = row.getCell('rate');
-      const rateVal = parseFloat(rate);
-      rateCell.fill = {
-        type: 'pattern', pattern: 'solid',
-        fgColor: { argb: rateVal >= 90 ? 'FF16A34A' : rateVal >= 70 ? 'FFCA8A04' : 'FFDC2626' }
-      };
-      rateCell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
-      rateCell.numFmt = '0.0"%"';
-      rateCell.alignment = { horizontal: 'center' };
-
-      row.getCell('passed').font  = { color: { argb: 'FF16A34A' }, bold: true };
-      row.getCell('failed').font  = { color: { argb: 'FFDC2626' }, bold: true };
-      row.getCell('total').alignment  = { horizontal: 'center' };
-      row.getCell('passed').alignment = { horizontal: 'center' };
-      row.getCell('failed').alignment = { horizontal: 'center' };
-      row.getCell('pending').alignment = { horizontal: 'center' };
-
-      if (i % 2 === 0) {
-        row.eachCell(cell => {
-          if (!cell.fill || !cell.fill.fgColor) {
-            cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF1F5F9' } };
-          }
-        });
-      }
-    });
-
-    // Summary totals row
-    const total = this._results.length;
-    const totalRow = ws2.addRow({
-      type: 'TOTAL',
-      total,
-      passed:  this._stats.pass,
-      failed:  this._stats.fail,
-      pending: this._stats.pending,
-      rate:    total > 0 ? parseFloat(((this._stats.pass / total) * 100).toFixed(1)) : 0,
-    });
-    totalRow.eachCell(cell => {
-      cell.font = { bold: true, size: 12 };
-      cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1E293B' } };
-      cell.font = { bold: true, color: { argb: 'FFFFFFFF' }, size: 11 };
-      cell.alignment = { horizontal: 'center' };
-    });
-
-    ws2.views = [{ state: 'frozen', ySplit: 1 }];
-
-    await wb.xlsx.writeFile(OUT_FILE);
-    console.log(`\n📊 Excel report saved → ${OUT_FILE}`);
-    console.log(`   ✅ Passed: ${this._stats.pass}  ❌ Failed: ${this._stats.fail}  ⏭ Pending: ${this._stats.pending}`);
-
-    // Trigger HTML report generation
+  _writeSyncReports() {
     const elapsed = Date.now() - this._startTime;
+    const typeMap = this._getTypeMap();
+
+    // Trigger HTML report generation synchronously
     generateHTMLReport({
       results:  this._results,
       stats:    this._stats,
@@ -291,7 +154,7 @@ class ExcelReporter {
       typeMap,
     });
 
-    // Write test-stats.json for CI step summary
+    // Write test-stats.json synchronously
     const statsJson = {
       total:    this._results.length,
       passed:   this._stats.pass,
@@ -305,7 +168,56 @@ class ExcelReporter {
     };
     const statsPath = path.join(process.cwd(), 'Test_Results', 'test-stats.json');
     fs.writeFileSync(statsPath, JSON.stringify(statsJson, null, 2), 'utf8');
-    console.log(`📋 Stats JSON saved  → ${statsPath}`);
+  }
+
+  _writeExcelSync() {
+    try {
+      const wb = new ExcelJS.Workbook();
+      wb.creator = 'PathoAI Test Suite';
+      wb.created = new Date();
+
+      const ws1 = wb.addWorksheet('Selenium Test Report');
+      const headerFill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1E293B' } };
+      const headerFont = { bold: true, color: { argb: 'FFFFFFFF' }, size: 11 };
+      const passColor  = 'FF22C55E';
+      const failColor  = 'FFEF4444';
+      const pendColor  = 'FFFBBF24';
+
+      ws1.columns = [
+        { header: '#',           key: 'no',       width: 6  },
+        { header: 'Suite',       key: 'suite',    width: 35 },
+        { header: 'Test Title',  key: 'title',    width: 60 },
+        { header: 'Type',        key: 'type',     width: 22 },
+        { header: 'Status',      key: 'status',   width: 10 },
+        { header: 'Duration(ms)',key: 'duration', width: 14 },
+        { header: 'Error',       key: 'error',    width: 50 },
+      ];
+
+      ws1.getRow(1).eachCell(cell => {
+        cell.fill = headerFill;
+        cell.font = headerFont;
+        cell.alignment = { vertical: 'middle', horizontal: 'center' };
+      });
+
+      this._results.forEach((r, i) => {
+        const row = ws1.addRow({
+          no:       i + 1,
+          suite:    r.suite,
+          title:    r.title,
+          type:     r.type,
+          status:   r.status,
+          duration: r.duration,
+          error:    r.error,
+        });
+
+        const statusCell = row.getCell('status');
+        const color = r.status === 'PASS' ? passColor : r.status === 'FAIL' ? failColor : pendColor;
+        statusCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: color } };
+        statusCell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+      });
+
+      wb.xlsx.writeFile(OUT_FILE).catch(() => {});
+    } catch (_) {}
   }
 }
 
