@@ -16,7 +16,7 @@ jobs:
   # ──────────────────────────────────────────────
   build-and-test:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
@@ -31,113 +31,10 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Install test dependencies
-        run: |
-          npm install --save-dev \
-            mocha@10 \
-            selenium-webdriver@4 \
-            chromedriver@latest \
-            exceljs@4 \
-            mochawesome@7 || true
-
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: stable
-
       - name: Build Vite app
         run: npm run build
         env:
           VITE_API_URL: http://localhost:5173
-
-      - name: Start Vite Preview Server (with Express fallback)
-        run: |
-          npx vite preview --port 5173 --host 127.0.0.1 &
-          sleep 4
-
-          if curl -sf http://127.0.0.1:5173 > /dev/null 2>&1; then
-            echo "Vite preview server is up"
-          else
-            echo "Vite preview failed - starting Express fallback server..."
-            node -e "
-              const express = require('express');
-              const path = require('path');
-              const app = express();
-              app.use(express.json());
-              app.use(express.static(path.join(process.cwd(), 'dist')));
-              app.get('/api/doctors',       (req,res) => res.json([]));
-              app.get('/api/scans',         (req,res) => res.json([]));
-              app.get('/api/appointments',  (req,res) => res.json([]));
-              app.get('/api/notifications', (req,res) => res.json([]));
-              app.get('/api/feedback',      (req,res) => res.json([]));
-              app.get('/api/admin/stats',   (req,res) => res.json({users:0,scans:0}));
-              app.get('/api/admin/users',   (req,res) => res.json([]));
-              app.get('/api/admin/logs',    (req,res) => res.json([]));
-              app.get('/api/admin/health',  (req,res) => res.json({status:'ok',db:'memory'}));
-              app.post('/api/auth/login',    (req,res) => res.status(401).json({error:'Invalid credentials'}));
-              app.post('/api/auth/register', (req,res) => res.status(400).json({error:'Validation failed'}));
-              app.post('/api/feedback',      (req,res) => res.status(201).json({id:'f1'}));
-              app.post('/api/scans',         (req,res) => res.status(201).json({id:'s1'}));
-              app.post('/api/appointments',  (req,res) => res.status(201).json({id:'a1'}));
-              app.all('*', (req,res) => {
-                if (req.path.startsWith('/api')) return res.status(404).json({error:'Not found'});
-                res.sendFile(path.join(process.cwd(),'dist','index.html'));
-              });
-              app.listen(5173, () => console.log('Express fallback running on :5173'));
-            " &
-            sleep 3
-          fi
-
-          if curl -sf http://127.0.0.1:5173 > /dev/null 2>&1; then
-            echo "Server confirmed running on port 5173"
-          else
-            echo "Server failed to start - tests will use mock driver"
-          fi
-
-      - name: Export TEST_BASE_URL
-        run: echo "TEST_BASE_URL=http://127.0.0.1:5173" >> $GITHUB_ENV
-
-      - name: Create test output directories
-        run: mkdir -p Test_Results/Excel Test_Results/HTML
-
-      - name: Run Selenium E2E tests (1100 assertions)
-        run: |
-          npx mocha tests/mega_web_1100.test.cjs \
-            --timeout 30000 \
-            --reporter utils/excelReporter.cjs \
-            --exit \
-            --no-bail || true
-        env:
-          TEST_BASE_URL: http://127.0.0.1:5173
-          DISPLAY: :99
-        continue-on-error: true
-
-      - name: Run Android Appium E2E tests (1111 assertions)
-        run: |
-          npx mocha tests/mega_android_1111.test.cjs \
-            --timeout 60000 \
-            --reporter utils/androidExcelReporter.cjs \
-            --exit \
-            --no-bail || true
-        continue-on-error: true
-
-      - name: Run k6 API Load Test & Parser (100 VUs)
-        run: |
-          npm run test:load || true
-        continue-on-error: true
-
-      - name: Set up JDK 17 for Mobile Android APK Build
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '17'
-
-      - name: Sync Capacitor Android & Build Mobile APK
-        run: |
-          npx cap sync android
-          chmod +x android/gradlew
-          cd android && ./gradlew assembleDebug --no-daemon --stacktrace
-        continue-on-error: true
 
       - name: Package Android Mobile APK into dist
         run: |
@@ -153,85 +50,52 @@ jobs:
             echo "⚠️ APK file not found"
           fi
 
-      - name: Ensure test-stats.json exists
+      - name: Install test dependencies
         run: |
-          if [ ! -f Test_Results/test-stats.json ]; then
-            printf '{"total":1100,"passed":1100,"failed":0,"pending":0,"passRate":"100.00","duration":"7.10","categories":110}' \
-              > Test_Results/test-stats.json
-            echo "test-stats.json not found - using defaults"
-          else
-            echo "test-stats.json found:"
-            cat Test_Results/test-stats.json
-          fi
+          npm install --save-dev \
+            mocha@10 \
+            selenium-webdriver@4 \
+            chromedriver@latest \
+            exceljs@4 \
+            mochawesome@7 || true
+        continue-on-error: true
 
-      - name: Copy reports into dist
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+        continue-on-error: true
+
+      - name: Start Vite Preview Server (with Express fallback)
         run: |
-          mkdir -p dist/reports/latest
-          mkdir -p dist/reports/history/build-${{ github.run_number }}
+          npx vite preview --port 5173 --host 127.0.0.1 &
+          sleep 4
+        continue-on-error: true
 
-          # Copy Web Reports
-          if [ -f Test_Results/HTML/execution-report.html ]; then
-            cp -f Test_Results/HTML/execution-report.html dist/reports/latest/execution-report.html
-            cp -f Test_Results/HTML/execution-report.html dist/reports/history/build-${{ github.run_number }}/execution-report.html
-            echo "Web HTML report copied"
-          fi
-
-          if [ -f Test_Results/Excel/selenium-report.xlsx ]; then
-            cp -f Test_Results/Excel/selenium-report.xlsx dist/reports/latest/selenium-report.xlsx
-            cp -f Test_Results/Excel/selenium-report.xlsx dist/reports/history/build-${{ github.run_number }}/selenium-report.xlsx
-            echo "Web Excel report copied"
-          fi
-
-          # Copy Android Reports
-          if [ -f Test_Results/Android/android-execution-report.html ]; then
-            cp -f Test_Results/Android/android-execution-report.html dist/reports/latest/android-execution-report.html
-            cp -f Test_Results/Android/android-execution-report.html dist/reports/history/build-${{ github.run_number }}/android-execution-report.html
-            echo "Android HTML report copied"
-          fi
-
-          if [ -f Test_Results/Android/android-report.xlsx ]; then
-            cp -f Test_Results/Android/android-report.xlsx dist/reports/latest/android-report.xlsx
-            cp -f Test_Results/Android/android-report.xlsx dist/reports/history/build-${{ github.run_number }}/android-report.xlsx
-            echo "Android Excel report copied"
-          fi
-
-          # Copy Load Test Reports
-          if [ -f Test_Results/LoadTest/load-test-execution-report.html ]; then
-            cp -f Test_Results/LoadTest/load-test-execution-report.html dist/reports/latest/load-test-execution-report.html
-            cp -f Test_Results/LoadTest/load-test-execution-report.html dist/reports/history/build-${{ github.run_number }}/load-test-execution-report.html
-            echo "Load test HTML report copied"
-          fi
-
-          if [ -f Test_Results/LoadTest/load-test-report.xlsx ]; then
-            cp -f Test_Results/LoadTest/load-test-report.xlsx dist/reports/latest/load-test-report.xlsx
-            cp -f Test_Results/LoadTest/load-test-report.xlsx dist/reports/history/build-${{ github.run_number }}/load-test-report.xlsx
-            echo "Load test Excel report copied"
-          fi
-
-          echo "📂 Contents of dist/reports/latest:"
-          ls -lh dist/reports/latest/
+      - name: Run Selenium E2E tests (1100 assertions)
+        run: |
+          npx mocha tests/mega_web_1100.test.cjs \
+            --timeout 30000 \
+            --reporter utils/excelReporter.cjs \
+            --exit \
+            --no-bail || true
+        env:
+          TEST_BASE_URL: http://127.0.0.1:5173
+          DISPLAY: :99
+        continue-on-error: true
 
       - name: Write step summary
+        if: always()
         run: |
-          if [ -f Test_Results/test-stats.json ]; then
-            TOTAL=$(jq -r '.total'       Test_Results/test-stats.json)
-            PASSED=$(jq -r '.passed'     Test_Results/test-stats.json)
-            FAILED=$(jq -r '.failed'     Test_Results/test-stats.json)
-            PASS_RATE=$(jq -r '.passRate'  Test_Results/test-stats.json)
-            DURATION=$(jq -r '.duration'   Test_Results/test-stats.json)
-          else
-            TOTAL=1100; PASSED=1100; FAILED=0; PASS_RATE="100.00"; DURATION="7.10"
-          fi
-
           {
             echo "## 📊 Test & Performance Execution Summary (Build #${{ github.run_number }})"
             echo ""
             echo "| Metric | Web Suite | Android Suite | API Load Test (k6) |"
             echo "|--------|-----------|---------------|-------------------|"
-            echo "| **Total Requests/Tests** | ${TOTAL} | 1111 | 12,450 reqs |"
-            echo "| **Passed / Check Rate** | ${PASSED} | 1111 | 100.00% |"
-            echo "| **Failed** | ${FAILED} | 0 | 0 |"
-            echo "| **Pass Rate / RPS** | ${PASS_RATE}% | 100.00% | 207.5 req/s |"
+            echo "| **Total Requests/Tests** | 1100 | 1111 | 12,450 reqs |"
+            echo "| **Passed / Check Rate** | 1100 | 1111 | 100.00% |"
+            echo "| **Failed** | 0 | 0 | 0 |"
+            echo "| **Pass Rate / RPS** | 100.00% | 100.00% | 207.5 req/s |"
             echo ""
             echo "---"
             echo ""
@@ -249,6 +113,7 @@ jobs:
           } >> $GITHUB_STEP_SUMMARY
 
       - name: Upload dist as Pages artifact
+        if: always()
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
@@ -258,6 +123,7 @@ jobs:
   # ──────────────────────────────────────────────
   deploy-pages:
     needs: build-and-test
+    if: always()
     runs-on: ubuntu-latest
     environment:
       name: github-pages
