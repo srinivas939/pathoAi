@@ -1,0 +1,5 @@
+image_id,diagnosis,category,severity,age,gender,localization
+ISIC_0024306,Basal Cell Carcinoma,Dermatopathology,Moderate,45,male,torso
+ISIC_0024307,Melanocytic Nevus,Dermatopathology,Low,32,female,lower extremity
+ISIC_0024308,Melanoma,Dermatopathology,Severe,58,male,upper extremity
+ISIC_0024309,Actinic Keratosis,Dermatopathology,Moderate,62,female,face

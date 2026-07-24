@@ -1,0 +1,10 @@
+{
+  "appId": "com.pathoai.app",
+  "appName": "PathologyAI",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "url": "http://10.203.166.24:3000",
+    "cleartext": true
+  }
+}
