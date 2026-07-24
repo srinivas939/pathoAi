@@ -1,9 +1,90 @@
-<!DOCTYPE html>
+// BrainBattleAppium/utils/generateHtmlReport.js
+import fs from 'fs';
+import path from 'path';
+
+export function generateHtmlReport(results, duration, outputPath) {
+  try {
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+
+    const total = results.length;
+    const passed = results.filter(r => r.status === 'PASS').length;
+    const failed = results.filter(r => r.status === 'FAIL').length;
+    const pending = results.filter(r => r.status === 'PENDING').length;
+    const passRate = total > 0 ? ((passed / total) * 100).toFixed(1) : '0.0';
+    const runDate = new Date().toLocaleString();
+    const durSec = (duration / 1000).toFixed(2);
+
+    // Group categories
+    const catMap = {};
+    results.forEach(r => {
+      if (!catMap[r.category]) catMap[r.category] = { total: 0, passed: 0, failed: 0, pending: 0 };
+      catMap[r.category].total++;
+      if (r.status === 'PASS') catMap[r.category].passed++;
+      if (r.status === 'FAIL') catMap[r.category].failed++;
+      if (r.status === 'PENDING') catMap[r.category].pending++;
+    });
+
+    const typeSummaryRows = Object.entries(catMap)
+      .sort((a, b) => a[0].localeCompare(b[0]))
+      .map(([cat, s]) => {
+        const rate = s.total > 0 ? ((s.passed / s.total) * 100).toFixed(1) : '0.0';
+        const badge = parseFloat(rate) >= 90 ? 'badge-green' : parseFloat(rate) >= 70 ? 'badge-yellow' : 'badge-red';
+        return `<tr>
+          <td>${escapeHtml(cat)}</td>
+          <td class="center">${s.total}</td>
+          <td class="center green">${s.passed}</td>
+          <td class="center red">${s.failed}</td>
+          <td class="center yellow">${s.pending}</td>
+          <td class="center"><span class="badge ${badge}">${rate}%</span></td>
+        </tr>`;
+      }).join('\n');
+
+    // Build test detail rows (group by suite)
+    const suiteMap = {};
+    results.forEach(r => {
+      if (!suiteMap[r.suite]) suiteMap[r.suite] = [];
+      suiteMap[r.suite].push(r);
+    });
+
+    const detailSections = Object.entries(suiteMap).map(([suite, tests]) => {
+      const sp = tests.filter(t => t.status === 'PASS').length;
+      const sf = tests.filter(t => t.status === 'FAIL').length;
+      const rows = tests.map((t, i) => {
+        const statusClass = t.status === 'PASS' ? 'status-pass' : t.status === 'FAIL' ? 'status-fail' : 'status-pending';
+        const icon = t.status === 'PASS' ? '✅' : t.status === 'FAIL' ? '❌' : '⏭';
+        const errHtml = t.error ? `<div class="error-trace">${escapeHtml(t.error)}</div>` : '';
+        return `<tr>
+          <td class="center dim">${i + 1}</td>
+          <td>${escapeHtml(t.title)}</td>
+          <td class="center"><span class="${statusClass}">${icon} ${t.status}</span></td>
+          <td class="center dim">${t.duration}ms</td>
+          <td>${errHtml}</td>
+        </tr>`;
+      }).join('\n');
+
+      return `
+      <div class="suite-block">
+        <div class="suite-header">
+          <span class="suite-title">📂 ${escapeHtml(suite)}</span>
+          <span class="suite-meta">
+            <span class="green">✅ ${sp}</span>
+            ${sf > 0 ? `<span class="red">❌ ${sf}</span>` : ''}
+            <span class="dim">${tests.length} tests</span>
+          </span>
+        </div>
+        <table class="test-table">
+          <thead><tr><th>#</th><th>Test</th><th>Status</th><th>Duration</th><th>Error</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>`;
+    }).join('\n');
+
+    const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>BrainBattle – Appium E2E Test Report · 24/7/2026, 2:36:49 pm</title>
+<title>BrainBattle – Appium E2E Test Report · ${runDate}</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
   :root{
@@ -142,8 +223,8 @@
   <h1>🧪 BrainBattle Android Test Report</h1>
   <p class="subtitle">Appium Mobile E2E Test Suite — 1,111 Assertions across 11 Categories</p>
   <div class="run-info" style="margin-bottom: 22px;">
-    <span>📅 24/7/2026, 2:36:49 pm</span>
-    <span>⏱ Duration: 0.00s</span>
+    <span>📅 ${runDate}</span>
+    <span>⏱ Duration: ${durSec}s</span>
     <span>📱 Android Emulator (API 29)</span>
     <span>🧩 WDIO + Appium WebDriver</span>
     <span>🧠 BrainBattle Mobile App</span>
@@ -158,27 +239,27 @@
 <!-- STATS CARDS -->
 <div class="stats-grid">
   <div class="stat-card card-total">
-    <div class="value">0</div>
+    <div class="value">${total}</div>
     <div class="label">Total Tests</div>
   </div>
   <div class="stat-card card-pass">
-    <div class="value">0</div>
+    <div class="value">${passed}</div>
     <div class="label">Passed</div>
   </div>
   <div class="stat-card card-fail">
-    <div class="value">0</div>
+    <div class="value">${failed}</div>
     <div class="label">Failed</div>
   </div>
   <div class="stat-card card-skip">
-    <div class="value">0</div>
+    <div class="value">${pending}</div>
     <div class="label">Pending</div>
   </div>
   <div class="stat-card card-rate">
-    <div class="value">0.0%</div>
+    <div class="value">${passRate}%</div>
     <div class="label">Pass Rate</div>
   </div>
   <div class="stat-card card-time">
-    <div class="value">0.00s</div>
+    <div class="value">${durSec}s</div>
     <div class="label">Duration</div>
   </div>
 </div>
@@ -187,10 +268,10 @@
 <div class="progress-section">
   <div class="progress-label">
     <span>Overall Pass Rate</span>
-    <span>0 / 0 tests passed</span>
+    <span>${passed} / ${total} tests passed</span>
   </div>
   <div class="progress-bar">
-    <div class="progress-fill" style="width:0.0%"></div>
+    <div class="progress-fill" style="width:${passRate}%"></div>
   </div>
 </div>
 
@@ -208,19 +289,19 @@
         <th class="center">Pass Rate</th>
       </tr>
     </thead>
-    <tbody></tbody>
+    <tbody>${typeSummaryRows}</tbody>
   </table>
 </div>
 
 <!-- DETAILED RESULTS -->
 <div class="section">
   <h2>🔍 Detailed Appium Test Results</h2>
-  
+  ${detailSections}
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-  <p>Generated by <strong>BrainBattle Appium Reporter</strong> · 24/7/2026, 2:36:49 pm · Appium + exceljs</p>
+  <p>Generated by <strong>BrainBattle Appium Reporter</strong> · ${runDate} · Appium + exceljs</p>
 </div>
 
 <script>
@@ -231,4 +312,17 @@ const dlLink = document.getElementById('excel-dl');
 if (dlLink) dlLink.setAttribute('href', excelUrl);
 </script>
 </body>
-</html>
+</html>`;
+
+    fs.writeFileSync(outputPath, html, 'utf8');
+    console.log(`🌐 HTML execution report written: ${outputPath}`);
+  } catch (e) {
+    console.error('Failed to generate HTML report:', e.message);
+  }
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}

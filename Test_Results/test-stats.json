@@ -1,9 +1,9 @@
 {
-  "total": 1100,
-  "passed": 1100,
+  "total": 0,
+  "passed": 0,
   "failed": 0,
   "pending": 0,
-  "passRate": "100.00",
-  "duration": "0.20",
-  "categories": 30
+  "passRate": "0.00",
+  "duration": "0.00",
+  "categories": 0
 }
