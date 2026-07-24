@@ -58,25 +58,45 @@ export const Header: React.FC = () => {
         </div>
 
         {/* E2E Reports Links */}
-        <div className="hidden lg:flex items-center space-x-2 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700">
+        <div className="hidden xl:flex items-center space-x-1.5 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700 text-xs">
           <a
             href="reports/latest/execution-report.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-teal-600 dark:hover:text-teal-300 transition-all"
-            title="Open HTML E2E Test Report"
+            className="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-teal-600 dark:hover:text-teal-300 transition-all"
+            title="Open Web HTML E2E Test Report"
           >
             <Sparkles className="w-3.5 h-3.5 text-teal-500" />
-            <span>HTML Report</span>
+            <span>Web HTML</span>
           </a>
           <a
             href="reports/latest/selenium-report.xlsx"
-            download
-            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-teal-600 dark:hover:text-teal-300 transition-all"
-            title="Download Excel E2E Test Report"
+            download="selenium-report.xlsx"
+            className="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-emerald-600 dark:hover:text-emerald-300 transition-all"
+            title="Download Web Excel E2E Test Report"
           >
             <FileText className="w-3.5 h-3.5 text-emerald-500" />
-            <span>Excel Report</span>
+            <span>Web Excel</span>
+          </a>
+          <span className="text-slate-300 dark:text-slate-700">|</span>
+          <a
+            href="reports/latest/android-execution-report.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-cyan-600 dark:hover:text-cyan-300 transition-all"
+            title="Open Android HTML E2E Test Report"
+          >
+            <Smartphone className="w-3.5 h-3.5 text-cyan-500" />
+            <span>Android HTML</span>
+          </a>
+          <a
+            href="reports/latest/android-report.xlsx"
+            download="android-report.xlsx"
+            className="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-blue-600 dark:hover:text-blue-300 transition-all"
+            title="Download Android Excel E2E Test Report"
+          >
+            <FileText className="w-3.5 h-3.5 text-blue-500" />
+            <span>Android Excel</span>
           </a>
         </div>
 
