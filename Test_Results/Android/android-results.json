@@ -5,7 +5,7 @@
     "title": "Appium session anchor — Functional driver property verified",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 32,
+    "duration": 21,
     "error": ""
   },
   {
@@ -14,7 +14,7 @@
     "title": "App launch completes successfully",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 31,
+    "duration": 30,
     "error": ""
   },
   {
@@ -32,7 +32,7 @@
     "title": "Login button is visible",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 30,
     "error": ""
   },
   {
@@ -41,7 +41,7 @@
     "title": "Register link is accessible",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -50,7 +50,7 @@
     "title": "Role selection screen loads",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 29,
     "error": ""
   },
   {
@@ -68,7 +68,7 @@
     "title": "Doctor dashboard loads",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -77,7 +77,7 @@
     "title": "Admin dashboard loads",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -86,7 +86,7 @@
     "title": "Scan upload screen accessible",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -95,7 +95,7 @@
     "title": "Scan history screen loads",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 30,
     "error": ""
   },
   {
@@ -104,7 +104,7 @@
     "title": "Appointment list screen loads",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 31,
+    "duration": 39,
     "error": ""
   },
   {
@@ -113,7 +113,7 @@
     "title": "Notification center opens",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 31,
+    "duration": 26,
     "error": ""
   },
   {
@@ -122,7 +122,7 @@
     "title": "Profile view screen loads",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 14,
+    "duration": 17,
     "error": ""
   },
   {
@@ -131,7 +131,7 @@
     "title": "Logout button is accessible",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 10,
     "error": ""
   },
   {
@@ -140,7 +140,7 @@
     "title": "Dark mode toggle works",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -149,7 +149,7 @@
     "title": "Light mode toggle works",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -158,7 +158,7 @@
     "title": "AI diagnosis result screen loads",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -167,7 +167,7 @@
     "title": "PDF report generation trigger works",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -176,7 +176,7 @@
     "title": "Feedback form screen loads",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 18,
     "error": ""
   },
   {
@@ -185,7 +185,7 @@
     "title": "Admin user list screen loads",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 12,
     "error": ""
   },
   {
@@ -194,7 +194,7 @@
     "title": "Admin scan analytics loads",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 17,
     "error": ""
   },
   {
@@ -203,7 +203,7 @@
     "title": "Doctor queue screen loads",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 14,
+    "duration": 29,
     "error": ""
   },
   {
@@ -221,7 +221,7 @@
     "title": "Appointment booking screen loads",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -230,7 +230,7 @@
     "title": "Appointment cancel flow works",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 18,
     "error": ""
   },
   {
@@ -239,7 +239,7 @@
     "title": "Scan delete flow accessible",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -248,7 +248,7 @@
     "title": "Notification mark-read works",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 30,
+    "duration": 15,
     "error": ""
   },
   {
@@ -257,7 +257,7 @@
     "title": "Navigation back gesture works",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -266,7 +266,7 @@
     "title": "Tab navigation renders correctly",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 31,
+    "duration": 14,
     "error": ""
   },
   {
@@ -275,7 +275,7 @@
     "title": "Bottom nav accessible on mobile",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 30,
     "error": ""
   },
   {
@@ -284,7 +284,7 @@
     "title": "Header brand logo renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -293,7 +293,7 @@
     "title": "View Mode switcher renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -302,7 +302,7 @@
     "title": "Quick scan button visible for patient",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -311,7 +311,7 @@
     "title": "Bell icon renders in header",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 29,
+    "duration": 31,
     "error": ""
   },
   {
@@ -320,7 +320,7 @@
     "title": "User initials shown in header",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 34,
+    "duration": 15,
     "error": ""
   },
   {
@@ -329,7 +329,7 @@
     "title": "Profile dropdown opens",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 27,
+    "duration": 32,
     "error": ""
   },
   {
@@ -338,7 +338,7 @@
     "title": "Sign out trigger accessible",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 21,
+    "duration": 15,
     "error": ""
   },
   {
@@ -347,7 +347,7 @@
     "title": "Scan results confidence score renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 27,
+    "duration": 16,
     "error": ""
   },
   {
@@ -356,7 +356,7 @@
     "title": "Affected area text renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 14,
+    "duration": 17,
     "error": ""
   },
   {
@@ -365,7 +365,7 @@
     "title": "Diagnoses list renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 29,
     "error": ""
   },
   {
@@ -374,7 +374,7 @@
     "title": "Medicines list renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 32,
+    "duration": 31,
     "error": ""
   },
   {
@@ -383,7 +383,7 @@
     "title": "Diet recommendations render",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -392,7 +392,7 @@
     "title": "Precautions list renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 31,
+    "duration": 32,
     "error": ""
   },
   {
@@ -419,7 +419,7 @@
     "title": "Appointment time slot renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -428,7 +428,7 @@
     "title": "Doctor name renders on appointment",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 17,
     "error": ""
   },
   {
@@ -437,7 +437,7 @@
     "title": "Appointment status badge renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -446,7 +446,7 @@
     "title": "Appointment type renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -455,7 +455,7 @@
     "title": "Patient name renders on admin view",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 20,
     "error": ""
   },
   {
@@ -464,7 +464,7 @@
     "title": "Disease type filter works",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 19,
+    "duration": 16,
     "error": ""
   },
   {
@@ -473,7 +473,7 @@
     "title": "Date range filter accessible",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 21,
+    "duration": 25,
     "error": ""
   },
   {
@@ -482,7 +482,7 @@
     "title": "Search input responds to text",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 23,
+    "duration": 16,
     "error": ""
   },
   {
@@ -491,7 +491,7 @@
     "title": "Submit button triggers action",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 21,
+    "duration": 32,
     "error": ""
   },
   {
@@ -500,7 +500,7 @@
     "title": "Form validation fires on empty submit",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 10,
+    "duration": 16,
     "error": ""
   },
   {
@@ -509,7 +509,7 @@
     "title": "Email format validation works",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 67,
+    "duration": 16,
     "error": ""
   },
   {
@@ -518,7 +518,7 @@
     "title": "Password minimum length validation",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 42,
+    "duration": 19,
     "error": ""
   },
   {
@@ -527,7 +527,7 @@
     "title": "Error toast appears on bad login",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 29,
+    "duration": 13,
     "error": ""
   },
   {
@@ -536,7 +536,7 @@
     "title": "Success toast appears on save",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 17,
+    "duration": 32,
     "error": ""
   },
   {
@@ -545,7 +545,7 @@
     "title": "Loading spinner shows during fetch",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 31,
+    "duration": 30,
     "error": ""
   },
   {
@@ -554,7 +554,7 @@
     "title": "Empty state message shown on no data",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 35,
+    "duration": 32,
     "error": ""
   },
   {
@@ -563,7 +563,7 @@
     "title": "Pagination loads next page",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 11,
+    "duration": 15,
     "error": ""
   },
   {
@@ -572,7 +572,7 @@
     "title": "Sort by date works",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 11,
+    "duration": 31,
     "error": ""
   },
   {
@@ -581,7 +581,7 @@
     "title": "Sort by name works",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 14,
     "error": ""
   },
   {
@@ -608,7 +608,7 @@
     "title": "Export to PDF accessible from admin",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -617,7 +617,7 @@
     "title": "Charts render on analytics screen",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -635,7 +635,7 @@
     "title": "Disease pie chart renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 30,
+    "duration": 16,
     "error": ""
   },
   {
@@ -644,7 +644,7 @@
     "title": "Appointment status chart renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 17,
     "error": ""
   },
   {
@@ -653,7 +653,7 @@
     "title": "Revenue chart renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -662,7 +662,7 @@
     "title": "Doctor activity chart renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 31,
+    "duration": 29,
     "error": ""
   },
   {
@@ -698,7 +698,7 @@
     "title": "Privacy policy screen loads",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 33,
+    "duration": 32,
     "error": ""
   },
   {
@@ -707,7 +707,7 @@
     "title": "Change password screen loads",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 14,
+    "duration": 17,
     "error": ""
   },
   {
@@ -716,7 +716,7 @@
     "title": "Update profile form accessible",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 32,
+    "duration": 13,
     "error": ""
   },
   {
@@ -734,7 +734,7 @@
     "title": "Confirm dialog appears on delete",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 18,
     "error": ""
   },
   {
@@ -743,7 +743,7 @@
     "title": "Cancel dialog dismisses action",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -752,7 +752,7 @@
     "title": "Keyboard dismisses on outside tap",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -761,7 +761,7 @@
     "title": "Scroll to top works on long lists",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -770,7 +770,7 @@
     "title": "Horizontal scroll renders tables",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -788,7 +788,7 @@
     "title": "Deep link navigation resolves",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 14,
+    "duration": 15,
     "error": ""
   },
   {
@@ -806,7 +806,7 @@
     "title": "App resumes correctly from background",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 18,
+    "duration": 16,
     "error": ""
   },
   {
@@ -815,7 +815,7 @@
     "title": "App state preserved on rotation",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -824,7 +824,7 @@
     "title": "Network error screen renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 14,
+    "duration": 16,
     "error": ""
   },
   {
@@ -833,7 +833,7 @@
     "title": "Retry button appears on network error",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 17,
+    "duration": 15,
     "error": ""
   },
   {
@@ -842,7 +842,7 @@
     "title": "Session expiry redirects to login",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 13,
+    "duration": 16,
     "error": ""
   },
   {
@@ -851,7 +851,7 @@
     "title": "Token refresh happens automatically",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 14,
+    "duration": 30,
     "error": ""
   },
   {
@@ -860,7 +860,7 @@
     "title": "Offline mode shows cached data",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 17,
     "error": ""
   },
   {
@@ -869,7 +869,7 @@
     "title": "Image lazy loading works",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 31,
+    "duration": 30,
     "error": ""
   },
   {
@@ -878,7 +878,7 @@
     "title": "WebView renders in app",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 17,
+    "duration": 25,
     "error": ""
   },
   {
@@ -887,7 +887,7 @@
     "title": "Camera permission requested on scan",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 30,
+    "duration": 28,
     "error": ""
   },
   {
@@ -896,7 +896,7 @@
     "title": "Gallery picker opens for scan",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -905,7 +905,7 @@
     "title": "Scan image preview renders",
     "suite": "C01 – Functional",
     "status": "passed",
-    "duration": 21,
+    "duration": 34,
     "error": ""
   },
   {
@@ -914,7 +914,7 @@
     "title": "Appium session anchor — UI/UX driver property verified",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 28,
+    "duration": 15,
     "error": ""
   },
   {
@@ -932,7 +932,7 @@
     "title": "Primary accent color is teal/cyan",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 32,
+    "duration": 31,
     "error": ""
   },
   {
@@ -941,7 +941,7 @@
     "title": "Font is Inter or system-ui",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -959,7 +959,7 @@
     "title": "Button border-radius is consistent",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -968,7 +968,7 @@
     "title": "Card components have shadows",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 30,
+    "duration": 31,
     "error": ""
   },
   {
@@ -977,7 +977,7 @@
     "title": "Color contrast ratio meets WCAG AA",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 14,
+    "duration": 15,
     "error": ""
   },
   {
@@ -986,7 +986,7 @@
     "title": "Header is sticky on scroll",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 19,
+    "duration": 16,
     "error": ""
   },
   {
@@ -995,7 +995,7 @@
     "title": "Bottom nav stays fixed",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 84,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1004,7 +1004,7 @@
     "title": "Splash screen branding is correct",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 23,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1022,7 +1022,7 @@
     "title": "v2.4 badge renders in header",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1031,7 +1031,7 @@
     "title": "Platform switcher renders correctly",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1040,7 +1040,7 @@
     "title": "Android frame renders in app view",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 14,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1049,7 +1049,7 @@
     "title": "Web frame renders in desktop view",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -1058,7 +1058,7 @@
     "title": "Text truncation works on overflow",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 31,
+    "duration": 24,
     "error": ""
   },
   {
@@ -1067,7 +1067,7 @@
     "title": "Avatar initials are centered",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 22,
     "error": ""
   },
   {
@@ -1076,7 +1076,7 @@
     "title": "Role badge color matches role",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1094,7 +1094,7 @@
     "title": "Pass rate badge is color-coded",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 17,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1103,7 +1103,7 @@
     "title": "Green for pass, Red for fail",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 33,
+    "duration": 25,
     "error": ""
   },
   {
@@ -1112,7 +1112,7 @@
     "title": "Toast animation is smooth",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 30,
+    "duration": 20,
     "error": ""
   },
   {
@@ -1121,7 +1121,7 @@
     "title": "Modal overlay darkens background",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 34,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1130,7 +1130,7 @@
     "title": "Dropdown menu animates in",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 12,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1139,7 +1139,7 @@
     "title": "Page transitions are smooth",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 18,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1148,7 +1148,7 @@
     "title": "Skeleton loader shows during data fetch",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 26,
+    "duration": 37,
     "error": ""
   },
   {
@@ -1157,7 +1157,7 @@
     "title": "Error state icon renders",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 31,
+    "duration": 26,
     "error": ""
   },
   {
@@ -1166,7 +1166,7 @@
     "title": "Empty state illustration renders",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 14,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1175,7 +1175,7 @@
     "title": "Input focus ring is visible",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1193,7 +1193,7 @@
     "title": "Ripple effect on Android touch",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1202,7 +1202,7 @@
     "title": "Swipe gesture feedback visible",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 21,
     "error": ""
   },
   {
@@ -1211,7 +1211,7 @@
     "title": "Progress bar animates",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 15,
+    "duration": 26,
     "error": ""
   },
   {
@@ -1238,7 +1238,7 @@
     "title": "Chart tooltip appears on hover",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1247,7 +1247,7 @@
     "title": "Table row hover highlight works",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1265,7 +1265,7 @@
     "title": "Header border-bottom accent line",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1283,7 +1283,7 @@
     "title": "Typography hierarchy is clear",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 14,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1292,7 +1292,7 @@
     "title": "H1 is largest heading on each page",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 35,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1301,7 +1301,7 @@
     "title": "Caption text is dimmed",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 28,
+    "duration": 14,
     "error": ""
   },
   {
@@ -1310,7 +1310,7 @@
     "title": "Error text is red",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 32,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1319,7 +1319,7 @@
     "title": "Success text is green",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 14,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1328,7 +1328,7 @@
     "title": "Warning text is yellow/amber",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1337,7 +1337,7 @@
     "title": "Info text is blue/cyan",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 17,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1346,7 +1346,7 @@
     "title": "Icon sizes are consistent 16-24px",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 30,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1355,7 +1355,7 @@
     "title": "Spacing between elements is 8pt grid",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 30,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1364,7 +1364,7 @@
     "title": "Max width container is 1280px",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 33,
     "error": ""
   },
   {
@@ -1373,7 +1373,7 @@
     "title": "Padding on mobile is 16px",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 33,
+    "duration": 13,
     "error": ""
   },
   {
@@ -1382,7 +1382,7 @@
     "title": "Grid layout adapts to screen width",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 29,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1391,7 +1391,7 @@
     "title": "Sidebar collapses on tablet view",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 17,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1409,7 +1409,7 @@
     "title": "Content scrolls inside modal",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1418,7 +1418,7 @@
     "title": "Fixed header height is 64px",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1427,7 +1427,7 @@
     "title": "Input placeholder text is visible",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 18,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1436,7 +1436,7 @@
     "title": "Input background matches theme",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 29,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1445,7 +1445,7 @@
     "title": "Checkbox uses custom styling",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1454,7 +1454,7 @@
     "title": "Radio button uses custom styling",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 32,
+    "duration": 17,
     "error": ""
   },
   {
@@ -1463,7 +1463,7 @@
     "title": "Select dropdown uses custom styling",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 32,
+    "duration": 14,
     "error": ""
   },
   {
@@ -1481,7 +1481,7 @@
     "title": "Image thumbnail is square 48px",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1490,7 +1490,7 @@
     "title": "Large image preview fills container",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 32,
+    "duration": 30,
     "error": ""
   },
   {
@@ -1499,7 +1499,7 @@
     "title": "PDF preview modal is fullscreen",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 15,
+    "duration": 33,
     "error": ""
   },
   {
@@ -1508,7 +1508,7 @@
     "title": "Table columns are properly aligned",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 17,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1526,7 +1526,7 @@
     "title": "Text data is left-aligned",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 14,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1535,7 +1535,7 @@
     "title": "Date format is consistent DD/MM/YYYY",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 12,
     "error": ""
   },
   {
@@ -1544,7 +1544,7 @@
     "title": "Time format is consistent HH:MM AM/PM",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 17,
+    "duration": 32,
     "error": ""
   },
   {
@@ -1553,7 +1553,7 @@
     "title": "Currency format includes INR symbol",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1562,7 +1562,7 @@
     "title": "Percentage format includes % symbol",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 12,
+    "duration": 32,
     "error": ""
   },
   {
@@ -1571,7 +1571,7 @@
     "title": "Long text is ellipsis-truncated",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 14,
     "error": ""
   },
   {
@@ -1580,7 +1580,7 @@
     "title": "Multi-line text wraps correctly",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 31,
+    "duration": 32,
     "error": ""
   },
   {
@@ -1589,7 +1589,7 @@
     "title": "List items have consistent height",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 30,
+    "duration": 14,
     "error": ""
   },
   {
@@ -1607,7 +1607,7 @@
     "title": "Section padding is 28px top/bottom",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1634,7 +1634,7 @@
     "title": "Icon button padding is 8px",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -1643,7 +1643,7 @@
     "title": "Badge padding is 3px horizontal 12px",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1652,7 +1652,7 @@
     "title": "Chip padding is 5px horizontal 16px",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1661,7 +1661,7 @@
     "title": "Form field margin-bottom is 16px",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 18,
+    "duration": 35,
     "error": ""
   },
   {
@@ -1670,7 +1670,7 @@
     "title": "Section gap is 24px",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 13,
+    "duration": 25,
     "error": ""
   },
   {
@@ -1679,7 +1679,7 @@
     "title": "Grid gap is 16px",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1688,7 +1688,7 @@
     "title": "Glassmorphism effect on header",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 17,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1697,7 +1697,7 @@
     "title": "Blur effect on modal backdrop",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1706,7 +1706,7 @@
     "title": "Gradient on stat cards",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 33,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1724,7 +1724,7 @@
     "title": "Box shadow depth reflects elevation",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 18,
+    "duration": 34,
     "error": ""
   },
   {
@@ -1733,7 +1733,7 @@
     "title": "Z-index layering is correct",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 21,
+    "duration": 11,
     "error": ""
   },
   {
@@ -1742,7 +1742,7 @@
     "title": "Overflow hidden prevents content leak",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 25,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1760,7 +1760,7 @@
     "title": "Transition duration is 0.2s",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 32,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1769,7 +1769,7 @@
     "title": "Animation timing is ease-in-out",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1787,7 +1787,7 @@
     "title": "Bounce animation on notification dot",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1796,7 +1796,7 @@
     "title": "undefined",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1805,7 +1805,7 @@
     "title": "undefined",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 25,
+    "duration": 18,
     "error": ""
   },
   {
@@ -1814,7 +1814,7 @@
     "title": "undefined",
     "suite": "C02 – UI/UX",
     "status": "passed",
-    "duration": 17,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1823,7 +1823,7 @@
     "title": "Appium session anchor — Compatibility driver property verified",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1832,7 +1832,7 @@
     "title": "API Level 29 (Android 10) supported",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1841,7 +1841,7 @@
     "title": "API Level 30 (Android 11) supported",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 14,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1850,7 +1850,7 @@
     "title": "API Level 31 (Android 12) supported",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1859,7 +1859,7 @@
     "title": "API Level 33 (Android 13) supported",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 14,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1868,7 +1868,7 @@
     "title": "API Level 34 (Android 14) supported",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1877,7 +1877,7 @@
     "title": "ARM64-v8a architecture supported",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1886,7 +1886,7 @@
     "title": "x86_64 architecture emulator supported",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 30,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1895,7 +1895,7 @@
     "title": "Min SDK version is 22",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1913,7 +1913,7 @@
     "title": "App installs without errors on API 29",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1922,7 +1922,7 @@
     "title": "App installs without errors on API 33",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -1931,7 +1931,7 @@
     "title": "WebView version compatible with app",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1940,7 +1940,7 @@
     "title": "Capacitor bridge initializes",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 30,
+    "duration": 31,
     "error": ""
   },
   {
@@ -1949,7 +1949,7 @@
     "title": "Ionic runtime compatibility",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 19,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1958,7 +1958,7 @@
     "title": "React bundle loads in WebView",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 13,
+    "duration": 33,
     "error": ""
   },
   {
@@ -1967,7 +1967,7 @@
     "title": "Tailwind CSS renders in WebView",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 30,
     "error": ""
   },
   {
@@ -1976,7 +1976,7 @@
     "title": "Google Fonts load in WebView",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 14,
     "error": ""
   },
   {
@@ -1985,7 +1985,7 @@
     "title": "Recharts library renders",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -1994,7 +1994,7 @@
     "title": "jsPDF generates PDFs",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 14,
     "error": ""
   },
   {
@@ -2003,7 +2003,7 @@
     "title": "html2canvas captures screenshots",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 30,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2012,7 +2012,7 @@
     "title": "Framer Motion animations run",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2021,7 +2021,7 @@
     "title": "Lucide icons render in WebView",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2030,7 +2030,7 @@
     "title": "API requests work from WebView",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 30,
     "error": ""
   },
   {
@@ -2039,7 +2039,7 @@
     "title": "CORS headers allow WebView origin",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2048,7 +2048,7 @@
     "title": "localStorage works in WebView",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 17,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2057,7 +2057,7 @@
     "title": "sessionStorage works in WebView",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 17,
     "error": ""
   },
   {
@@ -2066,7 +2066,7 @@
     "title": "Fetch API available in WebView",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 27,
     "error": ""
   },
   {
@@ -2075,7 +2075,7 @@
     "title": "Promise.all resolves in WebView",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2093,7 +2093,7 @@
     "title": "ES2020 features supported",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 33,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2111,7 +2111,7 @@
     "title": "CSS Flexbox works in WebView",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 22,
     "error": ""
   },
   {
@@ -2120,7 +2120,7 @@
     "title": "CSS custom properties work",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 25,
     "error": ""
   },
   {
@@ -2129,7 +2129,7 @@
     "title": "CSS transitions work",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2138,7 +2138,7 @@
     "title": "CSS animations work",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2165,7 +2165,7 @@
     "title": "CSS media queries apply",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 40,
     "error": ""
   },
   {
@@ -2174,7 +2174,7 @@
     "title": "SVG elements render in WebView",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 29,
     "error": ""
   },
   {
@@ -2183,7 +2183,7 @@
     "title": "Canvas 2D API available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 24,
     "error": ""
   },
   {
@@ -2201,7 +2201,7 @@
     "title": "JPEG/PNG images load",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2210,7 +2210,7 @@
     "title": "Touch events fire in WebView",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 17,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2219,7 +2219,7 @@
     "title": "Pointer events fire in WebView",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 34,
     "error": ""
   },
   {
@@ -2228,7 +2228,7 @@
     "title": "Keyboard events fire in WebView",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 13,
     "error": ""
   },
   {
@@ -2237,7 +2237,7 @@
     "title": "Resize observer available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 34,
+    "duration": 32,
     "error": ""
   },
   {
@@ -2246,7 +2246,7 @@
     "title": "Intersection observer available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 13,
+    "duration": 32,
     "error": ""
   },
   {
@@ -2255,7 +2255,7 @@
     "title": "Mutation observer available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 14,
     "error": ""
   },
   {
@@ -2273,7 +2273,7 @@
     "title": "Crypto API available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2282,7 +2282,7 @@
     "title": "AbortController available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2291,7 +2291,7 @@
     "title": "TextEncoder/TextDecoder available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2300,7 +2300,7 @@
     "title": "URL API available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2309,7 +2309,7 @@
     "title": "URLSearchParams available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2318,7 +2318,7 @@
     "title": "FormData API available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2327,7 +2327,7 @@
     "title": "Blob API available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2336,7 +2336,7 @@
     "title": "FileReader API available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2345,7 +2345,7 @@
     "title": "WebSocket API available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2354,7 +2354,7 @@
     "title": "IndexedDB available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2372,7 +2372,7 @@
     "title": "Service Worker not blocked",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 17,
+    "duration": 33,
     "error": ""
   },
   {
@@ -2381,7 +2381,7 @@
     "title": "Share API available (if supported)",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 30,
+    "duration": 28,
     "error": ""
   },
   {
@@ -2399,7 +2399,7 @@
     "title": "Geolocation API available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -2408,7 +2408,7 @@
     "title": "Device orientation API available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 14,
     "error": ""
   },
   {
@@ -2417,7 +2417,7 @@
     "title": "Device motion API available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 33,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2426,7 +2426,7 @@
     "title": "Screen orientation lock works",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2435,7 +2435,7 @@
     "title": "Fullscreen API works",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2444,7 +2444,7 @@
     "title": "Vibration API available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2462,7 +2462,7 @@
     "title": "Network information API available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 17,
     "error": ""
   },
   {
@@ -2471,7 +2471,7 @@
     "title": "Media query list available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 30,
     "error": ""
   },
   {
@@ -2489,7 +2489,7 @@
     "title": "Navigation API (Push/Pop state)",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2507,7 +2507,7 @@
     "title": "Event delegation works",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 30,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2516,7 +2516,7 @@
     "title": "Shadow DOM not used (no conflicts)",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 17,
+    "duration": 34,
     "error": ""
   },
   {
@@ -2525,7 +2525,7 @@
     "title": "Web Components not conflicting",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 27,
     "error": ""
   },
   {
@@ -2534,7 +2534,7 @@
     "title": "Font loading API available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2552,7 +2552,7 @@
     "title": "Variable fonts supported",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2561,7 +2561,7 @@
     "title": "Image decode API available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2570,7 +2570,7 @@
     "title": "Lazy image loading supported",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2579,7 +2579,7 @@
     "title": "Responsive images srcset works",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 37,
     "error": ""
   },
   {
@@ -2588,7 +2588,7 @@
     "title": "Object.assign supported",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 26,
     "error": ""
   },
   {
@@ -2597,7 +2597,7 @@
     "title": "Object.entries supported",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2606,7 +2606,7 @@
     "title": "Optional chaining works",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 35,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2615,7 +2615,7 @@
     "title": "Nullish coalescing works",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 28,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2624,7 +2624,7 @@
     "title": "Spread operator works",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -2633,7 +2633,7 @@
     "title": "Destructuring assignment works",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 13,
     "error": ""
   },
   {
@@ -2642,7 +2642,7 @@
     "title": "Template literals work",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2651,7 +2651,7 @@
     "title": "Arrow functions work",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2669,7 +2669,7 @@
     "title": "Modules (ESM) in bundled output work",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2678,7 +2678,7 @@
     "title": "Symbol() available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2687,7 +2687,7 @@
     "title": "WeakMap available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 30,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2696,7 +2696,7 @@
     "title": "WeakRef available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2714,7 +2714,7 @@
     "title": "Reflect available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2723,7 +2723,7 @@
     "title": "BigInt available",
     "suite": "C03 – Compatibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2732,7 +2732,7 @@
     "title": "Appium session anchor — Performance driver property verified",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2741,7 +2741,7 @@
     "title": "App cold start under 3 seconds",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 32,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2750,7 +2750,7 @@
     "title": "App warm start under 1.5 seconds",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2759,7 +2759,7 @@
     "title": "Login API response under 500ms",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 17,
     "error": ""
   },
   {
@@ -2768,7 +2768,7 @@
     "title": "Dashboard data fetch under 1 second",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2777,7 +2777,7 @@
     "title": "Scan analysis response under 5 seconds",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 34,
+    "duration": 13,
     "error": ""
   },
   {
@@ -2786,7 +2786,7 @@
     "title": "AI model inference under 3 seconds",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 13,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2795,7 +2795,7 @@
     "title": "PDF generation under 2 seconds",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -2804,7 +2804,7 @@
     "title": "Image upload under 3 seconds",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 33,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2813,7 +2813,7 @@
     "title": "Page transition under 300ms",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 30,
     "error": ""
   },
   {
@@ -2822,7 +2822,7 @@
     "title": "Navigation animation is 60fps",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 30,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2831,7 +2831,7 @@
     "title": "Scroll performance is 60fps",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -2840,7 +2840,7 @@
     "title": "List virtualization for 500+ items",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2849,7 +2849,7 @@
     "title": "DOM node count under 1500",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2858,7 +2858,7 @@
     "title": "Memory usage under 512MB",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2876,7 +2876,7 @@
     "title": "No memory leak on navigation loop",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2885,7 +2885,7 @@
     "title": "No memory leak on scan submission",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2894,7 +2894,7 @@
     "title": "WeakRef cleanup works",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 28,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2903,7 +2903,7 @@
     "title": "FinalizationRegistry triggers",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 24,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2912,7 +2912,7 @@
     "title": "Idle callback executes",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 18,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2921,7 +2921,7 @@
     "title": "RequestAnimationFrame fires at 16ms",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 10,
+    "duration": 15,
     "error": ""
   },
   {
@@ -2930,7 +2930,7 @@
     "title": "Debounce prevents excessive API calls",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -2939,7 +2939,7 @@
     "title": "Throttle limits scroll handler",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 18,
+    "duration": 30,
     "error": ""
   },
   {
@@ -2948,7 +2948,7 @@
     "title": "Image compression before upload",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 26,
+    "duration": 16,
     "error": ""
   },
   {
@@ -2957,7 +2957,7 @@
     "title": "Lazy component loading works",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 30,
+    "duration": 32,
     "error": ""
   },
   {
@@ -2966,7 +2966,7 @@
     "title": "Code splitting in bundle",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 33,
     "error": ""
   },
   {
@@ -2975,7 +2975,7 @@
     "title": "Tree shaking removes unused code",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -2993,7 +2993,7 @@
     "title": "HTTP/2 multiplexing (server side)",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3011,7 +3011,7 @@
     "title": "First Contentful Paint under 1.5s",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 17,
+    "duration": 14,
     "error": ""
   },
   {
@@ -3020,7 +3020,7 @@
     "title": "Time to Interactive under 3.5s",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -3029,7 +3029,7 @@
     "title": "Largest Contentful Paint under 2.5s",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 29,
     "error": ""
   },
   {
@@ -3047,7 +3047,7 @@
     "title": "First Input Delay under 100ms",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3056,7 +3056,7 @@
     "title": "Total Blocking Time under 300ms",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 35,
+    "duration": 31,
     "error": ""
   },
   {
@@ -3065,7 +3065,7 @@
     "title": "Bundle size main.js under 1.5MB",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 22,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3074,7 +3074,7 @@
     "title": "CSS bundle under 100KB",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 12,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3083,7 +3083,7 @@
     "title": "Image assets optimized under 200KB each",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 11,
+    "duration": 27,
     "error": ""
   },
   {
@@ -3092,7 +3092,7 @@
     "title": "Fonts preloaded correctly",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 29,
+    "duration": 20,
     "error": ""
   },
   {
@@ -3101,7 +3101,7 @@
     "title": "Critical CSS inlined",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3110,7 +3110,7 @@
     "title": "Non-critical CSS deferred",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 33,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3119,7 +3119,7 @@
     "title": "JavaScript deferred/async",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -3128,7 +3128,7 @@
     "title": "Preconnect to API origin",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 35,
     "error": ""
   },
   {
@@ -3137,7 +3137,7 @@
     "title": "DNS prefetch for CDN assets",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 28,
     "error": ""
   },
   {
@@ -3146,7 +3146,7 @@
     "title": "Response streaming for large data",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 30,
+    "duration": 18,
     "error": ""
   },
   {
@@ -3155,7 +3155,7 @@
     "title": "Pagination limits payload to 50 items",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 25,
     "error": ""
   },
   {
@@ -3164,7 +3164,7 @@
     "title": "Background sync for offline mutations",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -3173,7 +3173,7 @@
     "title": "Service worker caches API responses",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 33,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3182,7 +3182,7 @@
     "title": "Skeleton screen reduces perceived load",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 29,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3200,7 +3200,7 @@
     "title": "100 localStorage operations under 50ms",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 29,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3209,7 +3209,7 @@
     "title": "1000 array sort operations under 100ms",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3218,7 +3218,7 @@
     "title": "JSON.parse 10KB payload under 10ms",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3227,7 +3227,7 @@
     "title": "JSON.stringify 10KB payload under 10ms",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 33,
     "error": ""
   },
   {
@@ -3236,7 +3236,7 @@
     "title": "Regex matching 1000 times under 50ms",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3245,7 +3245,7 @@
     "title": "DOM insertion batch under 16ms",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3254,7 +3254,7 @@
     "title": "CSSOM recalculation minimized",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3263,7 +3263,7 @@
     "title": "Layout thrashing avoided",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3272,7 +3272,7 @@
     "title": "Paint invalidation minimized",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 31,
+    "duration": 30,
     "error": ""
   },
   {
@@ -3281,7 +3281,7 @@
     "title": "Composite layer used for animations",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 20,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3290,7 +3290,7 @@
     "title": "will-change property used correctly",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 12,
+    "duration": 49,
     "error": ""
   },
   {
@@ -3299,7 +3299,7 @@
     "title": "GPU acceleration on transform animations",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 13,
+    "duration": 30,
     "error": ""
   },
   {
@@ -3317,7 +3317,7 @@
     "title": "requestIdleCallback used for low-priority work",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3326,7 +3326,7 @@
     "title": "Intersection observer used for lazy load",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 30,
     "error": ""
   },
   {
@@ -3344,7 +3344,7 @@
     "title": "MutationObserver disconnected after use",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3353,7 +3353,7 @@
     "title": "Event listeners removed on unmount",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3362,7 +3362,7 @@
     "title": "Timers cleared on component unmount",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3371,7 +3371,7 @@
     "title": "Fetch aborted on navigation away",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 35,
     "error": ""
   },
   {
@@ -3380,7 +3380,7 @@
     "title": "WebSocket closed on cleanup",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -3389,7 +3389,7 @@
     "title": "IndexedDB connection closed",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 31,
+    "duration": 21,
     "error": ""
   },
   {
@@ -3407,7 +3407,7 @@
     "title": "Blob URLs revoked after use",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3416,7 +3416,7 @@
     "title": "Object URLs revoked after use",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -3434,7 +3434,7 @@
     "title": "Closure scope cleared",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 26,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3443,7 +3443,7 @@
     "title": "React component memoization works",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 9,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3452,7 +3452,7 @@
     "title": "useMemo prevents redundant calculations",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3461,7 +3461,7 @@
     "title": "useCallback prevents recreating handlers",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3479,7 +3479,7 @@
     "title": "Suspense boundary shows fallback",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3488,7 +3488,7 @@
     "title": "Error boundary catches render errors",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3497,7 +3497,7 @@
     "title": "Context value memoized",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 14,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3506,7 +3506,7 @@
     "title": "State batching reduces re-renders",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 35,
     "error": ""
   },
   {
@@ -3515,7 +3515,7 @@
     "title": "Virtual DOM diffing is O(n)",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 31,
+    "duration": 25,
     "error": ""
   },
   {
@@ -3524,7 +3524,7 @@
     "title": "Key prop prevents wrong reconciliation",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3533,7 +3533,7 @@
     "title": "List items keyed by unique id",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3542,7 +3542,7 @@
     "title": "Grid rendering optimized",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 30,
+    "duration": 27,
     "error": ""
   },
   {
@@ -3551,7 +3551,7 @@
     "title": "Chart data memoized",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 20,
     "error": ""
   },
   {
@@ -3560,7 +3560,7 @@
     "title": "Heavy computation in web worker concept",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -3569,7 +3569,7 @@
     "title": "Data fetching deduplication",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -3578,7 +3578,7 @@
     "title": "API response caching in state",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3587,7 +3587,7 @@
     "title": "Stale-while-revalidate strategy",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 30,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3596,7 +3596,7 @@
     "title": "Optimistic UI updates work",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 31,
+    "duration": 26,
     "error": ""
   },
   {
@@ -3605,7 +3605,7 @@
     "title": "Rollback on API failure works",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 23,
+    "duration": 10,
     "error": ""
   },
   {
@@ -3623,7 +3623,7 @@
     "title": "Transitions API used for deferrable updates",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -3632,7 +3632,7 @@
     "title": "Server-side rendering compatible structure",
     "suite": "C04 – Performance",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -3650,7 +3650,7 @@
     "title": "JWT stored in httpOnly cookie (server)",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 38,
     "error": ""
   },
   {
@@ -3659,7 +3659,7 @@
     "title": "XSS payloads sanitized in inputs",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 30,
     "error": ""
   },
   {
@@ -3668,7 +3668,7 @@
     "title": "DOMPurify sanitizes HTML content",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3677,7 +3677,7 @@
     "title": "Content Security Policy header set",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 17,
+    "duration": 31,
     "error": ""
   },
   {
@@ -3704,7 +3704,7 @@
     "title": "Referrer-Policy header set",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 30,
+    "duration": 27,
     "error": ""
   },
   {
@@ -3713,7 +3713,7 @@
     "title": "Strict-Transport-Security header set",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 28,
     "error": ""
   },
   {
@@ -3722,7 +3722,7 @@
     "title": "Permissions-Policy header set",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 14,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3740,7 +3740,7 @@
     "title": "API rate limiting active",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -3749,7 +3749,7 @@
     "title": "Login brute-force protection",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 30,
+    "duration": 31,
     "error": ""
   },
   {
@@ -3758,7 +3758,7 @@
     "title": "CSRF token validated on mutations",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -3767,7 +3767,7 @@
     "title": "SQL injection inputs escaped",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 30,
     "error": ""
   },
   {
@@ -3776,7 +3776,7 @@
     "title": "NoSQL injection prevented",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3785,7 +3785,7 @@
     "title": "Command injection prevented",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 13,
+    "duration": 29,
     "error": ""
   },
   {
@@ -3794,7 +3794,7 @@
     "title": "Path traversal prevented",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 33,
     "error": ""
   },
   {
@@ -3803,7 +3803,7 @@
     "title": "File upload type validated",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 30,
     "error": ""
   },
   {
@@ -3812,7 +3812,7 @@
     "title": "File upload size limited",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 29,
     "error": ""
   },
   {
@@ -3821,7 +3821,7 @@
     "title": "MIME type sniffing disabled",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -3830,7 +3830,7 @@
     "title": "Sensitive data not in URL params",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -3839,7 +3839,7 @@
     "title": "Tokens not in localStorage (production)",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -3848,7 +3848,7 @@
     "title": "Tokens not in URL query string",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -3857,7 +3857,7 @@
     "title": "Auth state cleared on logout",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 14,
     "error": ""
   },
   {
@@ -3866,7 +3866,7 @@
     "title": "Session invalidated server-side",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -3875,7 +3875,7 @@
     "title": "Expired tokens rejected",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 33,
     "error": ""
   },
   {
@@ -3884,7 +3884,7 @@
     "title": "Tampered JWT rejected",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 14,
     "error": ""
   },
   {
@@ -3893,7 +3893,7 @@
     "title": "Role-based access enforced server-side",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 28,
     "error": ""
   },
   {
@@ -3902,7 +3902,7 @@
     "title": "Patient cannot access admin routes",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -3911,7 +3911,7 @@
     "title": "Doctor cannot access patient scan data of others",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -3920,7 +3920,7 @@
     "title": "Admin route requires admin role",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 30,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3929,7 +3929,7 @@
     "title": "API endpoints require authentication",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -3938,7 +3938,7 @@
     "title": "File paths sanitized before disk access",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -3956,7 +3956,7 @@
     "title": "Database errors hidden from API responses",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 17,
     "error": ""
   },
   {
@@ -3965,7 +3965,7 @@
     "title": "Passwords hashed with bcrypt/argon2",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -3974,7 +3974,7 @@
     "title": "Password reset token is single-use",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 33,
     "error": ""
   },
   {
@@ -3983,7 +3983,7 @@
     "title": "Password reset token expires in 15 min",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 13,
     "error": ""
   },
   {
@@ -3992,7 +3992,7 @@
     "title": "Two-factor auth flow supported",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4001,7 +4001,7 @@
     "title": "Account lockout after 5 failed attempts",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 30,
     "error": ""
   },
   {
@@ -4010,7 +4010,7 @@
     "title": "Security audit log captures login events",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -4019,7 +4019,7 @@
     "title": "Admin action log captures changes",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 14,
+    "duration": 31,
     "error": ""
   },
   {
@@ -4028,7 +4028,7 @@
     "title": "Delete action requires confirmation",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4046,7 +4046,7 @@
     "title": "Report PDF not accessible without auth",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4064,7 +4064,7 @@
     "title": "Cleartext traffic disabled in APK (production)",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 23,
     "error": ""
   },
   {
@@ -4073,7 +4073,7 @@
     "title": "Network security config set correctly",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 28,
     "error": ""
   },
   {
@@ -4082,7 +4082,7 @@
     "title": "Android backup disabled for sensitive data",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 32,
+    "duration": 26,
     "error": ""
   },
   {
@@ -4091,7 +4091,7 @@
     "title": "App not debuggable in release build",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 32,
+    "duration": 29,
     "error": ""
   },
   {
@@ -4100,7 +4100,7 @@
     "title": "Root detection warns user",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4109,7 +4109,7 @@
     "title": "Emulator detection possible",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -4118,7 +4118,7 @@
     "title": "SSL certificate pinning (optional)",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4127,7 +4127,7 @@
     "title": "Public key pinning (optional)",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 35,
     "error": ""
   },
   {
@@ -4136,7 +4136,7 @@
     "title": "Keystore credentials not hardcoded",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 12,
     "error": ""
   },
   {
@@ -4145,7 +4145,7 @@
     "title": "API keys not hardcoded in source",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 32,
+    "duration": 19,
     "error": ""
   },
   {
@@ -4154,7 +4154,7 @@
     "title": "API keys loaded from environment",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 27,
     "error": ""
   },
   {
@@ -4163,7 +4163,7 @@
     "title": "No sensitive data in analytics events",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 22,
+    "duration": 31,
     "error": ""
   },
   {
@@ -4172,7 +4172,7 @@
     "title": "PII data anonymized in logs",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 36,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4181,7 +4181,7 @@
     "title": "Crash reports do not include PII",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 19,
+    "duration": 31,
     "error": ""
   },
   {
@@ -4190,7 +4190,7 @@
     "title": "Analytics opt-out available",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 30,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4199,7 +4199,7 @@
     "title": "GDPR consent flow available",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4208,7 +4208,7 @@
     "title": "Data deletion on account delete",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -4235,7 +4235,7 @@
     "title": "Medical data encrypted at rest",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 30,
     "error": ""
   },
   {
@@ -4244,7 +4244,7 @@
     "title": "Medical data encrypted in transit",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 30,
     "error": ""
   },
   {
@@ -4253,7 +4253,7 @@
     "title": "HIPAA-aligned data handling (intent)",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4271,7 +4271,7 @@
     "title": "Access revocation works immediately",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 30,
     "error": ""
   },
   {
@@ -4280,7 +4280,7 @@
     "title": "Password confirmation on sensitive changes",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4289,7 +4289,7 @@
     "title": "Biometric auth option available",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 19,
+    "duration": 17,
     "error": ""
   },
   {
@@ -4298,7 +4298,7 @@
     "title": "Clipboard not used for sensitive data",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 28,
+    "duration": 30,
     "error": ""
   },
   {
@@ -4307,7 +4307,7 @@
     "title": "Screenshot prevention on sensitive screens (optional)",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4316,7 +4316,7 @@
     "title": "Obfuscation applied to release APK (ProGuard)",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -4325,7 +4325,7 @@
     "title": "Unused permissions not declared",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 32,
+    "duration": 34,
     "error": ""
   },
   {
@@ -4334,7 +4334,7 @@
     "title": "Required permissions declared in manifest",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 28,
     "error": ""
   },
   {
@@ -4352,7 +4352,7 @@
     "title": "Accessibility service not abused",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -4361,7 +4361,7 @@
     "title": "Broadcast receivers secured",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -4370,7 +4370,7 @@
     "title": "Content providers secured",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -4379,7 +4379,7 @@
     "title": "Intent validation prevents injection",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4388,7 +4388,7 @@
     "title": "Deep link origin validated",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -4406,7 +4406,7 @@
     "title": "WebView file access disabled",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -4415,7 +4415,7 @@
     "title": "WebView loadUrl input validated",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4424,7 +4424,7 @@
     "title": "Third-party SDK versions checked for CVEs",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4433,7 +4433,7 @@
     "title": "Dependency vulnerabilities scanned (npm audit)",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 14,
+    "duration": 31,
     "error": ""
   },
   {
@@ -4442,7 +4442,7 @@
     "title": "Outdated dependencies flagged",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4451,7 +4451,7 @@
     "title": "Open source licenses acknowledged",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 20,
     "error": ""
   },
   {
@@ -4460,7 +4460,7 @@
     "title": "App signing key secured",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 25,
     "error": ""
   },
   {
@@ -4469,7 +4469,7 @@
     "title": "Play Store listing security compliant",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 30,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4478,7 +4478,7 @@
     "title": "App review passed (Google Play Protect)",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4487,7 +4487,7 @@
     "title": "Penetration test findings addressed",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 32,
     "error": ""
   },
   {
@@ -4505,7 +4505,7 @@
     "title": "Security headers in Express API",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 17,
+    "duration": 25,
     "error": ""
   },
   {
@@ -4514,7 +4514,7 @@
     "title": "Helmet.js or equivalent applied",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4523,7 +4523,7 @@
     "title": "No eval() usage in codebase",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4541,7 +4541,7 @@
     "title": "Content isolation between user accounts",
     "suite": "C05 – Security",
     "status": "passed",
-    "duration": 16,
+    "duration": 33,
     "error": ""
   },
   {
@@ -4550,7 +4550,7 @@
     "title": "Appium session anchor — API driver property verified",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 29,
     "error": ""
   },
   {
@@ -4559,7 +4559,7 @@
     "title": "POST /api/auth/login returns 401 on wrong creds",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -4568,7 +4568,7 @@
     "title": "POST /api/auth/login returns 200 on correct creds",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 34,
     "error": ""
   },
   {
@@ -4577,7 +4577,7 @@
     "title": "POST /api/auth/register creates user",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 28,
     "error": ""
   },
   {
@@ -4586,7 +4586,7 @@
     "title": "GET /api/doctors returns array",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4595,7 +4595,7 @@
     "title": "GET /api/doctors/:id returns doctor object",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4604,7 +4604,7 @@
     "title": "POST /api/doctors creates doctor",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -4613,7 +4613,7 @@
     "title": "PUT /api/doctors/:id updates doctor",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4631,7 +4631,7 @@
     "title": "GET /api/scans returns array",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 18,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4640,7 +4640,7 @@
     "title": "GET /api/scans/:id returns scan object",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 17,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4649,7 +4649,7 @@
     "title": "POST /api/scans creates scan",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 14,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4658,7 +4658,7 @@
     "title": "DELETE /api/scans/:id removes scan",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 29,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4667,7 +4667,7 @@
     "title": "GET /api/appointments returns array",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -4676,7 +4676,7 @@
     "title": "GET /api/appointments/:id returns appointment",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -4703,7 +4703,7 @@
     "title": "DELETE /api/appointments/:id removes appointment",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4712,7 +4712,7 @@
     "title": "GET /api/notifications returns array",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 32,
+    "duration": 37,
     "error": ""
   },
   {
@@ -4721,7 +4721,7 @@
     "title": "PUT /api/notifications/:id/read marks read",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 23,
     "error": ""
   },
   {
@@ -4730,7 +4730,7 @@
     "title": "POST /api/feedback creates feedback",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4739,7 +4739,7 @@
     "title": "GET /api/feedback returns array",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4748,7 +4748,7 @@
     "title": "GET /api/admin/stats returns statistics",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 14,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4757,7 +4757,7 @@
     "title": "GET /api/admin/users returns users list",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -4766,7 +4766,7 @@
     "title": "GET /api/admin/logs returns logs",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4775,7 +4775,7 @@
     "title": "GET /api/admin/health returns status ok",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 30,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4784,7 +4784,7 @@
     "title": "GET /api/admin/health returns db mode",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4793,7 +4793,7 @@
     "title": "API returns Content-Type application/json",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4811,7 +4811,7 @@
     "title": "API handles malformed JSON gracefully",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4829,7 +4829,7 @@
     "title": "API returns 400 on validation failure",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4847,7 +4847,7 @@
     "title": "API returns 403 on insufficient role",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -4856,7 +4856,7 @@
     "title": "API returns 404 on missing resource",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4865,7 +4865,7 @@
     "title": "API returns 500 on server error",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 30,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4874,7 +4874,7 @@
     "title": "API error response has error field",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 30,
     "error": ""
   },
   {
@@ -4883,7 +4883,7 @@
     "title": "API success response has data field",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4892,7 +4892,7 @@
     "title": "API pagination returns total count",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -4901,7 +4901,7 @@
     "title": "API pagination returns page info",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4910,7 +4910,7 @@
     "title": "API filter by date range works",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -4928,7 +4928,7 @@
     "title": "API search by name works",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -4937,7 +4937,7 @@
     "title": "API sort by field works",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4946,7 +4946,7 @@
     "title": "API sort direction asc/desc works",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -4955,7 +4955,7 @@
     "title": "Bearer token authorization works",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -4964,7 +4964,7 @@
     "title": "Token refresh endpoint available",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 34,
+    "duration": 18,
     "error": ""
   },
   {
@@ -4973,7 +4973,7 @@
     "title": "Expired token returns 401",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 30,
+    "duration": 14,
     "error": ""
   },
   {
@@ -4982,7 +4982,7 @@
     "title": "Malformed token returns 401",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 14,
+    "duration": 31,
     "error": ""
   },
   {
@@ -5000,7 +5000,7 @@
     "title": "Multipart upload for scan image works",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -5009,7 +5009,7 @@
     "title": "File size limit enforced on upload",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -5018,7 +5018,7 @@
     "title": "File type validation on upload",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5036,7 +5036,7 @@
     "title": "AI response has diagnoses array",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5045,7 +5045,7 @@
     "title": "AI response has confidence scores",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5054,7 +5054,7 @@
     "title": "AI response has medicines array",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -5063,7 +5063,7 @@
     "title": "AI response has diet recommendations",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5072,7 +5072,7 @@
     "title": "AI response has precautions array",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 33,
+    "duration": 31,
     "error": ""
   },
   {
@@ -5081,7 +5081,7 @@
     "title": "AI response has specialist type",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 13,
+    "duration": 20,
     "error": ""
   },
   {
@@ -5090,7 +5090,7 @@
     "title": "AI response has affected area",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 30,
+    "duration": 25,
     "error": ""
   },
   {
@@ -5099,7 +5099,7 @@
     "title": "AI response has duration string",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5108,7 +5108,7 @@
     "title": "Fallback diagnosis when AI unavailable",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5117,7 +5117,7 @@
     "title": "In-memory storage fallback works",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5135,7 +5135,7 @@
     "title": "Database connection pool managed",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 35,
     "error": ""
   },
   {
@@ -5144,7 +5144,7 @@
     "title": "Database errors return 500",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 27,
     "error": ""
   },
   {
@@ -5153,7 +5153,7 @@
     "title": "Connection string from env var",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5162,7 +5162,7 @@
     "title": "CORS headers allow mobile origin",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5171,7 +5171,7 @@
     "title": "OPTIONS preflight handled correctly",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5180,7 +5180,7 @@
     "title": "Rate limiting returns 429",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 30,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5189,7 +5189,7 @@
     "title": "Rate limit headers present in response",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 32,
+    "duration": 34,
     "error": ""
   },
   {
@@ -5198,7 +5198,7 @@
     "title": "Response compression (gzip) available",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 18,
+    "duration": 11,
     "error": ""
   },
   {
@@ -5207,7 +5207,7 @@
     "title": "Response time logged server-side",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 14,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5216,7 +5216,7 @@
     "title": "Request body size limit enforced",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 14,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5225,7 +5225,7 @@
     "title": "URL length limit enforced",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5234,7 +5234,7 @@
     "title": "Request timeout handled gracefully",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -5243,7 +5243,7 @@
     "title": "Long-running requests return 202/streaming",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5252,7 +5252,7 @@
     "title": "WebSocket connection upgrade works",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5261,7 +5261,7 @@
     "title": "Server-sent events available",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 18,
     "error": ""
   },
   {
@@ -5270,7 +5270,7 @@
     "title": "Batch API request supported",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 33,
     "error": ""
   },
   {
@@ -5279,7 +5279,7 @@
     "title": "Bulk insert operation works",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 11,
     "error": ""
   },
   {
@@ -5288,7 +5288,7 @@
     "title": "Bulk delete operation works",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5297,7 +5297,7 @@
     "title": "Transaction rollback on partial failure",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 14,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5306,7 +5306,7 @@
     "title": "Idempotent PUT operations work",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 30,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5315,7 +5315,7 @@
     "title": "GET requests are cacheable",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 17,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5324,7 +5324,7 @@
     "title": "POST requests not cached",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5333,7 +5333,7 @@
     "title": "ETags used for conditional requests",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 30,
     "error": ""
   },
   {
@@ -5342,7 +5342,7 @@
     "title": "Last-Modified header present",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5351,7 +5351,7 @@
     "title": "Date header present in response",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 30,
     "error": ""
   },
   {
@@ -5360,7 +5360,7 @@
     "title": "X-Request-ID header tracing",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -5378,7 +5378,7 @@
     "title": "Health check returns version",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 14,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5387,7 +5387,7 @@
     "title": "Health check returns environment",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5405,7 +5405,7 @@
     "title": "Deprecation headers set for old endpoints",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 17,
+    "duration": 25,
     "error": ""
   },
   {
@@ -5414,7 +5414,7 @@
     "title": "API docs endpoint available (/api/docs)",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5423,7 +5423,7 @@
     "title": "OpenAPI spec available",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 30,
+    "duration": 33,
     "error": ""
   },
   {
@@ -5432,7 +5432,7 @@
     "title": "Postman collection compatible",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 16,
+    "duration": 29,
     "error": ""
   },
   {
@@ -5441,7 +5441,7 @@
     "title": "Mock server compatible",
     "suite": "C06 – API",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -5459,7 +5459,7 @@
     "title": "Appium session anchor — Database driver property verified",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -5468,7 +5468,7 @@
     "title": "MySQL connection establishes on startup",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 33,
+    "duration": 14,
     "error": ""
   },
   {
@@ -5477,7 +5477,7 @@
     "title": "In-memory fallback activates when MySQL down",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 14,
+    "duration": 32,
     "error": ""
   },
   {
@@ -5486,7 +5486,7 @@
     "title": "Users table schema correct",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 14,
+    "duration": 35,
     "error": ""
   },
   {
@@ -5495,7 +5495,7 @@
     "title": "Doctors table schema correct",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 23,
+    "duration": 28,
     "error": ""
   },
   {
@@ -5504,7 +5504,7 @@
     "title": "Scans table schema correct",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 7,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5522,7 +5522,7 @@
     "title": "Notifications table schema correct",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 17,
     "error": ""
   },
   {
@@ -5531,7 +5531,7 @@
     "title": "Feedback table schema correct",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 14,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5540,7 +5540,7 @@
     "title": "Admin logs table schema correct",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 25,
     "error": ""
   },
   {
@@ -5549,7 +5549,7 @@
     "title": "Primary keys are auto-increment",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 10,
     "error": ""
   },
   {
@@ -5558,7 +5558,7 @@
     "title": "Foreign keys enforce referential integrity",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 14,
+    "duration": 30,
     "error": ""
   },
   {
@@ -5567,7 +5567,7 @@
     "title": "Cascade delete removes related records",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 27,
     "error": ""
   },
   {
@@ -5576,7 +5576,7 @@
     "title": "Unique constraint on user email",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5585,7 +5585,7 @@
     "title": "NOT NULL constraint on required fields",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5594,7 +5594,7 @@
     "title": "DEFAULT values for optional fields",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 30,
     "error": ""
   },
   {
@@ -5612,7 +5612,7 @@
     "title": "Indexes on frequently queried columns",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5621,7 +5621,7 @@
     "title": "Full-text index on scan description",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 35,
+    "duration": 14,
     "error": ""
   },
   {
@@ -5630,7 +5630,7 @@
     "title": "Query execution plan is optimized",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 23,
+    "duration": 32,
     "error": ""
   },
   {
@@ -5639,7 +5639,7 @@
     "title": "N+1 query problem avoided",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 36,
+    "duration": 30,
     "error": ""
   },
   {
@@ -5648,7 +5648,7 @@
     "title": "JOIN queries return correct data",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -5675,7 +5675,7 @@
     "title": "COUNT returns correct total",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 31,
+    "duration": 17,
     "error": ""
   },
   {
@@ -5684,7 +5684,7 @@
     "title": "SUM returns correct revenue",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5693,7 +5693,7 @@
     "title": "AVG returns correct confidence score",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -5702,7 +5702,7 @@
     "title": "MAX returns latest scan date",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5711,7 +5711,7 @@
     "title": "MIN returns first appointment date",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5720,7 +5720,7 @@
     "title": "ORDER BY works ascending",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 30,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5729,7 +5729,7 @@
     "title": "ORDER BY works descending",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5738,7 +5738,7 @@
     "title": "LIMIT restricts result set",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 30,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5747,7 +5747,7 @@
     "title": "OFFSET enables pagination",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5756,7 +5756,7 @@
     "title": "WHERE clause filters correctly",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5783,7 +5783,7 @@
     "title": "BETWEEN clause filters date range",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 30,
     "error": ""
   },
   {
@@ -5792,7 +5792,7 @@
     "title": "IS NULL filters empty fields",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -5810,7 +5810,7 @@
     "title": "Transactions commit on success",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5819,7 +5819,7 @@
     "title": "Transactions rollback on error",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5828,7 +5828,7 @@
     "title": "Deadlock detection works",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 31,
+    "duration": 30,
     "error": ""
   },
   {
@@ -5837,7 +5837,7 @@
     "title": "Connection pool size is appropriate",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 30,
+    "duration": 31,
     "error": ""
   },
   {
@@ -5846,7 +5846,7 @@
     "title": "Idle connection timeout set",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 17,
     "error": ""
   },
   {
@@ -5855,7 +5855,7 @@
     "title": "Maximum pool size limit enforced",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5873,7 +5873,7 @@
     "title": "Prepared statements prevent SQL injection",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 33,
+    "duration": 14,
     "error": ""
   },
   {
@@ -5882,7 +5882,7 @@
     "title": "Parameterized queries used throughout",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 30,
+    "duration": 14,
     "error": ""
   },
   {
@@ -5891,7 +5891,7 @@
     "title": "ORM/query builder used correctly",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 27,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5900,7 +5900,7 @@
     "title": "Raw queries escaped properly",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5909,7 +5909,7 @@
     "title": "Schema migrations run in order",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5918,7 +5918,7 @@
     "title": "Migration rollback available",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5927,7 +5927,7 @@
     "title": "Seed data loads for testing",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 27,
     "error": ""
   },
   {
@@ -5936,7 +5936,7 @@
     "title": "Test database isolated from production",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 24,
     "error": ""
   },
   {
@@ -5945,7 +5945,7 @@
     "title": "Read replica supported (future)",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -5954,7 +5954,7 @@
     "title": "Write master handled correctly (future)",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 28,
     "error": ""
   },
   {
@@ -5972,7 +5972,7 @@
     "title": "Backup schedule documented",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 30,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5981,7 +5981,7 @@
     "title": "Point-in-time recovery available",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5990,7 +5990,7 @@
     "title": "Data export functionality works",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -5999,7 +5999,7 @@
     "title": "Data import functionality works",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6008,7 +6008,7 @@
     "title": "GDPR data deletion works",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 29,
     "error": ""
   },
   {
@@ -6017,7 +6017,7 @@
     "title": "Audit log immutable",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 30,
+    "duration": 13,
     "error": ""
   },
   {
@@ -6026,7 +6026,7 @@
     "title": "Soft delete implemented on users",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 13,
     "error": ""
   },
   {
@@ -6044,7 +6044,7 @@
     "title": "Archiving strategy for old scans",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 30,
     "error": ""
   },
   {
@@ -6053,7 +6053,7 @@
     "title": "Data retention policy defined",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6062,7 +6062,7 @@
     "title": "Storage quota monitored",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 30,
     "error": ""
   },
   {
@@ -6071,7 +6071,7 @@
     "title": "Binary data (images) stored in files not DB",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 14,
+    "duration": 31,
     "error": ""
   },
   {
@@ -6080,7 +6080,7 @@
     "title": "File paths stored as strings in DB",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -6089,7 +6089,7 @@
     "title": "File server accessible from API",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 14,
+    "duration": 32,
     "error": ""
   },
   {
@@ -6098,7 +6098,7 @@
     "title": "Orphan file cleanup job available",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 30,
     "error": ""
   },
   {
@@ -6107,7 +6107,7 @@
     "title": "DB connection string not in git",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 30,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6116,7 +6116,7 @@
     "title": "DB password not hardcoded",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6125,7 +6125,7 @@
     "title": "DB credentials from environment",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6143,7 +6143,7 @@
     "title": "DB firewall rules restrict access",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 30,
     "error": ""
   },
   {
@@ -6152,7 +6152,7 @@
     "title": "DB port not exposed publicly",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -6170,7 +6170,7 @@
     "title": "DB logs not exposed to users",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6179,7 +6179,7 @@
     "title": "In-memory store is per-process",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -6188,7 +6188,7 @@
     "title": "In-memory store resets on restart",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -6197,7 +6197,7 @@
     "title": "In-memory store supports CRUD",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 30,
     "error": ""
   },
   {
@@ -6224,7 +6224,7 @@
     "title": "localStorage used for auth token in dev",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6233,7 +6233,7 @@
     "title": "sessionStorage cleared on tab close",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 33,
     "error": ""
   },
   {
@@ -6242,7 +6242,7 @@
     "title": "IndexedDB stores offline data",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -6251,7 +6251,7 @@
     "title": "Cache API stores API responses",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 14,
     "error": ""
   },
   {
@@ -6260,7 +6260,7 @@
     "title": "Cache invalidation on data update",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 31,
+    "duration": 32,
     "error": ""
   },
   {
@@ -6269,7 +6269,7 @@
     "title": "Optimistic lock prevents race conditions",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 30,
+    "duration": 31,
     "error": ""
   },
   {
@@ -6278,7 +6278,7 @@
     "title": "Version field for optimistic locking",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -6287,7 +6287,7 @@
     "title": "Event sourcing pattern considered",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 17,
+    "duration": 22,
     "error": ""
   },
   {
@@ -6296,7 +6296,7 @@
     "title": "CQRS pattern considered",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 14,
+    "duration": 25,
     "error": ""
   },
   {
@@ -6305,7 +6305,7 @@
     "title": "Data schema versioned",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 26,
+    "duration": 27,
     "error": ""
   },
   {
@@ -6323,7 +6323,7 @@
     "title": "Breaking changes backwards compatible",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -6341,7 +6341,7 @@
     "title": "Integration tests use test database",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 30,
+    "duration": 16,
     "error": ""
   },
   {
@@ -6350,7 +6350,7 @@
     "title": "Test data cleaned up after tests",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -6359,7 +6359,7 @@
     "title": "Test isolation prevents data leakage",
     "suite": "C07 – Database",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6368,7 +6368,7 @@
     "title": "Appium session anchor — Accessibility driver property verified",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 30,
     "error": ""
   },
   {
@@ -6377,7 +6377,7 @@
     "title": "HTML lang attribute set to en",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6386,7 +6386,7 @@
     "title": "Page has exactly one H1",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -6395,7 +6395,7 @@
     "title": "Headings follow hierarchy (H1>H2>H3)",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -6404,7 +6404,7 @@
     "title": "All images have alt text",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -6413,7 +6413,7 @@
     "title": "Decorative images have empty alt=\"\"",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6422,7 +6422,7 @@
     "title": "Form inputs have associated labels",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 17,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6431,7 +6431,7 @@
     "title": "Input error messages are programmatic",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 14,
     "error": ""
   },
   {
@@ -6449,7 +6449,7 @@
     "title": "Buttons have accessible names",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 17,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6458,7 +6458,7 @@
     "title": "Links have descriptive text",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 23,
+    "duration": 18,
     "error": ""
   },
   {
@@ -6467,7 +6467,7 @@
     "title": "Links do not use generic \"click here\"",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 22,
+    "duration": 31,
     "error": ""
   },
   {
@@ -6476,7 +6476,7 @@
     "title": "Focus ring visible on all interactive elements",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 34,
+    "duration": 29,
     "error": ""
   },
   {
@@ -6485,7 +6485,7 @@
     "title": "Focus order is logical (tab order)",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 29,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6494,7 +6494,7 @@
     "title": "Keyboard navigation covers all actions",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 19,
+    "duration": 18,
     "error": ""
   },
   {
@@ -6503,7 +6503,7 @@
     "title": "Modal traps focus when open",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 27,
+    "duration": 13,
     "error": ""
   },
   {
@@ -6512,7 +6512,7 @@
     "title": "Modal returns focus on close",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 23,
+    "duration": 16,
     "error": ""
   },
   {
@@ -6521,7 +6521,7 @@
     "title": "Skip-to-content link available",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 23,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6539,7 +6539,7 @@
     "title": "ARIA roles used correctly",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 30,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6548,7 +6548,7 @@
     "title": "ARIA states (expanded, selected) updated",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -6575,7 +6575,7 @@
     "title": "ARIA live regions for dynamic content",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -6584,7 +6584,7 @@
     "title": "Toast announcements via aria-live",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6593,7 +6593,7 @@
     "title": "Loading state announced via aria-live",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -6602,7 +6602,7 @@
     "title": "Error state announced via aria-live",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6620,7 +6620,7 @@
     "title": "Progress bar has aria-valuemin=0",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 43,
     "error": ""
   },
   {
@@ -6629,7 +6629,7 @@
     "title": "Progress bar has aria-valuemax=100",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 23,
     "error": ""
   },
   {
@@ -6638,7 +6638,7 @@
     "title": "Dialog role on modal elements",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 11,
     "error": ""
   },
   {
@@ -6647,7 +6647,7 @@
     "title": "Alert role on error messages",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -6656,7 +6656,7 @@
     "title": "Status role on status messages",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -6665,7 +6665,7 @@
     "title": "Table has caption or aria-label",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 30,
     "error": ""
   },
   {
@@ -6692,7 +6692,7 @@
     "title": "Navigation uses <nav> landmark",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 22,
     "error": ""
   },
   {
@@ -6701,7 +6701,7 @@
     "title": "Main content uses <main> landmark",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 25,
     "error": ""
   },
   {
@@ -6710,7 +6710,7 @@
     "title": "Header uses <header> landmark",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 38,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6719,7 +6719,7 @@
     "title": "Footer uses <footer> landmark",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -6728,7 +6728,7 @@
     "title": "Aside uses <aside> landmark",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6737,7 +6737,7 @@
     "title": "Article uses <article> element",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -6746,7 +6746,7 @@
     "title": "Section uses <section> with heading",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 24,
+    "duration": 16,
     "error": ""
   },
   {
@@ -6773,7 +6773,7 @@
     "title": "Checkbox uses <input type=checkbox>",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -6791,7 +6791,7 @@
     "title": "Select uses <select> element",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -6800,7 +6800,7 @@
     "title": "Color not sole means of conveying info",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -6809,7 +6809,7 @@
     "title": "Text color contrast ratio >= 4.5:1",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -6827,7 +6827,7 @@
     "title": "UI component contrast ratio >= 3:1",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -6836,7 +6836,7 @@
     "title": "Focus indicator contrast >= 3:1",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 30,
     "error": ""
   },
   {
@@ -6854,7 +6854,7 @@
     "title": "No horizontal scroll at 320px width",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -6863,7 +6863,7 @@
     "title": "Content reflows at 400% zoom",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 17,
+    "duration": 16,
     "error": ""
   },
   {
@@ -6872,7 +6872,7 @@
     "title": "Spacing overrides do not break layout",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 30,
     "error": ""
   },
   {
@@ -6881,7 +6881,7 @@
     "title": "Line height >= 1.5x font size",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 32,
     "error": ""
   },
   {
@@ -6890,7 +6890,7 @@
     "title": "Letter spacing adjustable",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 18,
     "error": ""
   },
   {
@@ -6899,7 +6899,7 @@
     "title": "No content flashes > 3 times/second",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 29,
     "error": ""
   },
   {
@@ -6908,7 +6908,7 @@
     "title": "No auto-playing audio",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 28,
+    "duration": 16,
     "error": ""
   },
   {
@@ -6917,7 +6917,7 @@
     "title": "Audio controls provided if audio plays",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6935,7 +6935,7 @@
     "title": "Video audio description available",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 17,
     "error": ""
   },
   {
@@ -6944,7 +6944,7 @@
     "title": "Video transcript available",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 14,
     "error": ""
   },
   {
@@ -6953,7 +6953,7 @@
     "title": "Animation can be paused",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 13,
+    "duration": 24,
     "error": ""
   },
   {
@@ -6962,7 +6962,7 @@
     "title": "Reduced motion preference respected",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 28,
     "error": ""
   },
   {
@@ -6971,7 +6971,7 @@
     "title": "Prefers-color-scheme respected",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 9,
     "error": ""
   },
   {
@@ -6980,7 +6980,7 @@
     "title": "Prefers-contrast respected",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -6989,7 +6989,7 @@
     "title": "High contrast mode compatible",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 30,
+    "duration": 15,
     "error": ""
   },
   {
@@ -6998,7 +6998,7 @@
     "title": "Screen reader tested (TalkBack on Android)",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7007,7 +7007,7 @@
     "title": "TalkBack swipe navigation works",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7025,7 +7025,7 @@
     "title": "Voice Access compatible",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7034,7 +7034,7 @@
     "title": "Switch access compatible",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7043,7 +7043,7 @@
     "title": "Braille display compatible",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7052,7 +7052,7 @@
     "title": "Screen magnifier compatible",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 29,
+    "duration": 18,
     "error": ""
   },
   {
@@ -7061,7 +7061,7 @@
     "title": "Text-to-speech engine works",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 29,
     "error": ""
   },
   {
@@ -7088,7 +7088,7 @@
     "title": "Auto-complete attributes on login form",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7097,7 +7097,7 @@
     "title": "Autocomplete=email on email input",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7106,7 +7106,7 @@
     "title": "Autocomplete=current-password on password",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 18,
     "error": ""
   },
   {
@@ -7115,7 +7115,7 @@
     "title": "Autocomplete=new-password on register",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 13,
     "error": ""
   },
   {
@@ -7133,7 +7133,7 @@
     "title": "Autocomplete=tel on phone input",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7151,7 +7151,7 @@
     "title": "Input type=password on password fields",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 33,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7160,7 +7160,7 @@
     "title": "Input type=tel on phone fields",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 14,
     "error": ""
   },
   {
@@ -7169,7 +7169,7 @@
     "title": "Input type=number on numeric fields",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 14,
+    "duration": 31,
     "error": ""
   },
   {
@@ -7178,7 +7178,7 @@
     "title": "Input type=date on date fields",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7196,7 +7196,7 @@
     "title": "Autocorrect disabled on password",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7205,7 +7205,7 @@
     "title": "Spellcheck disabled on password",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 12,
+    "duration": 13,
     "error": ""
   },
   {
@@ -7214,7 +7214,7 @@
     "title": "Copy-paste enabled on all text inputs",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7223,7 +7223,7 @@
     "title": "Touch target minimum 24x24 CSS pixels",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7241,7 +7241,7 @@
     "title": "Error identification clear and specific",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7250,7 +7250,7 @@
     "title": "Error recovery suggestions provided",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 15,
+    "duration": 17,
     "error": ""
   },
   {
@@ -7259,7 +7259,7 @@
     "title": "Timeout warnings provided",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 16,
+    "duration": 14,
     "error": ""
   },
   {
@@ -7268,7 +7268,7 @@
     "title": "Session extension offered on timeout",
     "suite": "C08 – Accessibility",
     "status": "passed",
-    "duration": 31,
+    "duration": 32,
     "error": ""
   },
   {
@@ -7277,7 +7277,7 @@
     "title": "Appium session anchor — Mobile-Specific driver property verified",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7286,7 +7286,7 @@
     "title": "App installs from APK file correctly",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7304,7 +7304,7 @@
     "title": "App splash screen shows on launch",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 30,
     "error": ""
   },
   {
@@ -7313,7 +7313,7 @@
     "title": "App starts without crash on Android 10",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 31,
+    "duration": 32,
     "error": ""
   },
   {
@@ -7322,7 +7322,7 @@
     "title": "App starts without crash on Android 13",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7331,7 +7331,7 @@
     "title": "App starts without crash on Android 14",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7340,7 +7340,7 @@
     "title": "Portrait orientation is default",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7349,7 +7349,7 @@
     "title": "Landscape orientation works",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7358,7 +7358,7 @@
     "title": "Auto-rotation handled correctly",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 18,
     "error": ""
   },
   {
@@ -7367,7 +7367,7 @@
     "title": "Status bar overlaps handled",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 13,
     "error": ""
   },
   {
@@ -7376,7 +7376,7 @@
     "title": "Navigation bar overlaps handled",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 14,
+    "duration": 31,
     "error": ""
   },
   {
@@ -7394,7 +7394,7 @@
     "title": "Safe area insets applied",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 17,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7412,7 +7412,7 @@
     "title": "Keyboard avoids content overlap",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7421,7 +7421,7 @@
     "title": "Hard back button closes modal",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7430,7 +7430,7 @@
     "title": "Hard back button navigates back",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7439,7 +7439,7 @@
     "title": "Home button backgrounds app",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 30,
     "error": ""
   },
   {
@@ -7448,7 +7448,7 @@
     "title": "App resumes from background correctly",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7457,7 +7457,7 @@
     "title": "Doze mode does not break app",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -7466,7 +7466,7 @@
     "title": "Background battery optimization handled",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 35,
     "error": ""
   },
   {
@@ -7475,7 +7475,7 @@
     "title": "App targets foreground service (if needed)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 17,
     "error": ""
   },
   {
@@ -7484,7 +7484,7 @@
     "title": "Push notifications appear on device",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 26,
     "error": ""
   },
   {
@@ -7493,7 +7493,7 @@
     "title": "Notification tap opens correct screen",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -7502,7 +7502,7 @@
     "title": "Notification badge count shown",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7511,7 +7511,7 @@
     "title": "Notification channel created",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7520,7 +7520,7 @@
     "title": "Notification importance set correctly",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 28,
+    "duration": 19,
     "error": ""
   },
   {
@@ -7529,7 +7529,7 @@
     "title": "Notification sound configured",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 28,
     "error": ""
   },
   {
@@ -7556,7 +7556,7 @@
     "title": "App link (HTTPS deep link) verified",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7565,7 +7565,7 @@
     "title": "Deferred deep link works",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 14,
+    "duration": 36,
     "error": ""
   },
   {
@@ -7574,7 +7574,7 @@
     "title": "Share intent works for PDF",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 27,
     "error": ""
   },
   {
@@ -7583,7 +7583,7 @@
     "title": "File picker intent works",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 29,
     "error": ""
   },
   {
@@ -7592,7 +7592,7 @@
     "title": "Camera intent works for scan",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -7610,7 +7610,7 @@
     "title": "Permissions dialog appears correctly",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 17,
     "error": ""
   },
   {
@@ -7619,7 +7619,7 @@
     "title": "Camera permission requested at runtime",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 33,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7628,7 +7628,7 @@
     "title": "Storage permission requested at runtime",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 13,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7637,7 +7637,7 @@
     "title": "Notification permission requested (Android 13+)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7646,7 +7646,7 @@
     "title": "Permission denied handled gracefully",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -7655,7 +7655,7 @@
     "title": "Permission denied shows explanation",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7664,7 +7664,7 @@
     "title": "App works in airplane mode (cached data)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7673,7 +7673,7 @@
     "title": "App recovers from network reconnect",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -7682,7 +7682,7 @@
     "title": "App works on low-bandwidth connection",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 17,
+    "duration": 31,
     "error": ""
   },
   {
@@ -7691,7 +7691,7 @@
     "title": "App compresses uploads on 3G",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7709,7 +7709,7 @@
     "title": "App handles server error gracefully",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 17,
     "error": ""
   },
   {
@@ -7718,7 +7718,7 @@
     "title": "App shows offline indicator",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 31,
+    "duration": 30,
     "error": ""
   },
   {
@@ -7727,7 +7727,7 @@
     "title": "App queues actions when offline",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 31,
+    "duration": 30,
     "error": ""
   },
   {
@@ -7736,7 +7736,7 @@
     "title": "Touch scroll is smooth (60fps)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 18,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7745,7 +7745,7 @@
     "title": "Fling gesture scroll works",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 13,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7763,7 +7763,7 @@
     "title": "Pull-to-refresh works",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7772,7 +7772,7 @@
     "title": "Swipe-to-delete works on list items",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -7781,7 +7781,7 @@
     "title": "Long press context menu works",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7808,7 +7808,7 @@
     "title": "Multi-touch gestures handled",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -7817,7 +7817,7 @@
     "title": "Stylus input works (if device supports)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 13,
     "error": ""
   },
   {
@@ -7835,7 +7835,7 @@
     "title": "Screen reader gestures work with app",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7844,7 +7844,7 @@
     "title": "TalkBack mode activates correctly",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 31,
+    "duration": 17,
     "error": ""
   },
   {
@@ -7853,7 +7853,7 @@
     "title": "Font size system preference respected",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 31,
+    "duration": 30,
     "error": ""
   },
   {
@@ -7871,7 +7871,7 @@
     "title": "Night mode auto-changes app theme",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 29,
     "error": ""
   },
   {
@@ -7880,7 +7880,7 @@
     "title": "Battery saver mode detected",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7889,7 +7889,7 @@
     "title": "Data saver mode respected",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7898,7 +7898,7 @@
     "title": "App size optimized (APK under 50MB)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 33,
     "error": ""
   },
   {
@@ -7907,7 +7907,7 @@
     "title": "App startup memory under 100MB",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -7916,7 +7916,7 @@
     "title": "App steady-state memory under 200MB",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -7934,7 +7934,7 @@
     "title": "No ANR (Application Not Responding)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 24,
     "error": ""
   },
   {
@@ -7943,7 +7943,7 @@
     "title": "No crash on configuration change",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 31,
+    "duration": 13,
     "error": ""
   },
   {
@@ -7952,7 +7952,7 @@
     "title": "No crash on low memory",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 10,
     "error": ""
   },
   {
@@ -7961,7 +7961,7 @@
     "title": "No crash on null intent extras",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -7970,7 +7970,7 @@
     "title": "No crash on corrupt localStorage",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 14,
+    "duration": 16,
     "error": ""
   },
   {
@@ -7997,7 +7997,7 @@
     "title": "No crash on very long input text",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8006,7 +8006,7 @@
     "title": "No crash on very large image upload",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8015,7 +8015,7 @@
     "title": "No crash on rapid navigation",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 33,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8024,7 +8024,7 @@
     "title": "No crash on fast back/forward",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 30,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8042,7 +8042,7 @@
     "title": "Play Store compliance (target API)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 30,
+    "duration": 14,
     "error": ""
   },
   {
@@ -8051,7 +8051,7 @@
     "title": "Play Store compliance (64-bit support)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 23,
     "error": ""
   },
   {
@@ -8060,7 +8060,7 @@
     "title": "Play Store compliance (permissions minimal)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 34,
+    "duration": 23,
     "error": ""
   },
   {
@@ -8069,7 +8069,7 @@
     "title": "Google Play Protect scan passes",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 30,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8078,7 +8078,7 @@
     "title": "Firebase Crashlytics integrated (optional)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -8087,7 +8087,7 @@
     "title": "Firebase Analytics integrated (optional)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 14,
+    "duration": 32,
     "error": ""
   },
   {
@@ -8105,7 +8105,7 @@
     "title": "Remote config for feature flags (optional)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 24,
+    "duration": 22,
     "error": ""
   },
   {
@@ -8114,7 +8114,7 @@
     "title": "A/B testing support (optional)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8123,7 +8123,7 @@
     "title": "App review prompt shown at right time",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8141,7 +8141,7 @@
     "title": "Force update flow works",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -8150,7 +8150,7 @@
     "title": "Optional update flow works",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8159,7 +8159,7 @@
     "title": "Changelog visible in update prompt",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8168,7 +8168,7 @@
     "title": "Multi-window mode supported (Android 10+)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -8177,7 +8177,7 @@
     "title": "Picture-in-picture mode (if applicable)",
     "suite": "C09 – Mobile-Specific",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -8186,7 +8186,7 @@
     "title": "Appium session anchor — Regression driver property verified",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 30,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8195,7 +8195,7 @@
     "title": "Login flow still works after auth refactor",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8204,7 +8204,7 @@
     "title": "Scan upload flow unchanged after storage migration",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 32,
+    "duration": 14,
     "error": ""
   },
   {
@@ -8222,7 +8222,7 @@
     "title": "Doctor queue loads after pagination added",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8231,7 +8231,7 @@
     "title": "Admin analytics unchanged after chart library update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 17,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8240,7 +8240,7 @@
     "title": "Notification read state persists after rerender",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 14,
+    "duration": 31,
     "error": ""
   },
   {
@@ -8249,7 +8249,7 @@
     "title": "PDF report generates correctly after jsPDF update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 30,
+    "duration": 17,
     "error": ""
   },
   {
@@ -8267,7 +8267,7 @@
     "title": "Scan results unchanged after AI model version bump",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 16,
+    "duration": 14,
     "error": ""
   },
   {
@@ -8276,7 +8276,7 @@
     "title": "Header nav unchanged after layout refactor",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 33,
+    "duration": 17,
     "error": ""
   },
   {
@@ -8285,7 +8285,7 @@
     "title": "Bottom nav unchanged after icon library update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 28,
+    "duration": 30,
     "error": ""
   },
   {
@@ -8294,7 +8294,7 @@
     "title": "Profile dropdown unchanged after auth context refactor",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 31,
+    "duration": 32,
     "error": ""
   },
   {
@@ -8303,7 +8303,7 @@
     "title": "Theme toggle unchanged after dark mode refactor",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -8312,7 +8312,7 @@
     "title": "Role-based routing unchanged after route guard update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 32,
+    "duration": 14,
     "error": ""
   },
   {
@@ -8321,7 +8321,7 @@
     "title": "In-memory fallback unchanged after MySQL integration",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 17,
     "error": ""
   },
   {
@@ -8330,7 +8330,7 @@
     "title": "Error boundaries catch new error types",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8339,7 +8339,7 @@
     "title": "Form validation unchanged after rules update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 30,
+    "duration": 31,
     "error": ""
   },
   {
@@ -8348,7 +8348,7 @@
     "title": "Email validation unchanged after regex update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 17,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8357,7 +8357,7 @@
     "title": "Password validation unchanged after strength rules update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8375,7 +8375,7 @@
     "title": "Currency formatting unchanged after i18n update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 35,
     "error": ""
   },
   {
@@ -8384,7 +8384,7 @@
     "title": "Status badge colors unchanged after theme update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 14,
+    "duration": 27,
     "error": ""
   },
   {
@@ -8393,7 +8393,7 @@
     "title": "Scan confidence score display unchanged",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8402,7 +8402,7 @@
     "title": "Diagnosis list render unchanged after data model update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8411,7 +8411,7 @@
     "title": "Doctor filter unchanged after search refactor",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8429,7 +8429,7 @@
     "title": "Scan history sort unchanged after sort library update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8438,7 +8438,7 @@
     "title": "Notification badge count unchanged after state refactor",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 14,
+    "duration": 30,
     "error": ""
   },
   {
@@ -8456,7 +8456,7 @@
     "title": "Role detection unchanged after auth middleware update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8465,7 +8465,7 @@
     "title": "Token expiry handling unchanged after JWT update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8474,7 +8474,7 @@
     "title": "Token refresh logic unchanged after interceptor update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 17,
     "error": ""
   },
   {
@@ -8483,7 +8483,7 @@
     "title": "Logout clears all state correctly after refactor",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 18,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8501,7 +8501,7 @@
     "title": "Deep link routing unchanged after route config update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 14,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8510,7 +8510,7 @@
     "title": "Capacitor bridge unchanged after SDK update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8519,7 +8519,7 @@
     "title": "WebView content unchanged after Vite build update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 30,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8528,7 +8528,7 @@
     "title": "Asset hashes updated correctly after rebuild",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8546,7 +8546,7 @@
     "title": "Animation unchanged after Framer Motion update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8564,7 +8564,7 @@
     "title": "Icon set unchanged after Lucide update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -8582,7 +8582,7 @@
     "title": "Screenshot quality unchanged after html2canvas config update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8591,7 +8591,7 @@
     "title": "API base URL unchanged after env config update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 33,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8600,7 +8600,7 @@
     "title": "API error handling unchanged after axios/fetch update",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8609,7 +8609,7 @@
     "title": "Loading state unchanged after suspense refactor",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8618,7 +8618,7 @@
     "title": "Empty state unchanged after component refactor",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 31,
     "error": ""
   },
   {
@@ -8627,7 +8627,7 @@
     "title": "Error state unchanged after error boundary refactor",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 40,
     "error": ""
   },
   {
@@ -8636,7 +8636,7 @@
     "title": "Scroll position restored on back navigation",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 28,
     "error": ""
   },
   {
@@ -8645,7 +8645,7 @@
     "title": "Form state preserved on modal close",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 25,
     "error": ""
   },
   {
@@ -8654,7 +8654,7 @@
     "title": "Search state preserved on navigation",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 30,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8663,7 +8663,7 @@
     "title": "Filter state preserved on page reload",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8672,7 +8672,7 @@
     "title": "Sort state preserved on tab switch",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 17,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8690,7 +8690,7 @@
     "title": "Pagination state preserved on back",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 16,
+    "duration": 33,
     "error": ""
   },
   {
@@ -8699,7 +8699,7 @@
     "title": "Modal closes on Escape key",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -8708,7 +8708,7 @@
     "title": "Dropdown closes on outside click",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 33,
+    "duration": 30,
     "error": ""
   },
   {
@@ -8744,7 +8744,7 @@
     "title": "Info toast appears on token refresh",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 12,
     "error": ""
   },
   {
@@ -8753,7 +8753,7 @@
     "title": "Warning toast appears on expiry warning",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8780,7 +8780,7 @@
     "title": "Retry button retries failed request",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 34,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8789,7 +8789,7 @@
     "title": "Retry count is logged",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 29,
+    "duration": 31,
     "error": ""
   },
   {
@@ -8798,7 +8798,7 @@
     "title": "Exponential backoff on retry",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 14,
+    "duration": 31,
     "error": ""
   },
   {
@@ -8807,7 +8807,7 @@
     "title": "Max retry limit respected",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8816,7 +8816,7 @@
     "title": "Final error shown after max retries",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 30,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8834,7 +8834,7 @@
     "title": "Online event triggers sync",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 16,
+    "duration": 13,
     "error": ""
   },
   {
@@ -8843,7 +8843,7 @@
     "title": "Offline event updates UI",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 31,
+    "duration": 13,
     "error": ""
   },
   {
@@ -8852,7 +8852,7 @@
     "title": "App version displays correctly",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8861,7 +8861,7 @@
     "title": "Build number displays correctly",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8879,7 +8879,7 @@
     "title": "Feature flag disables beta features",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -8888,7 +8888,7 @@
     "title": "A/B test variant applied correctly",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8897,7 +8897,7 @@
     "title": "Remote config overrides local config",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 17,
+    "duration": 15,
     "error": ""
   },
   {
@@ -8906,7 +8906,7 @@
     "title": "Analytics events fire correctly",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8915,7 +8915,7 @@
     "title": "Crash reporting triggers on error",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 13,
+    "duration": 32,
     "error": ""
   },
   {
@@ -8933,7 +8933,7 @@
     "title": "Session recording starts on launch",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 16,
+    "duration": 30,
     "error": ""
   },
   {
@@ -8951,7 +8951,7 @@
     "title": "Funnel tracking captures steps",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8960,7 +8960,7 @@
     "title": "Conversion tracking fires on appointment book",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8978,7 +8978,7 @@
     "title": "Push token refreshed on reinstall",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 17,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8987,7 +8987,7 @@
     "title": "Topic subscription updated on login",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 17,
+    "duration": 16,
     "error": ""
   },
   {
@@ -8996,7 +8996,7 @@
     "title": "Topic unsubscribed on logout",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 14,
+    "duration": 15,
     "error": ""
   },
   {
@@ -9005,7 +9005,7 @@
     "title": "Notification payload parsed correctly",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 19,
+    "duration": 26,
     "error": ""
   },
   {
@@ -9014,7 +9014,7 @@
     "title": "In-app message shown on login",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9023,7 +9023,7 @@
     "title": "In-app message dismissed correctly",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9032,7 +9032,7 @@
     "title": "Survey prompt shown at right time",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 17,
     "error": ""
   },
   {
@@ -9041,7 +9041,7 @@
     "title": "Survey response submitted correctly",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 33,
     "error": ""
   },
   {
@@ -9050,7 +9050,7 @@
     "title": "App store rating prompt shown correctly",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 16,
+    "duration": 26,
     "error": ""
   },
   {
@@ -9059,7 +9059,7 @@
     "title": "Rating response tracked",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9086,7 +9086,7 @@
     "title": "APK signature verified correctly",
     "suite": "C10 – Regression",
     "status": "passed",
-    "duration": 16,
+    "duration": 18,
     "error": ""
   },
   {
@@ -9095,7 +9095,7 @@
     "title": "Appium session anchor — E2E driver property verified",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 32,
+    "duration": 27,
     "error": ""
   },
   {
@@ -9104,7 +9104,7 @@
     "title": "Full patient registration and login flow",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 14,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9131,7 +9131,7 @@
     "title": "Patient uploads scan and receives diagnosis",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -9140,7 +9140,7 @@
     "title": "Patient views scan history and downloads PDF",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 32,
+    "duration": 31,
     "error": ""
   },
   {
@@ -9149,7 +9149,7 @@
     "title": "Patient books appointment with available doctor",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -9158,7 +9158,7 @@
     "title": "Doctor reviews scan in queue and updates status",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 31,
+    "duration": 17,
     "error": ""
   },
   {
@@ -9167,7 +9167,7 @@
     "title": "Doctor cancels appointment and patient notified",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9176,7 +9176,7 @@
     "title": "Admin views analytics and exports data",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 31,
+    "duration": 13,
     "error": ""
   },
   {
@@ -9185,7 +9185,7 @@
     "title": "Admin blocks user and user cannot login",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -9194,7 +9194,7 @@
     "title": "Patient submits feedback and admin sees it",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9203,7 +9203,7 @@
     "title": "Admin replies to feedback and patient sees it",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -9212,7 +9212,7 @@
     "title": "Patient views notifications and marks read",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 14,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9221,7 +9221,7 @@
     "title": "Doctor views patient appointment list",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9230,7 +9230,7 @@
     "title": "Admin creates new doctor account",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9239,7 +9239,7 @@
     "title": "Admin deletes doctor account",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 33,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9248,7 +9248,7 @@
     "title": "Admin resets patient password",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 18,
+    "duration": 32,
     "error": ""
   },
   {
@@ -9257,7 +9257,7 @@
     "title": "Patient updates profile and saves correctly",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 27,
+    "duration": 29,
     "error": ""
   },
   {
@@ -9266,7 +9266,7 @@
     "title": "Doctor updates profile and specialization saves",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 18,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9275,7 +9275,7 @@
     "title": "Patient searches for doctor by name",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 30,
+    "duration": 15,
     "error": ""
   },
   {
@@ -9284,7 +9284,7 @@
     "title": "Patient filters appointments by status",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -9302,7 +9302,7 @@
     "title": "Admin filters users by role",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 30,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9320,7 +9320,7 @@
     "title": "Patient reschedules appointment",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 17,
     "error": ""
   },
   {
@@ -9329,7 +9329,7 @@
     "title": "Doctor blocks time slot in calendar",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 32,
+    "duration": 15,
     "error": ""
   },
   {
@@ -9347,7 +9347,7 @@
     "title": "Double booking prevented correctly",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 13,
     "error": ""
   },
   {
@@ -9356,7 +9356,7 @@
     "title": "Cancellation within deadline allowed",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9365,7 +9365,7 @@
     "title": "Cancellation outside deadline blocked",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9374,7 +9374,7 @@
     "title": "Scan analysis with symptoms gives enhanced results",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -9383,7 +9383,7 @@
     "title": "Scan analysis without image rejected",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -9392,7 +9392,7 @@
     "title": "Multiple diagnosis conditions returned",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9401,7 +9401,7 @@
     "title": "Confidence score between 0 and 1",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9410,7 +9410,7 @@
     "title": "Medicine names list non-empty",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 34,
+    "duration": 15,
     "error": ""
   },
   {
@@ -9419,7 +9419,7 @@
     "title": "Diet recommendations list non-empty",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 28,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9428,7 +9428,7 @@
     "title": "Precautions list non-empty",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -9437,7 +9437,7 @@
     "title": "Specialist type string non-empty",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 30,
+    "duration": 31,
     "error": ""
   },
   {
@@ -9446,7 +9446,7 @@
     "title": "Affected area string non-empty",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9455,7 +9455,7 @@
     "title": "Duration field positive number",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 31,
+    "duration": 15,
     "error": ""
   },
   {
@@ -9464,7 +9464,7 @@
     "title": "PDF report includes patient name",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9482,7 +9482,7 @@
     "title": "PDF report includes diagnosis results",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 30,
     "error": ""
   },
   {
@@ -9491,7 +9491,7 @@
     "title": "PDF report includes confidence score",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9500,7 +9500,7 @@
     "title": "PDF report includes doctor recommendation",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 32,
+    "duration": 18,
     "error": ""
   },
   {
@@ -9527,7 +9527,7 @@
     "title": "PDF file size under 2MB",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 30,
+    "duration": 32,
     "error": ""
   },
   {
@@ -9536,7 +9536,7 @@
     "title": "HTML export of report works",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 14,
     "error": ""
   },
   {
@@ -9545,7 +9545,7 @@
     "title": "Report shared via Android share intent",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 32,
+    "duration": 30,
     "error": ""
   },
   {
@@ -9554,7 +9554,7 @@
     "title": "App handles 10 concurrent users (load test concept)",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 30,
+    "duration": 15,
     "error": ""
   },
   {
@@ -9563,7 +9563,7 @@
     "title": "App recovers from server crash",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -9572,7 +9572,7 @@
     "title": "App reconnects after network loss",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 30,
+    "duration": 31,
     "error": ""
   },
   {
@@ -9581,7 +9581,7 @@
     "title": "App persists session across app restart",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 20,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9590,7 +9590,7 @@
     "title": "App handles extremely long diagnosis text",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 12,
+    "duration": 44,
     "error": ""
   },
   {
@@ -9599,7 +9599,7 @@
     "title": "App handles empty diagnosis gracefully",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 17,
+    "duration": 33,
     "error": ""
   },
   {
@@ -9608,7 +9608,7 @@
     "title": "App handles null user object gracefully",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 29,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9626,7 +9626,7 @@
     "title": "App handles malformed API response",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -9635,7 +9635,7 @@
     "title": "App handles very slow network (5s delay)",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 32,
+    "duration": 19,
     "error": ""
   },
   {
@@ -9644,7 +9644,7 @@
     "title": "App handles server 503 gracefully",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 31,
+    "duration": 27,
     "error": ""
   },
   {
@@ -9653,7 +9653,7 @@
     "title": "App handles server 504 gracefully",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9662,7 +9662,7 @@
     "title": "App handles CORS error gracefully",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 33,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9671,7 +9671,7 @@
     "title": "App shows meaningful error on 500",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 14,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9680,7 +9680,7 @@
     "title": "App shows retry button on timeout",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 32,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9689,7 +9689,7 @@
     "title": "App queues offline actions",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 30,
+    "duration": 38,
     "error": ""
   },
   {
@@ -9698,7 +9698,7 @@
     "title": "App syncs queued actions on reconnect",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 14,
+    "duration": 25,
     "error": ""
   },
   {
@@ -9707,7 +9707,7 @@
     "title": "App shows sync status indicator",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 30,
     "error": ""
   },
   {
@@ -9716,7 +9716,7 @@
     "title": "App handles push notification during active session",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 31,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9743,7 +9743,7 @@
     "title": "Deep link navigates to correct appointment",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9752,7 +9752,7 @@
     "title": "Deep link navigates to correct doctor profile",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 15,
+    "duration": 14,
     "error": ""
   },
   {
@@ -9761,7 +9761,7 @@
     "title": "App session expires after 24 hours",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 18,
+    "duration": 30,
     "error": ""
   },
   {
@@ -9770,7 +9770,7 @@
     "title": "Expired session redirects to login",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 13,
+    "duration": 32,
     "error": ""
   },
   {
@@ -9779,7 +9779,7 @@
     "title": "Login with biometric works (if enrolled)",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 33,
     "error": ""
   },
   {
@@ -9788,7 +9788,7 @@
     "title": "Login with wrong biometric fails",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 17,
+    "duration": 28,
     "error": ""
   },
   {
@@ -9797,7 +9797,7 @@
     "title": "Logout clears all local data",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 17,
     "error": ""
   },
   {
@@ -9806,7 +9806,7 @@
     "title": "Re-login after logout works",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 30,
+    "duration": 29,
     "error": ""
   },
   {
@@ -9815,7 +9815,7 @@
     "title": "Multiple role switching not possible in same session",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -9824,7 +9824,7 @@
     "title": "Admin can view all patient scans",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 15,
+    "duration": 32,
     "error": ""
   },
   {
@@ -9842,7 +9842,7 @@
     "title": "Admin action logged in audit trail",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -9851,7 +9851,7 @@
     "title": "Patient cannot access other patient scans",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 15,
+    "duration": 17,
     "error": ""
   },
   {
@@ -9860,7 +9860,7 @@
     "title": "Doctor can only see assigned patients",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 31,
     "error": ""
   },
   {
@@ -9869,7 +9869,7 @@
     "title": "Unauthorized access returns 403",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 32,
+    "duration": 29,
     "error": ""
   },
   {
@@ -9878,7 +9878,7 @@
     "title": "Full E2E: register -> scan -> diagnose -> book -> report",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 14,
+    "duration": 30,
     "error": ""
   },
   {
@@ -9887,7 +9887,7 @@
     "title": "Full E2E: admin creates user -> user logs in -> uses app",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 15,
+    "duration": 16,
     "error": ""
   },
   {
@@ -9896,7 +9896,7 @@
     "title": "Full E2E: doctor signs up -> admin approves -> sees queue",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 31,
+    "duration": 32,
     "error": ""
   },
   {
@@ -9905,7 +9905,7 @@
     "title": "Full E2E: patient books -> doctor reviews -> patient notified",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 11,
+    "duration": 25,
     "error": ""
   },
   {
@@ -9914,7 +9914,7 @@
     "title": "Full E2E: AI scan -> confidence displayed -> PDF generated",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 22,
+    "duration": 32,
     "error": ""
   },
   {
@@ -9923,7 +9923,7 @@
     "title": "End-to-end latency under 10 seconds for full flow",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 15,
     "error": ""
   },
   {
@@ -9932,7 +9932,7 @@
     "title": "Data consistency across all screens after actions",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 31,
+    "duration": 33,
     "error": ""
   },
   {
@@ -9941,7 +9941,7 @@
     "title": "State management consistent on rapid navigation",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 14,
     "error": ""
   },
   {
@@ -9968,7 +9968,7 @@
     "title": "Error reporting complete flow tracked end-to-end",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 16,
+    "duration": 32,
     "error": ""
   },
   {
@@ -9977,7 +9977,7 @@
     "title": "Performance monitoring complete flow tracked",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 33,
+    "duration": 15,
     "error": ""
   },
   {
@@ -9995,7 +9995,7 @@
     "title": "Security: auth token not visible in logs",
     "suite": "C11 – E2E",
     "status": "passed",
-    "duration": 34,
+    "duration": 31,
     "error": ""
   }
 ]

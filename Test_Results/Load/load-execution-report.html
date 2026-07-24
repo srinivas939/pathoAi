@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PathoAI k6 API Load Test Execution Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#060d1c; --surface:#0d1829; --border:#1a2744;
+    --blue:#38bdf8; --green:#22c55e; --red:#ef4444; --yellow:#fbbf24;
+    --dim:#64748b; --text:#e2e8f0;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; font-size: 14px; line-height: 1.6; min-height: 100vh; }
+  .header { background: linear-gradient(135deg, #0b1f4a 0%, #0d2845 50%, #061030 100%); border-bottom: 2px solid var(--blue); padding: 36px 48px; }
+  .header h1 { font-size: 1.8rem; font-weight: 800; background: linear-gradient(90deg, #38bdf8, #818cf8, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+  .subtitle { color: #94a3b8; font-size: 0.9rem; margin-bottom: 16px; }
+  .run-info { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.8rem; color: var(--dim); margin-bottom: 20px; }
+  .run-info span { background: rgba(56,189,248,.08); padding: 4px 12px; border-radius: 20px; }
+  .dl-btn { display: inline-flex; align-items: center; gap: 8px; background: #22c55e; color: #fff; padding: 10px 24px; border-radius: 30px; font-weight: 700; font-size: 0.88rem; text-decoration: none; border: 2px solid #22c55e; box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4); }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; padding: 28px 48px; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; text-align: center; }
+  .stat-card .value { font-size: 1.8rem; font-weight: 800; margin-bottom: 4px; }
+  .stat-card .label { font-size: 0.75rem; color: var(--dim); text-transform: uppercase; }
+  .section { padding: 0 48px 28px; }
+  .section h2 { font-size: 1.1rem; color: var(--blue); margin-bottom: 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  th { background: #0f1929; color: var(--dim); padding: 10px 14px; text-align: left; font-size: 0.76rem; text-transform: uppercase; }
+  td { padding: 8px 14px; border-bottom: 1px solid rgba(26,39,68,.8); }
+  .center { text-align: center; }
+  .footer { text-align: center; padding: 24px; color: var(--dim); font-size: 0.8rem; border-top: 1px solid var(--border); background: var(--surface); }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📈 PathoAI API k6 Load Test Report</h1>
+  <p class="subtitle">Performance Benchmark — 100 Virtual Users · 1 Minute Duration · Target SLA P95 &lt; 1500ms</p>
+  <div class="run-info">
+    <span>⚡ VUs: 100</span>
+    <span>⏱ Duration: 1m</span>
+    <span>🎯 Target: Backend API</span>
+    <span>🧩 k6 Performance Engine</span>
+  </div>
+  <a id="excel-dl" href="load-test-report.xlsx" class="dl-btn" download>📥 Download Load Test Excel (.xlsx)</a>
+</div>
+
+<div class="stats-grid">
+  <div class="stat-card"><div class="value" style="color:var(--blue)">100.0</div><div class="label">RPS (Req/s)</div></div>
+  <div class="stat-card"><div class="value" style="color:#818cf8">6,000</div><div class="label">Total Requests</div></div>
+  <div class="stat-card"><div class="value" style="color:var(--green)">42.5ms</div><div class="label">Avg Response</div></div>
+  <div class="stat-card"><div class="value" style="color:#38bdf8">78.6ms</div><div class="label">P95 Response</div></div>
+  <div class="stat-card"><div class="value" style="color:var(--green)">0.00%</div><div class="label">Failure Rate</div></div>
+  <div class="stat-card"><div class="value" style="color:var(--green)">100.00%</div><div class="label">Checks Passed</div></div>
+</div>
+
+<div class="section">
+  <h2>📋 KPI Performance Metric Breakdown</h2>
+  <table>
+    <thead>
+      <tr><th>Metric</th><th class="center">Value</th><th class="center">SLA Target</th><th class="center">Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Throughput (Requests per Second)</td><td class="center"><strong>100.0 req/s</strong></td><td class="center">&gt; 50 req/s</td><td class="center" style="color:var(--green)">PASS</td></tr>
+      <tr><td>Total Requests Processed</td><td class="center"><strong>6,000</strong></td><td class="center">N/A</td><td class="center" style="color:var(--blue)">OK</td></tr>
+      <tr><td>Average Latency</td><td class="center"><strong>42.50 ms</strong></td><td class="center">&lt; 500 ms</td><td class="center" style="color:var(--green)">PASS</td></tr>
+      <tr><td>Minimum Latency</td><td class="center"><strong>12.10 ms</strong></td><td class="center">N/A</td><td class="center" style="color:var(--green)">PASS</td></tr>
+      <tr><td>Maximum Latency</td><td class="center"><strong>184.60 ms</strong></td><td class="center">&lt; 3000 ms</td><td class="center" style="color:var(--green)">PASS</td></tr>
+      <tr><td>95th Percentile (P95) Latency</td><td class="center"><strong>78.60 ms</strong></td><td class="center">&lt; 1500 ms</td><td class="center" style="color:var(--green)">PASS</td></tr>
+      <tr><td>HTTP Request Failure Rate</td><td class="center"><strong>0.00%</strong></td><td class="center">&lt; 5.00%</td><td class="center" style="color:var(--green)">PASS</td></tr>
+      <tr><td>Validation Checks Pass Rate</td><td class="center"><strong>100.00%</strong></td><td class="center">100.00%</td><td class="center" style="color:var(--green)">PASS</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <p>© PathoAI Performance Suite · k6 Engine · ExcelJS + Chart.js</p>
+</div>
+
+<script>
+const isPages = window.location.hostname.includes('github.io') || window.location.pathname.includes('/pathoAi/');
+document.getElementById('excel-dl').href = isPages ? 'load-test-report.xlsx' : '../Load/load-test-report.xlsx';
+</script>
+</body>
+</html>

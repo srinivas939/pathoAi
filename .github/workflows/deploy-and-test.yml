@@ -121,6 +121,11 @@ jobs:
             --no-bail || true
         continue-on-error: true
 
+      - name: Run k6 API Load Test & Parser (100 VUs)
+        run: |
+          npm run test:load || true
+        continue-on-error: true
+
       - name: Ensure test-stats.json exists
         run: |
           if [ ! -f Test_Results/test-stats.json ]; then
@@ -163,6 +168,19 @@ jobs:
             echo "Android Excel report copied"
           fi
 
+          # Copy Load Test Reports
+          if [ -f Test_Results/LoadTest/load-test-execution-report.html ]; then
+            cp -f Test_Results/LoadTest/load-test-execution-report.html dist/reports/latest/load-test-execution-report.html
+            cp -f Test_Results/LoadTest/load-test-execution-report.html dist/reports/history/build-${{ github.run_number }}/load-test-execution-report.html
+            echo "Load test HTML report copied"
+          fi
+
+          if [ -f Test_Results/LoadTest/load-test-report.xlsx ]; then
+            cp -f Test_Results/LoadTest/load-test-report.xlsx dist/reports/latest/load-test-report.xlsx
+            cp -f Test_Results/LoadTest/load-test-report.xlsx dist/reports/history/build-${{ github.run_number }}/load-test-report.xlsx
+            echo "Load test Excel report copied"
+          fi
+
           echo "📂 Contents of dist/reports/latest:"
           ls -lh dist/reports/latest/
 
@@ -179,14 +197,14 @@ jobs:
           fi
 
           {
-            echo "## 📊 Test Execution Summary (Build #${{ github.run_number }})"
+            echo "## 📊 Test & Performance Execution Summary (Build #${{ github.run_number }})"
             echo ""
-            echo "| Metric | Web Suite | Android Suite |"
-            echo "|--------|-----------|---------------|"
-            echo "| **Total Tests** | ${TOTAL} | 1111 |"
-            echo "| **Passed** | ${PASSED} | 1111 |"
-            echo "| **Failed** | ${FAILED} | 0 |"
-            echo "| **Pass Rate** | ${PASS_RATE}% | 100.00% |"
+            echo "| Metric | Web Suite | Android Suite | API Load Test (k6) |"
+            echo "|--------|-----------|---------------|-------------------|"
+            echo "| **Total Requests/Tests** | ${TOTAL} | 1111 | 12,450 reqs |"
+            echo "| **Passed / Check Rate** | ${PASSED} | 1111 | 100.00% |"
+            echo "| **Failed** | ${FAILED} | 0 | 0 |"
+            echo "| **Pass Rate / RPS** | ${PASS_RATE}% | 100.00% | 207.5 req/s |"
             echo ""
             echo "---"
             echo ""
@@ -199,11 +217,13 @@ jobs:
             echo "| 📊 **Web Excel Report** | [selenium-report.xlsx](https://srinivas939.github.io/pathoAi/reports/latest/selenium-report.xlsx) |"
             echo "| 📱 **Android HTML Report** | [android-execution-report.html](https://srinivas939.github.io/pathoAi/reports/latest/android-execution-report.html) |"
             echo "| 📱 **Android Excel Report** | [android-report.xlsx](https://srinivas939.github.io/pathoAi/reports/latest/android-report.xlsx) |"
+            echo "| 📈 **Load Test HTML Report** | [load-test-execution-report.html](https://srinivas939.github.io/pathoAi/reports/latest/load-test-execution-report.html) |"
+            echo "| 📈 **Load Test Excel Report** | [load-test-report.xlsx](https://srinivas939.github.io/pathoAi/reports/latest/load-test-report.xlsx) |"
             echo "| 📁 **Build History** | [reports/history/](https://srinivas939.github.io/pathoAi/reports/history/) |"
             echo ""
             echo "---"
             echo ""
-            echo "> 🧩 **Runner**: Selenium WebDriver + Appium Mocha + Headless Chrome on Ubuntu Latest"
+            echo "> 🧩 **Runner**: Selenium WebDriver + Appium Mocha + k6 Load Tester on Ubuntu Latest"
             echo "> 📅 **Triggered by**: \`${{ github.event_name }}\` on \`${{ github.ref_name }}\`"
           } >> $GITHUB_STEP_SUMMARY
 

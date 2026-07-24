@@ -14,7 +14,8 @@ import {
   ChevronDown,
   Calendar,
   FileText,
-  UserCheck
+  UserCheck,
+  BarChart2
 } from 'lucide-react';
 
 export const Header: React.FC = () => {
@@ -57,13 +58,13 @@ export const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* E2E Reports Links */}
-        <div className="hidden xl:flex items-center space-x-1.5 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700 text-xs">
+        {/* E2E & Load Test Reports Links */}
+        <div className="hidden lg:flex items-center space-x-1.5 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700 text-xs">
           <a
             href="reports/latest/execution-report.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-teal-600 dark:hover:text-teal-300 transition-all"
+            className="flex items-center space-x-1 px-2 py-1 rounded-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-teal-600 dark:hover:text-teal-300 transition-all"
             title="Open Web HTML E2E Test Report"
           >
             <Sparkles className="w-3.5 h-3.5 text-teal-500" />
@@ -72,7 +73,7 @@ export const Header: React.FC = () => {
           <a
             href="reports/latest/selenium-report.xlsx"
             download="selenium-report.xlsx"
-            className="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-emerald-600 dark:hover:text-emerald-300 transition-all"
+            className="flex items-center space-x-1 px-2 py-1 rounded-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-emerald-600 dark:hover:text-emerald-300 transition-all"
             title="Download Web Excel E2E Test Report"
           >
             <FileText className="w-3.5 h-3.5 text-emerald-500" />
@@ -83,7 +84,7 @@ export const Header: React.FC = () => {
             href="reports/latest/android-execution-report.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-cyan-600 dark:hover:text-cyan-300 transition-all"
+            className="flex items-center space-x-1 px-2 py-1 rounded-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-cyan-600 dark:hover:text-cyan-300 transition-all"
             title="Open Android HTML E2E Test Report"
           >
             <Smartphone className="w-3.5 h-3.5 text-cyan-500" />
@@ -92,11 +93,31 @@ export const Header: React.FC = () => {
           <a
             href="reports/latest/android-report.xlsx"
             download="android-report.xlsx"
-            className="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-blue-600 dark:hover:text-blue-300 transition-all"
+            className="flex items-center space-x-1 px-2 py-1 rounded-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-blue-600 dark:hover:text-blue-300 transition-all"
             title="Download Android Excel E2E Test Report"
           >
             <FileText className="w-3.5 h-3.5 text-blue-500" />
             <span>Android Excel</span>
+          </a>
+          <span className="text-slate-300 dark:text-slate-700">|</span>
+          <a
+            href="reports/latest/load-test-execution-report.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-1 px-2 py-1 rounded-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-purple-600 dark:hover:text-purple-300 transition-all"
+            title="Open API Load Test HTML Report"
+          >
+            <BarChart2 className="w-3.5 h-3.5 text-purple-500" />
+            <span>k6 Load HTML</span>
+          </a>
+          <a
+            href="reports/latest/load-test-report.xlsx"
+            download="load-test-report.xlsx"
+            className="flex items-center space-x-1 px-2 py-1 rounded-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-indigo-600 dark:hover:text-indigo-300 transition-all"
+            title="Download API Load Test Excel Report"
+          >
+            <FileText className="w-3.5 h-3.5 text-indigo-500" />
+            <span>k6 Load Excel</span>
           </a>
         </div>
 

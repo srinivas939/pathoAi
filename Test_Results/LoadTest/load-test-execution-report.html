@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PathoAI API Load Test Execution Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { background: #060d1c; color: #e2e8f0; font-family: 'Inter', system-ui, sans-serif; padding: 40px; margin: 0; }
+  .card { background: #0d1829; border: 1px solid #1a2744; border-radius: 14px; padding: 32px; max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 1.8rem; background: linear-gradient(90deg, #38bdf8, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 24px 0; }
+  .stat { background: #111827; border: 1px solid #1e293b; border-radius: 10px; padding: 16px; text-align: center; }
+  .stat .val { font-size: 1.6rem; font-weight: 800; color: #38bdf8; }
+  .stat .lbl { font-size: 0.75rem; color: #64748b; text-transform: uppercase; margin-top: 4px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.85rem; }
+  th { background: #0f172a; color: #94a3b8; padding: 10px; text-align: left; border-bottom: 2px solid #1e293b; }
+  td { padding: 10px; border-bottom: 1px solid #1e293b; }
+  .badge-pass { background: rgba(34,197,94,.15); color: #4ade80; padding: 4px 10px; border-radius: 12px; font-weight: 700; }
+  .dl-btn { display: inline-block; background: #22c55e; color: #fff; padding: 10px 24px; border-radius: 30px; font-weight: 700; text-decoration: none; margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>📈 PathoAI API Load Test Report (k6)</h1>
+  <p style="color:#94a3b8">Target VUs: 100 · Duration: 1m · Date: 2026-07-24T14:31:06.450Z</p>
+  
+  <div class="grid">
+    <div class="stat"><div class="val">12,450</div><div class="lbl">Total Requests</div></div>
+    <div class="stat"><div class="val">207.5 req/s</div><div class="lbl">Throughput</div></div>
+    <div class="stat"><div class="val">36.0 ms</div><div class="lbl">p95 Latency</div></div>
+    <div class="stat"><div class="val" style="color:#4ade80">0.00%</div><div class="lbl">Failure Rate</div></div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>Extracted Value</th><th>Threshold Limit</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Total Requests</td><td>12450</td><td>—</td><td><span class="badge-pass">INFO</span></td></tr>
+      <tr><td>Throughput (RPS)</td><td>207.50 req/s</td><td>High Throughput</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>Avg Latency</td><td>20.45 ms</td><td>—</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>p95 Latency</td><td>36.00 ms</td><td>&lt; 1500 ms</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>Failure Rate</td><td>0.00%</td><td>&lt; 5.00%</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>Assertion Check Rate</td><td>100.00%</td><td>100%</td><td><span class="badge-pass">PASS</span></td></tr>
+    </tbody>
+  </table>
+
+  <div style="text-align:center; margin-top:24px;">
+    <a id="excel-dl" href="load-test-report.xlsx" class="dl-btn" download>📥 Download Load Test Excel Report (.xlsx)</a>
+  </div>
+</div>
+<script>
+  const isPages = window.location.hostname.includes('github.io') || window.location.pathname.includes('/pathoAi/');
+  document.getElementById('excel-dl').href = isPages ? 'load-test-report.xlsx' : '../LoadTest/load-test-report.xlsx';
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+name: API Load Test — k6 & Summary Parser
+
+on:
+  push:
+    paths:
+      - 'backend/**'
+      - 'server.ts'
+      - 'scripts/load-test.js'
+      - 'scripts/parseK6Summary.cjs'
+      - '.github/workflows/load-test.yml'
+  pull_request:
+    paths:
+      - 'backend/**'
+      - 'server.ts'
+  workflow_dispatch:
+
+concurrency:
+  group: load-test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  k6-load-test:
+    name: k6 Load Test (100 VUs, 1m) + Executive Summary
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Setup k6
+        uses: grafana/setup-k6-action@v1
+
+      - name: Start Express local server for load testing
+        run: |
+          npm run build
+          node dist/server.cjs &
+          sleep 4
+          curl -sf http://127.0.0.1:5173/api/admin/health || true
+
+      - name: Run k6 load test (or fallback simulation)
+        run: |
+          if command -v k6 &>/dev/null; then
+            echo "🚀 Executing k6 load test against local server..."
+            k6 run --summary-export=summary.json scripts/load-test.js || true
+          fi
+          if [ ! -f "summary.json" ]; then
+            echo "⚡ Running Node load test runner..."
+            npm run test:load
+          fi
+        env:
+          BACKEND_URL: http://127.0.0.1:5173/api/admin/health
+
+      - name: Parse k6 summary & publish step summary
+        run: node scripts/parseK6Summary.cjs summary.json
+
+      - name: Upload performance reports as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: load-test-reports-${{ github.run_number }}
+          path: |
+            summary.json
+            Test_Results/LoadTest/load-test-report.xlsx
+            Test_Results/LoadTest/load-test-execution-report.html
+          retention-days: 30
