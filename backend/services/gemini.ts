@@ -85,8 +85,48 @@ export function validatePathologyOrXrayImage(
   symptoms: string[] = []
 ): { isValid: boolean; message?: string } {
   if (!imageBase64 || !imageBase64.trim()) {
-    return { isValid: false, message: 'Please upload pathology / X-ray images' };
+    return { isValid: false, message: 'Please upload a valid Dental X-Ray or pathology radiograph image.' };
   }
+
+  const rawBase64 = imageBase64.includes(',') ? imageBase64.split(',')[1] : imageBase64;
+  if (!rawBase64 || rawBase64.length < 50) {
+    return { isValid: false, message: 'Invalid image data. Please upload a valid Dental X-Ray image.' };
+  }
+
+  try {
+    const buffer = Buffer.from(rawBase64, 'base64');
+    let totalSat = 0;
+    let sampleCount = 0;
+
+    const step = Math.max(1, Math.floor(buffer.length / 1200));
+    for (let i = 0; i < buffer.length - 3; i += step) {
+      const r = buffer[i];
+      const g = buffer[i + 1];
+      const b = buffer[i + 2];
+
+      const max = Math.max(r, g, b);
+      const min = Math.min(r, g, b);
+      if (max > 0) {
+        const sat = (max - min) / max;
+        totalSat += sat;
+        sampleCount++;
+      }
+    }
+
+    const avgSat = sampleCount > 0 ? totalSat / sampleCount : 0;
+
+    // High color saturation (> 0.32) indicates a random colorful non-medical photo (car, dog, landscape, food)
+    // Dental X-rays and medical radiographs are grayscale radiographical scans with low saturation (< 0.18)
+    if (avgSat > 0.32) {
+      return {
+        isValid: false,
+        message: 'Invalid Image: The uploaded picture is not a Dental X-Ray or pathology scan. Please upload a dental-related X-Ray image.'
+      };
+    }
+  } catch (e) {
+    // Graceful fallback
+  }
+
   return { isValid: true };
 }
 

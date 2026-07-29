@@ -396,21 +396,57 @@ export const ScanUploadScreen: React.FC = () => {
   const [step, setStep] = useState<'upload' | 'symptoms'>('upload');
   const [selectedFile, setSelectedFile] = useState<string | null>(null);
   const [selectedFileName, setSelectedFileName] = useState<string | null>(null);
+  const [imageValidationError, setImageValidationError] = useState<string | null>(null);
   const [isCameraActive, setIsCameraActive] = useState(false);
   const [isTrainerOpen, setIsTrainerOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Symptoms state
-  const [symptoms, setSymptoms] = useState<string[]>(['Mild Itching', 'Redness']);
-  const [affectedArea, setAffectedArea] = useState('Forearm / Arm');
+  const [symptoms, setSymptoms] = useState<string[]>(['Tooth Pain', 'Radiographical Lesion']);
+  const [affectedArea, setAffectedArea] = useState('Maxilla / Mandible / Teeth');
   const [durationDays, setDurationDays] = useState('4-7 days');
   const [customSymptom, setCustomSymptom] = useState('');
 
   const commonSymptomChips = [
-    'Mild Itching', 'Severe Itching', 'Redness / Erythema', 'Scaling',
-    'Bleeding / Oozing', 'Irregular Borders', 'Rapid Color Change',
-    'Pain / Tenderness', 'Raised Nodule', 'Flaking'
+    'Tooth Pain', 'Gimbl / Gingival Swelling', 'Jaw Discomfort', 'Enamel Decay',
+    'Periapical Tenderness', 'Bleeding Gums', 'Radiographical Density',
+    'Root Irritation', 'Bone Resorption', 'Occlusal Pain'
   ];
+
+  const validateClientImage = (dataUrl: string) => {
+    const img = new Image();
+    img.crossOrigin = 'Anonymous';
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      canvas.width = Math.min(img.width, 150);
+      canvas.height = Math.min(img.height, 150);
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+      let totalSat = 0;
+      let sampleCount = 0;
+      for (let i = 0; i < data.length; i += 16) {
+        const r = data[i];
+        const g = data[i + 1];
+        const b = data[i + 2];
+        const max = Math.max(r, g, b);
+        const min = Math.min(r, g, b);
+        if (max > 0) {
+          totalSat += (max - min) / max;
+          sampleCount++;
+        }
+      }
+      const avgSat = sampleCount > 0 ? totalSat / sampleCount : 0;
+      if (avgSat > 0.32) {
+        setImageValidationError('Invalid Image: The uploaded picture is not a Dental X-Ray or pathology scan. Please upload a valid dental-related X-Ray image.');
+      } else {
+        setImageValidationError(null);
+      }
+    };
+    img.src = dataUrl;
+  };
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -418,7 +454,9 @@ export const ScanUploadScreen: React.FC = () => {
       setSelectedFileName(file.name);
       const reader = new FileReader();
       reader.onload = (event) => {
-        setSelectedFile(event.target?.result as string);
+        const result = event.target?.result as string;
+        setSelectedFile(result);
+        validateClientImage(result);
       };
       reader.readAsDataURL(file);
     }
@@ -515,6 +553,16 @@ export const ScanUploadScreen: React.FC = () => {
       {step === 'upload' ? (
         <div className="space-y-6">
           
+          {imageValidationError && (
+            <div className="p-4 bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/50 rounded-2xl flex items-start space-x-3 text-rose-800 dark:text-rose-200 text-xs">
+              <AlertTriangle className="w-5 h-5 shrink-0 text-rose-600 dark:text-rose-400 mt-0.5" />
+              <div>
+                <p className="font-bold">Dental X-Ray Image Validation Failed</p>
+                <p className="text-[11px] text-rose-700 dark:text-rose-300 mt-0.5">{imageValidationError}</p>
+              </div>
+            </div>
+          )}
+
           {/* Main Dropzone Box */}
           <div className="border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-3xl p-6 text-center bg-slate-50/50 dark:bg-slate-800/30 overflow-hidden">
             {selectedFile ? (
@@ -524,10 +572,12 @@ export const ScanUploadScreen: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-slate-900 dark:text-white truncate">{selectedFileName || 'Specimen Image Loaded'}</p>
-                  <p className="text-[10px] text-slate-500 mt-0.5">Specimen Data Loaded • Ready for Pipeline Analysis</p>
+                  <p className="text-[10px] text-slate-500 mt-0.5">
+                    {imageValidationError ? '⚠️ Non-Dental / Invalid Image Detected' : '✅ Valid Dental / Pathology Radiograph Verified'}
+                  </p>
                 </div>
                 <label className="inline-block bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 text-slate-800 dark:text-slate-200 text-[11px] font-bold px-3 py-1.5 rounded-xl cursor-pointer">
-                  Upload Image
+                  Re-upload Image
                   <input type="file" accept=".dcm,.png,.jpg,.jpeg,.bmp,.webp,.tiff" onChange={handleFileUpload} className="hidden" />
                 </label>
               </div>
@@ -537,8 +587,8 @@ export const ScanUploadScreen: React.FC = () => {
                   <Upload className="w-8 h-8" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-slate-900 dark:text-white">Upload Pathology Specimen / Image</p>
-                  <p className="text-xs text-slate-500 mt-0.5">Supports Digital Specimen Data / DICOM / JPG (Max 15MB)</p>
+                  <p className="text-sm font-bold text-slate-900 dark:text-white">Upload Dental X-Ray or Pathology Specimen</p>
+                  <p className="text-xs text-slate-500 mt-0.5">Please upload dental radiograph / DICOM / JPG (Max 15MB)</p>
                 </div>
                 <label className="inline-block bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-bold text-xs px-5 py-2.5 rounded-xl cursor-pointer">
                   Upload Image
@@ -550,7 +600,7 @@ export const ScanUploadScreen: React.FC = () => {
 
           <button
             onClick={() => setStep('symptoms')}
-            disabled={!selectedFile}
+            disabled={!selectedFile || !!imageValidationError}
             className="w-full bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-slate-200 text-white dark:text-slate-900 font-bold py-3.5 rounded-2xl text-xs flex items-center justify-center space-x-2 transition-all disabled:opacity-50"
           >
             <span>Proceed to Symptom Assessment</span>
