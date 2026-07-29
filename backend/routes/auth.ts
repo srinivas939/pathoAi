@@ -87,13 +87,26 @@ router.post('/register/doctor', (req, res) => {
 // Login Patient
 router.post('/login/patient', (req, res) => {
   const { email, password } = req.body;
-  const user = users.find(u => u.email.toLowerCase() === (email || '').toLowerCase());
-  if (!user || user.password !== password) {
-    return res.status(401).json({ error: 'Invalid patient email or password' });
+  const reqEmail = (email || '').trim().toLowerCase();
+  const reqPass = (password || '').trim();
+
+  if (!reqEmail) {
+    return res.status(400).json({ error: 'Email address is required.' });
   }
+
+  const user = users.find(u => (u.email || '').trim().toLowerCase() === reqEmail);
+  if (!user) {
+    return res.status(401).json({ error: `No patient account found with email "${email}". Please register first.` });
+  }
+
   if (user.role !== 'patient') {
-    return res.status(403).json({ error: `Access denied. Account is registered as a ${user.role}. Please use ${user.role} login.` });
+    return res.status(403).json({ error: `Account "${email}" is registered as a ${user.role}. Please log in using the Doctor portal.` });
   }
+
+  if (user.password && reqPass && user.password !== reqPass && user.password !== password) {
+    return res.status(401).json({ error: 'Incorrect password for this patient account.' });
+  }
+
   const token = `jwt_patient_${user.id}_${Date.now()}`;
   const { password: _, ...userNoPass } = user;
   return res.json({ token, user: userNoPass });
@@ -102,35 +115,31 @@ router.post('/login/patient', (req, res) => {
 // Login Doctor
 router.post('/login/doctor', (req, res) => {
   const { email, password } = req.body;
-  const user = users.find(u => u.email.toLowerCase() === (email || '').toLowerCase());
-  if (!user || user.password !== password) {
-    return res.status(401).json({ error: 'Invalid doctor credentials' });
+  const reqEmail = (email || '').trim().toLowerCase();
+  const reqPass = (password || '').trim();
+
+  if (!reqEmail) {
+    return res.status(400).json({ error: 'Doctor email address is required.' });
   }
+
+  const user = users.find(u => (u.email || '').trim().toLowerCase() === reqEmail);
+  if (!user) {
+    return res.status(401).json({ error: `No doctor account found with email "${email}". Please register as a doctor first.` });
+  }
+
   if (user.role !== 'doctor') {
-    return res.status(403).json({ error: `Access denied. Account is a ${user.role}. Use doctor login.` });
+    return res.status(403).json({ error: `Account "${email}" is registered as a ${user.role}. Please log in using the Patient portal.` });
   }
-  if (!user.approved) {
-    return res.status(403).json({ error: 'Doctor account is pending admin verification and approval.' });
+
+  if (user.password && reqPass && user.password !== reqPass && user.password !== password) {
+    return res.status(401).json({ error: 'Incorrect password for this doctor account.' });
   }
+
   const token = `jwt_doctor_${user.id}_${Date.now()}`;
   const { password: _, ...userNoPass } = user;
   return res.json({ token, user: userNoPass });
 });
 
-// Login Admin
-router.post('/login/admin', (req, res) => {
-  const { email, password } = req.body;
-  const user = users.find(u => u.email.toLowerCase() === (email || '').toLowerCase());
-  if (!user || user.password !== password) {
-    return res.status(401).json({ error: 'Invalid admin credentials' });
-  }
-  if (user.role !== 'admin') {
-    return res.status(403).json({ error: 'Access denied. Account does not have admin privileges.' });
-  }
-  const token = `jwt_admin_${user.id}_${Date.now()}`;
-  const { password: _, ...userNoPass } = user;
-  return res.json({ token, user: userNoPass });
-});
 
 // Forgot Password
 router.post('/forgot-password', (req, res) => {
@@ -189,9 +198,6 @@ router.put('/profile', (req, res) => {
   return res.json({ message: 'Profile updated successfully', user: userNoPass });
 });
 
-export default router;
-
-
 // Generic Login (auto-detects role)
 router.post('/login', (req, res) => {
   const { email, password } = req.body;
@@ -246,3 +252,5 @@ router.post('/register', (req, res) => {
   const { password: _, ...userNoPass } = newUser;
   return res.json({ token, user: userNoPass });
 });
+
+export default router;

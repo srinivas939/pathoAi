@@ -1,4 +1,4 @@
-export type Role = 'patient' | 'doctor' | 'admin';
+export type Role = 'patient' | 'doctor';
 
 export type SeverityLevel = 'Low' | 'Moderate' | 'High' | 'Severe';
 
@@ -10,6 +10,7 @@ export interface User {
   phone?: string;
   avatarUrl?: string;
   createdAt: string;
+  isActive?: boolean;
   // Patient specific
   age?: number;
   gender?: 'Male' | 'Female' | 'Other';
@@ -65,7 +66,7 @@ export interface ScanResult {
   
   reviewedByDoctorId?: string;
   doctorNotes?: string;
-  status: 'analyzed' | 'doctor_reviewed' | 'pending_review';
+  status: 'analyzed' | 'doctor_reviewed' | 'pending_review' | 'verified';
   createdAt: string;
 }
 
@@ -118,7 +119,7 @@ export interface FeedbackItem {
 export interface SystemLog {
   id: string;
   endpoint: string;
-  method: 'GET' | 'POST' | 'PUT' | 'DELETE';
+  method: string;
   statusCode: number;
   responseTimeMs: number;
   timestamp: string;
@@ -170,7 +171,13 @@ export type ScreenId =
   | 'prescription_editor'
   | 'pdf_preview'
   | 'notifications'
+  | 'notification_center'
   | 'admin_users'
   | 'admin_doctor_approval'
+  | 'admin_doctor_approvals'
   | 'admin_analytics'
-  | 'admin_logs';
+  | 'admin_logs'
+  | 'patient_symptom_checker'
+  | 'patient_med_tracker'
+  | 'admin_ai_retraining'
+  | 'admin_security_audit';

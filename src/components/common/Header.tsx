@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         
         {/* Brand & Logo */}
-        <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate(role === 'patient' ? 'patient_dashboard' : role === 'doctor' ? 'doctor_dashboard' : role === 'admin' ? 'admin_dashboard' : 'role_select')}>
+        <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate(role === 'patient' ? 'patient_dashboard' : role === 'doctor' ? 'doctor_dashboard' : 'role_select')}>
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 via-teal-500 to-emerald-500 flex items-center justify-center text-white shadow-md shadow-teal-500/20">
             <Activity className="w-6 h-6 animate-pulse" />
           </div>
@@ -112,9 +112,8 @@ export const Header: React.FC = () => {
                   {user.name.split(' ')[0]}
                 </span>
                 <span className={`text-[10px] px-1.5 py-0.5 rounded font-bold uppercase ${
-                  user.role === 'admin' ? 'bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-300' :
                   user.role === 'doctor' ? 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/50 dark:text-indigo-300' :
-                  'bg-teal-100 text-teal-800 dark:bg-teal-900/50 dark:text-teal-300'
+                  'bg-teal-100 text-teal-800 dark:bg-teal-950/50 dark:text-teal-300'
                 }`}>
                   {user.role}
                 </span>
@@ -164,16 +163,6 @@ export const Header: React.FC = () => {
                       >
                         <UserCheck className="w-4 h-4 text-indigo-600" />
                         <span>Patient Scan Review Queue</span>
-                      </button>
-                    )}
-
-                    {role === 'admin' && (
-                      <button
-                        onClick={() => { setShowProfileMenu(false); navigate('admin_analytics'); }}
-                        className="w-full flex items-center space-x-2 px-4 py-2 text-xs text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
-                      >
-                        <ShieldAlert className="w-4 h-4 text-amber-600" />
-                        <span>Admin Console</span>
                       </button>
                     )}
                   </div>

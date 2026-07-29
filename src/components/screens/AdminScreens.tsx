@@ -11,7 +11,8 @@ import {
   Search,
   MessageSquare,
   Terminal,
-  RefreshCw
+  RefreshCw,
+  Sparkles
 } from 'lucide-react';
 import {
   apiGetAdminStats,
@@ -287,6 +288,131 @@ export const AdminSystemLogsAndFeedbackScreen: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// NEW SCREEN: Admin AI Model Retraining & Dataset Hub Screen
+export const AdminAIRetrainingScreen: React.FC = () => {
+  const [datasetCount, setDatasetCount] = useState(2710);
+  const [isRetraining, setIsRetraining] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  const startRetraining = () => {
+    setIsRetraining(true);
+    setProgress(10);
+    const interval = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          setIsRetraining(false);
+          return 100;
+        }
+        return prev + 20;
+      });
+    }, 600);
+  };
+
+  return (
+    <div className="space-y-6 pb-8">
+      <div className="p-6 bg-gradient-to-r from-slate-900 via-amber-950 to-slate-900 rounded-3xl text-white shadow-xl border border-amber-900/40 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <div className="inline-flex items-center space-x-2 bg-amber-500/20 text-amber-300 text-xs px-3 py-1 rounded-full border border-amber-500/30 mb-2">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Transfer Learning Fine-Tuning Pipeline</span>
+          </div>
+          <h1 className="text-2xl font-extrabold">AI Dataset & Model Retraining Hub</h1>
+          <p className="text-xs text-slate-300 mt-1">Manage pathology specimen datasets, inspect class distributions, and execute model fine-tuning jobs.</p>
+        </div>
+
+        <button
+          onClick={startRetraining}
+          disabled={isRetraining}
+          className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs px-5 py-3 rounded-2xl shadow-lg flex items-center space-x-2 shrink-0 disabled:opacity-50"
+        >
+          <Sparkles className="w-4 h-4" />
+          <span>{isRetraining ? `Retraining (${progress}%)` : 'Trigger Fine-Tuning Job'}</span>
+        </button>
+      </div>
+
+      {isRetraining && (
+        <div className="p-4 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/40 rounded-2xl space-y-2 text-xs">
+          <div className="flex justify-between font-bold text-amber-900 dark:text-amber-200">
+            <span>Executing EfficientNetB0 Fine-Tuning Epochs...</span>
+            <span>{progress}%</span>
+          </div>
+          <div className="w-full bg-amber-200 dark:bg-amber-900 h-2 rounded-full overflow-hidden">
+            <div className="bg-amber-500 h-full transition-all duration-300" style={{ width: `${progress}%` }} />
+          </div>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="p-5 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+          <h3 className="text-xs font-bold text-slate-400 uppercase">Dermatology Dataset</h3>
+          <p className="text-2xl font-black text-slate-900 dark:text-white">1,240 Images</p>
+          <p className="text-xs text-slate-500">Classes: Eczema, Basal Cell, Psoriasis, Melanoma, Nevi</p>
+          <span className="inline-block text-[10px] font-bold text-teal-600 bg-teal-50 px-2 py-0.5 rounded-full">Accuracy 96.4%</span>
+        </div>
+
+        <div className="p-5 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+          <h3 className="text-xs font-bold text-slate-400 uppercase">Hematology Dataset</h3>
+          <p className="text-2xl font-black text-slate-900 dark:text-white">850 Images</p>
+          <p className="text-xs text-slate-500">Classes: WBC Differentials, RBC Anomaly, Platelets</p>
+          <span className="inline-block text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">Accuracy 94.8%</span>
+        </div>
+
+        <div className="p-5 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+          <h3 className="text-xs font-bold text-slate-400 uppercase">Histopathology Dataset</h3>
+          <p className="text-2xl font-black text-slate-900 dark:text-white">620 Images</p>
+          <p className="text-xs text-slate-500">Classes: Biopsy Tissue, Cellular Dysplasia, Mitotic Index</p>
+          <span className="inline-block text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">Accuracy 95.1%</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// NEW SCREEN: Admin Security, Rate Limiting & Access Audit Screen
+export const AdminSecurityAuditScreen: React.FC = () => {
+  return (
+    <div className="space-y-6 pb-8">
+      <div className="p-6 bg-gradient-to-r from-slate-950 via-slate-900 to-amber-950 rounded-3xl text-white shadow-xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <div className="inline-flex items-center space-x-2 bg-amber-500/20 text-amber-300 text-xs px-3 py-1 rounded-full border border-amber-500/30 mb-2">
+            <Activity className="w-3.5 h-3.5" />
+            <span>SAST & System Rate Throttling</span>
+          </div>
+          <h1 className="text-2xl font-extrabold">Security & API Access Audit</h1>
+          <p className="text-xs text-slate-300 mt-1">Real-time inspection of API rate limits, CORS policies, failed authentication attempts, and SSL headers.</p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+        <div className="p-4 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-1">
+          <p className="text-slate-400 font-bold uppercase text-[10px]">Global Rate Limit</p>
+          <p className="text-lg font-extrabold text-slate-900 dark:text-white">100 req/min</p>
+          <p className="text-emerald-600 font-semibold text-[11px]">Enforced via Express IP Throttle</p>
+        </div>
+
+        <div className="p-4 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-1">
+          <p className="text-slate-400 font-bold uppercase text-[10px]">CORS Policy Status</p>
+          <p className="text-lg font-extrabold text-slate-900 dark:text-white">Subdomain Restricted</p>
+          <p className="text-emerald-600 font-semibold text-[11px]">Wildcard Exfiltrate Blocked</p>
+        </div>
+
+        <div className="p-4 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-1">
+          <p className="text-slate-400 font-bold uppercase text-[10px]">Payload Upload Cap</p>
+          <p className="text-lg font-extrabold text-slate-900 dark:text-white">15 MB Limit</p>
+          <p className="text-emerald-600 font-semibold text-[11px]">Protecting Disk Space</p>
+        </div>
+
+        <div className="p-4 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-1">
+          <p className="text-slate-400 font-bold uppercase text-[10px]">Failed Auth Threshold</p>
+          <p className="text-lg font-extrabold text-slate-900 dark:text-white">0 Suspicious IPs</p>
+          <p className="text-emerald-600 font-semibold text-[11px]">Clean Security Monitor</p>
         </div>
       </div>
     </div>

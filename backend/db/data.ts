@@ -6,7 +6,7 @@ export interface User {
   name: string;
   email: string;
   password?: string;
-  role: 'patient' | 'doctor' | 'admin';
+  role: 'patient' | 'doctor';
   phone?: string;
   createdAt: string;
   avatarUrl?: string;
@@ -107,7 +107,7 @@ export interface FeedbackItem {
 export interface SystemLog {
   id: string;
   endpoint: string;
-  method: 'GET' | 'POST' | 'PUT' | 'DELETE';
+  method: string;
   statusCode: number;
   responseTimeMs: number;
   timestamp: string;
@@ -120,7 +120,7 @@ export const users: User[] = [
     id: 'pat-1',
     name: 'Sarah Jenkins',
     email: 'patient@pathoai.com',
-    password: 'password123',
+    password: 'PathoAI#2026!Secure',
     role: 'patient',
     phone: '+1 (555) 234-5678',
     createdAt: '2026-01-15T10:00:00Z',
@@ -134,7 +134,7 @@ export const users: User[] = [
     id: 'doc-1',
     name: 'Dr. Marcus Vance, MD',
     email: 'doctor@pathoai.com',
-    password: 'password123',
+    password: 'PathoAI#2026!Secure',
     role: 'doctor',
     phone: '+1 (555) 876-5432',
     createdAt: '2025-11-20T08:30:00Z',
@@ -151,16 +151,6 @@ export const users: User[] = [
     reviewsCount: 128,
     bio: 'Board-certified Dermatopathologist specializing in melanoma detection, digital lesion classification, and autoimmune skin pathologies.',
     availableDays: ['Monday', 'Tuesday', 'Thursday', 'Friday'],
-    isActive: true,
-  },
-  {
-    id: 'adm-1',
-    name: 'Chief Admin',
-    email: 'admin@pathoai.com',
-    password: 'password123',
-    role: 'admin',
-    phone: '+1 (555) 000-1111',
-    createdAt: '2025-01-01T00:00:00Z',
     isActive: true,
   },
 ];

@@ -51,15 +51,7 @@ const DEFAULT_DOCTOR: User = {
   isActive: true,
 };
 
-const DEFAULT_ADMIN: User = {
-  id: 'adm-1',
-  name: 'Chief Admin',
-  email: 'admin@pathoai.com',
-  role: 'admin',
-  phone: '+1 (555) 000-1111',
-  createdAt: '2025-01-01T00:00:00Z',
-  isActive: true,
-};
+
 
 const MOCK_SCANS: ScanResult[] = [
   {
@@ -145,9 +137,6 @@ function getMockFallbackResponse<T>(endpoint: string, options: RequestInit = {})
   }
   if (url === '/api/auth/login/doctor') {
     return { token: 'mock-token-doctor', user: { ...DEFAULT_DOCTOR, email: body.email || DEFAULT_DOCTOR.email } } as T;
-  }
-  if (url === '/api/auth/login/admin') {
-    return { token: 'mock-token-admin', user: { ...DEFAULT_ADMIN, email: body.email || DEFAULT_ADMIN.email } } as T;
   }
   if (url === '/api/auth/register/patient') {
     const user: User = {
@@ -267,7 +256,7 @@ function getMockFallbackResponse<T>(endpoint: string, options: RequestInit = {})
     return [{ id: 'fb-1', userId: 'pat-1', userName: 'Sarah Jenkins', role: 'patient', rating: 5, category: 'Accuracy', comment: 'Great platform!', createdAt: new Date().toISOString() }] as T;
   }
   if (url === '/api/admin/users') {
-    return [DEFAULT_PATIENT, DEFAULT_DOCTOR, DEFAULT_ADMIN] as T;
+    return [DEFAULT_PATIENT, DEFAULT_DOCTOR] as T;
   }
   if (url === '/api/admin/stats') {
     return { totalUsers: 154, totalScans: 1240, activeDoctors: 24, totalAppointments: 380, revenue: 14200, users: 154, scans: 1240 } as T;
@@ -320,6 +309,8 @@ export async function fetchApi<T>(endpoint: string, options: RequestInit = {}): 
     ...(options.headers || {}),
   };
 
+  const isAuthEndpoint = endpoint.includes('/auth/login') || endpoint.includes('/auth/register');
+
   try {
     const response = await fetch(fullUrl, {
       ...options,
@@ -327,16 +318,22 @@ export async function fetchApi<T>(endpoint: string, options: RequestInit = {}): 
     });
 
     if (!response.ok) {
-      return getMockFallbackResponse<T>(endpoint, options);
+      const errorJson = await response.json().catch(() => ({}));
+      const errorMsg = errorJson.error || errorJson.message || `Authentication failed (${response.status})`;
+      throw new Error(errorMsg);
     }
 
     const data = await response.json().catch(() => null);
     if (data === null) {
+      if (isAuthEndpoint) throw new Error('Invalid server response');
       return getMockFallbackResponse<T>(endpoint, options);
     }
 
     return data as T;
-  } catch (err) {
+  } catch (err: any) {
+    if (isAuthEndpoint) {
+      throw new Error(err.message || 'Authentication request failed');
+    }
     return getMockFallbackResponse<T>(endpoint, options);
   }
 }
@@ -354,11 +351,6 @@ export const apiLoginDoctor = (email: string, pass: string) =>
     body: JSON.stringify({ email, password: pass }),
   });
 
-export const apiLoginAdmin = (email: string, pass: string) =>
-  fetchApi<{ token: string; user: User }>('/api/auth/login/admin', {
-    method: 'POST',
-    body: JSON.stringify({ email, password: pass }),
-  });
 
 export const apiRegisterPatient = (payload: any) =>
   fetchApi<{ token: string; user: User }>('/api/auth/register/patient', {

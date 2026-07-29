@@ -47,10 +47,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     medicalHistory: 'Mild eczema in childhood. No known drug allergies.',
   };
 
-  const [user, setUser] = useState<User | null>(defaultPatientUser);
-  const [role, setRole] = useState<Role | null>('patient');
-  const [currentScreen, setCurrentScreen] = useState<ScreenId>('patient_dashboard');
-  const [screenHistory, setScreenHistory] = useState<ScreenId[]>(['splash', 'patient_dashboard']);
+  const [user, setUser] = useState<User | null>(null);
+  const [role, setRole] = useState<Role | null>(null);
+  const [currentScreen, setCurrentScreen] = useState<ScreenId>('role_select');
+  const [screenHistory, setScreenHistory] = useState<ScreenId[]>(['role_select']);
   
   const [activeScan, setActiveScan] = useState<ScanResult | null>(null);
   const [activeDoctorId, setActiveDoctorId] = useState<string | null>('doc-1');
@@ -98,9 +98,29 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const login = (newUser: User, _token: string) => {
+  // Always start cleanly on Role Select / Login screen
+  useEffect(() => {
+    try {
+      localStorage.removeItem('pathoai_user');
+      localStorage.removeItem('pathoai_token');
+    } catch (e) {
+      // quiet catch
+    }
+    setUser(null);
+    setRole(null);
+    setCurrentScreen('role_select');
+    setScreenHistory(['role_select']);
+  }, []);
+
+  const login = (newUser: User, token: string) => {
     setUser(newUser);
     setRole(newUser.role);
+    try {
+      localStorage.setItem('pathoai_user', JSON.stringify(newUser));
+      if (token) localStorage.setItem('pathoai_token', token);
+    } catch (e) {
+      // quiet catch
+    }
     
     // Navigate to role dashboard
     if (newUser.role === 'patient') {
@@ -115,6 +135,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const logout = () => {
     setUser(null);
     setRole(null);
+    try {
+      localStorage.removeItem('pathoai_user');
+      localStorage.removeItem('pathoai_token');
+    } catch (e) {
+      // quiet catch
+    }
     setCurrentScreen('role_select');
     setScreenHistory(['role_select']);
   };

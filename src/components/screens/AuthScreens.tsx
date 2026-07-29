@@ -23,7 +23,6 @@ import {
 import {
   apiLoginPatient,
   apiLoginDoctor,
-  apiLoginAdmin,
   apiRegisterPatient,
   apiRegisterDoctor,
   apiForgotPassword,
@@ -201,23 +200,6 @@ export const RoleSelectScreen: React.FC = () => {
             </div>
           </div>
           <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all" />
-        </div>
-
-        {/* Admin Role Card */}
-        <div
-          onClick={() => navigate('login_admin')}
-          className="p-4 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-amber-500 dark:hover:border-amber-500 bg-slate-50 dark:bg-slate-800/50 hover:bg-amber-50/50 dark:hover:bg-amber-950/20 cursor-pointer transition-all flex items-center justify-between group"
-        >
-          <div className="flex items-center space-x-4">
-            <div className="p-3 bg-amber-100 dark:bg-amber-900/60 text-amber-700 dark:text-amber-300 rounded-xl group-hover:bg-amber-600 group-hover:text-white transition-colors">
-              <Shield className="w-6 h-6" />
-            </div>
-            <div>
-              <h3 className="font-bold text-slate-900 dark:text-white text-sm">Administrator Console</h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">Manage user accounts, doctor verification approvals & analytics logs.</p>
-            </div>
-          </div>
-          <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-amber-600 group-hover:translate-x-1 transition-all" />
         </div>
       </div>
     </div>
@@ -428,91 +410,7 @@ export const LoginDoctorScreen: React.FC = () => {
   );
 };
 
-// SCREEN 6: Admin Login
-export const LoginAdminScreen: React.FC = () => {
-  const { navigate, login } = useAuth();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError('');
-    setLoading(true);
-    try {
-      const res = await apiLoginAdmin(email, password);
-      login(res.user, res.token);
-    } catch (err: any) {
-      setError(err.message || 'Admin authentication failed');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <div className="max-w-md mx-auto my-8 p-6 sm:p-8 bg-white dark:bg-slate-900 rounded-3xl shadow-xl border border-slate-200 dark:border-slate-800 space-y-6">
-      <div className="flex items-center justify-between">
-        <button onClick={() => navigate('role_select')} className="text-slate-400 hover:text-slate-600 p-1">
-          <ArrowLeft className="w-5 h-5" />
-        </button>
-        <span className="text-xs font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">Restricted Admin</span>
-      </div>
-
-      <div className="text-center">
-        <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Admin Console</h2>
-        <p className="text-xs text-slate-500 mt-1">System Authorization & Oversight Access</p>
-      </div>
-
-      {error && (
-        <div className="p-3 bg-rose-50 border border-rose-200 text-rose-700 text-xs rounded-xl flex items-center space-x-2">
-          <AlertCircle className="w-4 h-4 shrink-0" />
-          <span>{error}</span>
-        </div>
-      )}
-
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Admin Identity</label>
-          <div className="relative">
-            <Shield className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-            <input
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              placeholder="Enter admin email"
-              required
-              className="w-full pl-9 pr-3 py-2.5 text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-amber-500 outline-none text-slate-900 dark:text-white"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Admin Security Key</label>
-          <div className="relative">
-            <Lock className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-            <input
-              type="password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              placeholder="Enter admin password"
-              required
-              className="w-full pl-9 pr-3 py-2.5 text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-amber-500 outline-none text-slate-900 dark:text-white"
-            />
-          </div>
-        </div>
-
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 rounded-2xl text-xs transition-all shadow-md shadow-amber-500/20 disabled:opacity-50"
-        >
-          {loading ? 'Verifying Credentials...' : 'Authenticate Admin Access'}
-        </button>
-      </form>
-    </div>
-  );
-};
 
 // SCREEN 7: Patient Registration
 export const RegisterPatientScreen: React.FC = () => {
@@ -527,16 +425,21 @@ export const RegisterPatientScreen: React.FC = () => {
     bloodGroup: 'A+',
     medicalHistory: '',
   });
+  const [successMsg, setSuccessMsg] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    setSuccessMsg('');
     setLoading(true);
     try {
-      const res = await apiRegisterPatient(formData);
-      login(res.user, res.token);
+      await apiRegisterPatient(formData);
+      setSuccessMsg('Account registered successfully! Redirecting to Patient Login...');
+      setTimeout(() => {
+        navigate('login_patient');
+      }, 1500);
     } catch (err: any) {
       setError(err.message || 'Registration failed');
     } finally {
@@ -557,6 +460,13 @@ export const RegisterPatientScreen: React.FC = () => {
         <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Create Patient Account</h2>
         <p className="text-xs text-slate-500 mt-1">Start scanning lesions and managing pathology records</p>
       </div>
+
+      {successMsg && (
+        <div className="p-3 bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs rounded-xl flex items-center space-x-2">
+          <CheckCircle2 className="w-4 h-4 shrink-0" />
+          <span>{successMsg}</span>
+        </div>
+      )}
 
       {error && (
         <div className="p-3 bg-rose-50 border border-rose-200 text-rose-700 text-xs rounded-xl flex items-center space-x-2">

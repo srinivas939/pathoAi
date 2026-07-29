@@ -164,6 +164,57 @@ async function setupTablesAndSeed() {
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
     `);
 
+    // Ensure all columns exist on users table in pre-existing phpMyAdmin database
+    const userCols = [
+      'password VARCHAR(100)', 'phone VARCHAR(50)', 'age INT', 'gender VARCHAR(20)',
+      'bloodGroup VARCHAR(10)', 'medicalHistory TEXT', 'qualification VARCHAR(100)',
+      'specialization VARCHAR(100)', 'licenseId VARCHAR(50)', 'hospital VARCHAR(150)',
+      'clinicAddress VARCHAR(200)', 'experienceYears INT', 'consultationFee INT',
+      'consultationHours VARCHAR(100)', 'approved TINYINT(1) DEFAULT 1',
+      'rating FLOAT DEFAULT 5.0', 'reviewsCount INT DEFAULT 0', 'bio TEXT',
+      'availableDays TEXT', 'isActive TINYINT(1) DEFAULT 1', 'avatarUrl TEXT', 'createdAt VARCHAR(50)'
+    ];
+    for (const colDef of userCols) {
+      try {
+        const colName = colDef.split(' ')[0];
+        await dbPool.query(`ALTER TABLE users ADD COLUMN ${colDef};`);
+      } catch (e) {
+        // Column already exists
+      }
+    }
+
+    // 6. Patient Profiles Table
+    await dbPool.query(`
+      CREATE TABLE IF NOT EXISTS patient_profiles (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        user_id VARCHAR(50) UNIQUE,
+        dob VARCHAR(50),
+        gender VARCHAR(20),
+        blood_group VARCHAR(10),
+        allergies TEXT,
+        medical_history TEXT,
+        emergency_contact VARCHAR(50),
+        address TEXT
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    `);
+
+    // 7. Doctor Profiles Table
+    await dbPool.query(`
+      CREATE TABLE IF NOT EXISTS doctor_profiles (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        user_id VARCHAR(50) UNIQUE,
+        qualification VARCHAR(100),
+        specialization VARCHAR(100),
+        license_id VARCHAR(50),
+        hospital VARCHAR(150),
+        clinic_address VARCHAR(200),
+        experience_years INT,
+        consultation_fee INT,
+        consultation_hours VARCHAR(100),
+        bio TEXT
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    `);
+
     // Seed initial users into MySQL if empty
     const [rows]: any = await dbPool.query('SELECT COUNT(*) as count FROM users');
     if (rows[0].count === 0) {
@@ -172,6 +223,10 @@ async function setupTablesAndSeed() {
       }
       console.log(`🌱 Seeded ${users.length} initial users into XAMPP MySQL database 'pathoai'`);
     } else {
+      // Sync initial memory users to MySQL database
+      for (const u of users) {
+        await saveUserToMySQL(u);
+      }
       // Sync memory users from MySQL database
       const [dbUsers]: any = await dbPool.query('SELECT * FROM users');
       if (Array.isArray(dbUsers) && dbUsers.length > 0) {
@@ -181,7 +236,7 @@ async function setupTablesAndSeed() {
             ...u,
             approved: Boolean(u.approved),
             isActive: Boolean(u.isActive),
-            availableDays: u.availableDays ? JSON.parse(u.availableDays) : [],
+            availableDays: u.availableDays ? (typeof u.availableDays === 'string' ? JSON.parse(u.availableDays) : u.availableDays) : [],
           });
         });
         console.log(`📥 Loaded ${users.length} users from XAMPP MySQL 'pathoai' database`);
@@ -214,6 +269,7 @@ async function setupTablesAndSeed() {
 export async function saveUserToMySQL(user: User) {
   if (!dbPool || !isMySQLConnected) return;
   try {
+    // Save to main users table
     await dbPool.query(
       `INSERT INTO users (
         id, name, email, password, role, phone, age, gender, bloodGroup, medicalHistory,
@@ -221,7 +277,7 @@ export async function saveUserToMySQL(user: User) {
         consultationFee, consultationHours, approved, rating, reviewsCount, bio, availableDays, isActive, avatarUrl, createdAt
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       ON DUPLICATE KEY UPDATE
-        name = VALUES(name), phone = VALUES(phone), age = VALUES(age), gender = VALUES(gender),
+        name = VALUES(name), password = VALUES(password), phone = VALUES(phone), age = VALUES(age), gender = VALUES(gender),
         medicalHistory = VALUES(medicalHistory), qualification = VALUES(qualification),
         specialization = VALUES(specialization), hospital = VALUES(hospital),
         consultationFee = VALUES(consultationFee), consultationHours = VALUES(consultationHours),
@@ -230,7 +286,7 @@ export async function saveUserToMySQL(user: User) {
         user.id,
         user.name,
         user.email,
-        user.password || 'password123',
+        user.password || 'PathoAI#2026!Secure',
         user.role,
         user.phone || '',
         user.age || null,
@@ -255,6 +311,48 @@ export async function saveUserToMySQL(user: User) {
         user.createdAt || new Date().toISOString(),
       ]
     );
+
+    // Also populate patient_profiles table if patient
+    if (user.role === 'patient') {
+      try {
+        await dbPool.query(
+          `INSERT INTO patient_profiles (user_id, gender, blood_group, medical_history)
+           VALUES (?, ?, ?, ?)
+           ON DUPLICATE KEY UPDATE
+             gender = VALUES(gender), blood_group = VALUES(blood_group), medical_history = VALUES(medical_history);`,
+          [user.id, user.gender || 'Other', user.bloodGroup || 'O+', user.medicalHistory || 'None']
+        );
+      } catch (err: any) {
+        // quiet catch if patient_profiles table structure differs
+      }
+    }
+
+    // Also populate doctor_profiles table if doctor
+    if (user.role === 'doctor') {
+      try {
+        await dbPool.query(
+          `INSERT INTO doctor_profiles (user_id, qualification, specialization, license_id, hospital, clinic_address, experience_years, consultation_fee, consultation_hours, bio)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+           ON DUPLICATE KEY UPDATE
+             qualification = VALUES(qualification), specialization = VALUES(specialization), hospital = VALUES(hospital);`,
+          [
+            user.id,
+            user.qualification || 'MD Pathology',
+            user.specialization || 'Pathology Specialist',
+            user.licenseId || 'LIC-100',
+            user.hospital || 'Medical Center',
+            user.clinicAddress || '',
+            user.experienceYears || 5,
+            user.consultationFee || 100,
+            user.consultationHours || '09:00 AM - 05:00 PM',
+            user.bio || ''
+          ]
+        );
+      } catch (err: any) {
+        // quiet catch if doctor_profiles table structure differs
+      }
+    }
+
   } catch (err: any) {
     console.error('Error saving user to MySQL:', err.message);
   }

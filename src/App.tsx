@@ -11,7 +11,6 @@ import {
   RoleSelectScreen,
   LoginPatientScreen,
   LoginDoctorScreen,
-  LoginAdminScreen,
   RegisterPatientScreen,
   RegisterDoctorScreen,
   ForgotPasswordScreen,
@@ -21,7 +20,9 @@ import {
 
 import {
   PatientDashboardScreen,
-  ProfileScreen
+  ProfileScreen,
+  PatientSymptomCheckerScreen,
+  PatientMedTrackerScreen
 } from './components/screens/PatientScreens';
 
 import {
@@ -42,14 +43,6 @@ import {
   PrescriptionEditorScreen
 } from './components/screens/DoctorModuleScreens';
 
-import {
-  AdminDashboardScreen,
-  AdminUserManagementScreen,
-  AdminDoctorApprovalQueueScreen,
-  AdminAnalyticsDashboardScreen,
-  AdminSystemLogsAndFeedbackScreen
-} from './components/screens/AdminScreens';
-
 import { NotificationCenterScreen } from './components/screens/UtilityScreens';
 
 const AppContent: React.FC = () => {
@@ -57,7 +50,7 @@ const AppContent: React.FC = () => {
 
   const renderScreen = () => {
     switch (currentScreen) {
-      // Auth Flow Screens (1-11)
+      // Auth Flow Screens
       case 'splash':
         return <SplashScreen />;
       case 'onboarding':
@@ -68,8 +61,6 @@ const AppContent: React.FC = () => {
         return <LoginPatientScreen />;
       case 'login_doctor':
         return <LoginDoctorScreen />;
-      case 'login_admin':
-        return <LoginAdminScreen />;
       case 'register_patient':
         return <RegisterPatientScreen />;
       case 'register_doctor':
@@ -81,14 +72,18 @@ const AppContent: React.FC = () => {
       case 'email_verify':
         return <EmailVerifyScreen />;
 
-      // Patient Screens (12, 15, 16)
+      // Patient Screens
       case 'patient_dashboard':
         return <PatientDashboardScreen />;
+      case 'patient_symptom_checker':
+        return <PatientSymptomCheckerScreen />;
+      case 'patient_med_tracker':
+        return <PatientMedTrackerScreen />;
       case 'profile':
       case 'profile_edit':
         return <ProfileScreen />;
 
-      // Scan Module Screens (17-22)
+      // Scan Module Screens
       case 'scan_upload':
       case 'symptom_entry':
         return <ScanUploadScreen />;
@@ -101,7 +96,7 @@ const AppContent: React.FC = () => {
       case 'scan_detail':
         return <ScanDetailScreen />;
 
-      // Doctor & Appointment Module Screens (13, 23-29)
+      // Doctor & Appointment Module Screens
       case 'doctor_dashboard':
         return <DoctorDashboardScreen />;
       case 'doctor_directory':
@@ -118,19 +113,7 @@ const AppContent: React.FC = () => {
       case 'prescription_editor':
         return <PrescriptionEditorScreen />;
 
-      // Admin Screens (14, 32-35)
-      case 'admin_dashboard':
-        return <AdminDashboardScreen />;
-      case 'admin_users':
-        return <AdminUserManagementScreen />;
-      case 'admin_doctor_approvals':
-        return <AdminDoctorApprovalQueueScreen />;
-      case 'admin_analytics':
-        return <AdminAnalyticsDashboardScreen />;
-      case 'admin_logs':
-        return <AdminSystemLogsAndFeedbackScreen />;
-
-      // Utility Screens (30-31)
+      // Utility Screens
       case 'notification_center':
         return <NotificationCenterScreen />;
 
@@ -141,7 +124,7 @@ const AppContent: React.FC = () => {
 
   const isAuthScreen = [
     'splash', 'onboarding', 'role_select', 'login_patient',
-    'login_doctor', 'login_admin', 'register_patient',
+    'login_doctor', 'register_patient',
     'register_doctor', 'forgot_password', 'reset_password', 'email_verify'
   ].includes(currentScreen);
 
