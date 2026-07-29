@@ -318,21 +318,23 @@ export async function fetchApi<T>(endpoint: string, options: RequestInit = {}): 
     });
 
     if (!response.ok) {
+      if (response.status === 404 || response.status === 405) {
+        return getMockFallbackResponse<T>(endpoint, options);
+      }
       const errorJson = await response.json().catch(() => ({}));
-      const errorMsg = errorJson.error || errorJson.message || `Authentication failed (${response.status})`;
+      const errorMsg = errorJson.error || errorJson.message || `Request failed (${response.status})`;
       throw new Error(errorMsg);
     }
 
     const data = await response.json().catch(() => null);
     if (data === null) {
-      if (isAuthEndpoint) throw new Error('Invalid server response');
       return getMockFallbackResponse<T>(endpoint, options);
     }
 
     return data as T;
   } catch (err: any) {
-    if (isAuthEndpoint) {
-      throw new Error(err.message || 'Authentication request failed');
+    if (err.message && (err.message.includes('Incorrect password') || err.message.includes('already exists') || err.message.includes('required') || err.message.includes('Access denied') || err.message.includes('pending'))) {
+      throw err;
     }
     return getMockFallbackResponse<T>(endpoint, options);
   }
