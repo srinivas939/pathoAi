@@ -302,6 +302,11 @@ function getMockFallbackResponse<T>(endpoint: string, options: RequestInit = {})
 }
 
 export async function fetchApi<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+  // If running statically on GitHub Pages (e.g. srinivas939.github.io), use mock response immediately
+  if (typeof window !== 'undefined' && (window.location.hostname.includes('github.io') || window.location.hostname.includes('github.com'))) {
+    return getMockFallbackResponse<T>(endpoint, options);
+  }
+
   const fullUrl = endpoint.startsWith('http') ? endpoint : `${API_BASE_URL}${endpoint}`;
 
   const headers = {
